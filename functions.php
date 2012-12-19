@@ -122,23 +122,23 @@ function mre_scripts_and_styles() {
    		wp_enqueue_script('mre_jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js", array(), '1.8', true);
 
 		// enqueue modernizr.js | @Dependents: jQuery
-		wp_enqueue_script('mre_modernizr', get_stylesheet_directory_uri() . '/js/libs/modernizr-2.0.6.min.js',array('mre_jquery'), '2.0.6', false);
+		wp_enqueue_script('mre_modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr-2.0.6.min.js',array('mre_jquery'), '2.0.6', false);
 
 		// enqueue jquery.validate.min.js | @Dependents: JQuery
 		// http://bassistance.de/jquery-plugins/jquery-plugin-validation/
 		// wp_enqueue_script('mre_validator', 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js',array('mre_jquery'), '1.10.0', false);
 		
 		// enqueue plugins.js | @Dependents: jQuery
-		wp_enqueue_script('mre_plugins', get_stylesheet_directory_uri() . '/js/plugins.js', array('mre_jquery'), "1", true);
+		wp_enqueue_script('mre_plugins', get_stylesheet_directory_uri() . '/library/js/plugins.js', array('mre_jquery'), "1", true);
 		
 		// enqueue scripts.js | @Dependents: jQuery
-		wp_enqueue_script('mre_scripts', get_stylesheet_directory_uri() . '/js/script.js', array('mre_jquery'), "1", true);
+		wp_enqueue_script('mre_scripts', get_stylesheet_directory_uri() . '/library/js/script.js', array('mre_jquery'), "1", true);
 		
 		// enqueue style.css // http://codex.wordpress.org/Function_Reference/wp_register_style
 		wp_enqueue_style('mre_wpstyles', get_stylesheet_uri(), array(), '01', 'all');
 
 		// enqueue /css/style.css 
-		wp_enqueue_style('mre_styles', get_stylesheet_directory_uri() . '/css/style.css', array(), '01', 'all');
+		wp_enqueue_style('mre_styles', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '01', 'all');
 	}
 }
 

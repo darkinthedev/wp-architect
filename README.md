@@ -1,4 +1,4 @@
 wp-architect
 ============
 
-Another Boilerplate for Custom WordPress Theming
+Another Boilerplate for Crafting Custom WordPress Themes
