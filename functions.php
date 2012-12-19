@@ -44,13 +44,14 @@ add_action('wp_head', 'mre_remove_recent_comments_style', 1);
 // 1E - clean up gallery output in wp
 add_filter('gallery_style', 'mre_gallery_style');
 
+// 1F - Remove Menu items from WP Admin Console
+//add_action( 'admin_menu', 'mre_remove_menu_pages' );
+
 // 2A - enqueue base scripts and styles
 add_action('wp_enqueue_scripts', 'mre_scripts_and_styles', 999);
 
 // launching this stuff after theme setup
 add_action('after_setup_theme','mre_theme_support');
-
-
 
 // 1A - Head Clean Up
 function mre_head_cleanup() {
@@ -75,10 +76,6 @@ function mre_head_cleanup() {
 
 } 
 
-
-
-
-
 // 1B – remove WP version from RSS
 function mre_rss_version() { return ''; }
 
@@ -101,6 +98,16 @@ function mre_remove_recent_comments_style() {
 function mre_gallery_style($css) {
   return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
 }
+
+/*
+	1F Remove Menu Pages from Admin Console (uncomment function and action hook if needed)
+	http://codex.wordpress.org/Function_Reference/remove_menu_page
+*/
+// function mre_remove_menu_pages() {
+// 	remove_menu_page('link-manager.php');
+// 	remove_menu_page('tools.php');	
+// }
+
 // Register and Enqueue Scripts ///////////////////////////////////////////////////////////////////
 // wp_resgister_* not required before wp_enqueue_*
 // wp_register_* is more useful for making available for the user to enqueue tw2113 @ 9:24
