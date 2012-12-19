@@ -71,13 +71,22 @@ $base-font-size:100%;
 html {}
 body {}
 
-#page {}
+#page {
+  width:76%;
+  margin:0 auto;
+}
 
 #branding {}
 
 #main {
-  .content-area {}
-  .widget-area {}
+  .content-area {
+    width:60%;
+    float:left;
+  }
+  .widget-area {
+    width:40%;
+    float:right;
+  }
 }
 
 .site-footer {}
@@ -117,8 +126,8 @@ blockquote {
     content:'”';
   }
   footer {
-  	cite {
-    	font-size:.875em; //14/16
+    cite {
+      font-size:.875em; //14/16
     }
   }
 }
@@ -194,20 +203,11 @@ article.comment {
 .gallery-caption,
 .entry-caption {
   font-style: italic;
-  font-size: 12px;
-  font-size: 0.857142857rem;
+  font-size: .75em;
   line-height: 2;
   color: #777;
 }
-img.wp-smiley,
-.rsswidget img {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0;
-}
+// Image Galleries (Worpress also automatically injects other CSS - see functions.php)
 .entry-content dl.gallery-item {
   margin: 0;
 }
@@ -226,6 +226,28 @@ img.wp-smiley,
 }
 .gallery-columns-1 .gallery-icon img {
   padding: 3%;
+}
+// Image attachments
+.image-attachment div.entry-meta {
+  float: left;
+}
+.image-attachment nav {
+  float: right;
+  margin: 0 0 1em 0;
+}
+.image-attachment .entry-content {
+  clear: both;
+}
+.image-attachment .entry-content .entry-attachment {
+  background: #eee;
+  margin: 0 0 1em;
+  padding: 1em;
+  text-align: center;
+}
+.image-attachment .entry-content .attachment {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* =Media Queries 
