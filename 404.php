@@ -2,8 +2,8 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package wp_arch
- * @since wp_arch 1.0
+ * @package mre_s
+ * @since mre_s 1.0
  */
 
 get_header(); ?>

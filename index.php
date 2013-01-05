@@ -8,8 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package wp_arch
- * @since wp_arch 1.0
+ * @package mre_s
+ * @since mre_s 1.0
  */
 
 get_header(); ?>
@@ -19,7 +19,7 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 
-				<?php wp_arch_content_nav( 'nav-above' ); ?>
+				<?php mre_content_nav( 'nav-above' ); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -34,7 +34,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php wp_arch_content_nav( 'nav-below' ); ?>
+				<?php mre_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
 
