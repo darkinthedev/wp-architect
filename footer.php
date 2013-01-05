@@ -4,8 +4,8 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package mre_s
- * @since mre_s 1.0
+ * @package wp_arch
+ * @since wp_arch 1.0
  */
 ?>
 

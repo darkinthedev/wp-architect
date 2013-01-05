@@ -1,7 +1,7 @@
 <?php
 /**
- * @package mre_s
- * @since mre_s 1.0
+ * @package wp_arch
+ * @since wp_arch 1.0
  */
 ?>
 
@@ -11,7 +11,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php mre_posted_on(); ?>
+			<?php wp_arch_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -32,7 +32,7 @@
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( __( ', ', 'mre' ) );
-				if ( $categories_list && mre_categorized_blog() ) :
+				if ( $categories_list && wp_arch_categorized_blog() ) :
 			?>
 			<span class="cat-links">
 				<?php printf( __( 'Posted in %1$s', 'mre' ), $categories_list ); ?>
@@ -46,16 +46,16 @@
 			?>
 			<span class="sep"> | </span>
 			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'mre_s' ), $tags_list ); ?>
+				<?php printf( __( 'Tagged %1$s', 'wp_arch' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 		<span class="sep"> | </span>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'mre_s' ), __( '1 Comment', 'mre_s' ), __( '% Comments', 'mre_s' ) ); ?></span>
+		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'wp_arch' ), __( '1 Comment', 'wp_arch' ), __( '% Comments', 'wp_arch' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'mre_s' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'wp_arch' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
