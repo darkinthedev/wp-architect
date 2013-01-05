@@ -417,7 +417,7 @@ jQuery.extend({
 
 	// Handle when the DOM is ready
 	ready: function( wait ) {
-		// Either a released hold or an DOMready/load event and not yet ready
+		// Either a released hold or an DOwp_archady/load event and not yet ready
 		if ( (wait === true && !--jQuery.readyWait) || (wait !== true && !jQuery.isReady) ) {
 			// Make sure body exists, at least, in case IE gets a little overzealous (ticket #5443).
 			if ( !document.body ) {

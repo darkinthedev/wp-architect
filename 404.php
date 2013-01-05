@@ -2,8 +2,8 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package mre_s
- * @since mre_s 1.0
+ * @package wp_arch
+ * @since wp_arch 1.0
  */
 
 get_header(); ?>
@@ -13,18 +13,18 @@ get_header(); ?>
 
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'mre' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'wp_arch' ); ?></h1>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'mre' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'wp_arch' ); ?></p>
 
 					<?php get_search_form(); ?>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 					<div class="widget">
-						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'mre' ); ?></h2>
+						<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'wp_arch' ); ?></h2>
 						<ul>
 						<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
 						</ul>
@@ -32,7 +32,7 @@ get_header(); ?>
 
 					<?php
 					/* translators: %1$s: smilie */
-					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'mre' ), convert_smilies( ':)' ) ) . '</p>';
+					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'wp_arch' ), convert_smilies( ':)' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
 
