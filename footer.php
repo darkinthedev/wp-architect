@@ -9,14 +9,14 @@
  */
 ?>
 
-	</div><!-- #main .site-main -->
+	</section><?php //.main-wrapper ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer class="page-footer" role="contentinfo">
 		<div class="site-info">
 			<p>Testing</p>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon .site-footer -->
-</div><!-- #page .hfeed .site -->
+		</div><?php //.site-info ?>
+	</footer><?php // .page-footer ?>
+</div><?php //.page .hfeed .site ?>
 
 <?php wp_footer(); ?>
 

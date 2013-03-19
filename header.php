@@ -5,10 +5,10 @@
  ?>
 <!DOCTYPE html>
 <?php // Paul Irish IE Conditional http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ ?>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <?php // Always force latest IE rendering engine (even in intranet) & Chrome Frame // ?>
@@ -48,20 +48,20 @@
 <body <?php body_class(); ?>>
 
 <?php // Schema 'hfeed' http://microformats.org/wiki/hatom ?>
-    <div id="page" class="hfeed site">
+    <div class="hfeed page">
 
 <?php //ARIA 'role' http://www.paciellogroup.com/blog/2012/06/html5-accessibility-chops-when-to-use-an-aria-role/ ?>
-        <header id="branding" role="banner">
+        <header role="banner">
             <hgroup>
-                <h1 id="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+                <h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <h2><?php bloginfo( 'description' ); ?></h2>
             </hgroup>
 
-            <nav id="access" role="navigation">
+            <nav role="navigation">
                 <h1 class="assistive-text section-heading"><?php _e( 'Main menu', 'wp_arch' ); ?></h1>
                 <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'wp_arch' ); ?>"><?php _e( 'Skip to content', 'wp_archstarter' ); ?></a></div>
                 <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-            </nav><!-- #access -->
-        </header><!-- #branding -->
+            </nav><?php //access -?>
+        </header><?php //branding ?>
 
-        <div id="main" class="group">
+        <section class="group main-wrapper">

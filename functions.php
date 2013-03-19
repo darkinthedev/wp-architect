@@ -242,7 +242,7 @@ function wp_arch_content_nav( $nav_id ) {
 
     <?php endif; ?>
 
-    </nav><!-- #<?php echo $nav_id; ?> -->
+    </nav><?php #<?php echo $nav_id; ?> ?>
     <?php
 }
 endif; // wp_arch_content_nav

@@ -12,19 +12,19 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<?php wp_arch_posted_on(); ?>
-		</div><!-- .entry-meta -->
+		</div><?php //.entry-meta ?>
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+	</header><?php //.entry-header ?>
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+	</div><?php //.entry-summary ?>
 	<?php else : ?>
 	<div class="entry-content">
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp_arch' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'wp_arch' ), 'after' => '</div>' ) ); ?>
-	</div><!-- .entry-content -->
+	</div><?php //.entry-content ?>
 	<?php endif; ?>
 
 	<footer class="entry-meta">
@@ -57,5 +57,5 @@
 		<?php endif; ?>
 
 		<?php edit_post_link( __( 'Edit', 'wp_arch' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	</footer><?php //.entry-meta ?>
+</article><?php #post-<?php the_ID(); ?>
