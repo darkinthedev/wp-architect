@@ -21,7 +21,7 @@
 		<?php the_excerpt(); ?>
 	</div><?php //.entry-summary ?>
 	<?php else : ?>
-	<div class="entry-content">
+	<div class="entry-content group">
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp_arch' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'wp_arch' ), 'after' => '</div>' ) ); ?>
 	</div><?php //.entry-content ?>
@@ -51,9 +51,9 @@
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="sep"> | </span>
+		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'wp_arch' ), __( '1 Comment', 'wp_arch' ), __( '% Comments', 'wp_arch' ) ); ?></span>
+		<span class="sep"> | </span>
 		<?php endif; ?>
 
 		<?php edit_post_link( __( 'Edit', 'wp_arch' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>

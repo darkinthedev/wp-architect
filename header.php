@@ -13,7 +13,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <?php // Always force latest IE rendering engine (even in intranet) & Chrome Frame // ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title><?php //Adopted from Toolbox Theme
+<title><?php //Adopted from toolbox Theme
     /*
      * Print the <title> tag based on what is being viewed.
      */
@@ -31,7 +31,7 @@
 
     // Add a page number if necessary:
     if ( $paged >= 2 || $page >= 2 )
-        echo ' | ' . sprintf( __( 'Page %s', 'toolbox' ), max( $paged, $page ) );
+        echo ' | ' . sprintf( __( 'Page %s', 'wp_arch' ), max( $paged, $page ) );
 
     ?></title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -64,4 +64,4 @@
             </nav><?php //access -?>
         </header><?php //branding ?>
 
-        <section class="group main-wrapper">
+        <section id="content" class="group main-wrapper">
