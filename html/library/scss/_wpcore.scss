@@ -1,0 +1,228 @@
+/* =WordPress Core - Responsive
+-------------------------------------------------------------- */
+.entry-content img,
+.comment-content img,
+.widget img {
+    max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+    height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+
+img.size-full,
+img.size-large,
+img.header-image,
+img.wp-post-image {
+    max-width: 100%;
+    height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+
+/* Make sure videos and embeds fit their containers */
+embed,
+iframe,
+object,
+video {
+    max-width: 100%;
+}
+
+/* =WordPress Core -  Globals
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* =WordPress Core – Comments
+-------------------------------------------------------------- */
+// @Toolbox – Entire Comments block
+#comments {}
+
+// @Toolbox – Date/Timestamp under Reply
+.comment-meta {
+    font-size: .75em;
+    text-transform: uppercase;
+}
+
+// @Toolbox – All text and forms associated with the comment form (clicking Reply)
+#respond {
+    font-size: .75em;
+  
+    input[type=text] {
+        display: block;
+        width: 60%;
+    }
+
+    textarea {
+        display: block;
+        margin: 0 0 1em;
+        width: 80%;
+    }
+    
+    .form-allowed-tags {
+        clear: both;
+        width: 80%;
+    }
+    
+    .form-allowed-tags code {
+        display: block;
+    }
+}
+
+.commentlist, .children {
+    // @Toolbox – Removes list bullet styles from comment list and children
+    list-style-type: none;  
+    border-left: 1px solid #ddd;
+}
+
+// @Toolbox – Removes "Allowed html tags..." code below comment box
+.form-allowed-tags {
+    display: none;
+}
+
+article.comment {
+    display: block;
+}
+
+/* =WordPress Core – Images and Image Galleries
+-------------------------------------------------------------- */
+.wp-caption {
+    max-width: 100%; /* Keep wide captions from overflowing their container. */
+    padding: 4px;
+}
+.wp-caption .wp-caption-text,
+.gallery-caption,
+.entry-caption {
+    font-style: italic;
+    font-size: .75em;
+    line-height: 2;
+    color: #777;
+}
+// Image Galleries (Worpress also automatically injects other CSS - see functions.php)
+.entry-content dl.gallery-item {
+    margin: 0;
+}
+.gallery-item a {
+    display: block;
+    width: 90%;
+}
+.gallery-columns-1 {
+    .gallery-item a {
+        max-width: 100%;
+        width: auto;
+    } 
+}
+.gallery .gallery-icon img {
+    height: auto;
+    max-width: 90%;
+    padding: 5%;
+}
+.gallery-columns-1 .gallery-icon img {
+    padding: 3%;
+}
+// Image attachments
+.image-attachment { 
+    div.entry-meta {
+        float: left;
+    }
+
+    nav {
+        float: right;
+        margin: 0 0 1em 0;
+    }
+
+    .entry-content {
+        clear: both;
+
+    .entry-attachment {
+        background: #eee;
+        margin: 0 0 1em;
+        padding: 1em;
+        text-align: center;
+    }
+
+    .attachment {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+  }
+}
