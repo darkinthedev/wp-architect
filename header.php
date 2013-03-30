@@ -1,17 +1,10 @@
-<?php 
-/*
-///REF: http://themeshaper.com/2012/10/22/the-themeshaper-wordpress-theme-tutorial-2nd-edition/
-*/
- ?>
 <!DOCTYPE html>
-<?php // Paul Irish IE Conditional http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ ?>
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<?php // Always force latest IE rendering engine (even in intranet) & Chrome Frame // ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title><?php //Adopted from toolbox Theme
     /*
@@ -35,22 +28,13 @@
 
     ?></title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<?php // XHTML Friends Network http://gmpg.org/xfn/ ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-<?php /*The name Atom applies to a pair of related standards. The Atom Syndication Format is an XML language used for web feeds, while the Atom Publishing Protocol (AtomPub or APP) is a simple HTTP-based protocol for creating and updating web resources.*/ ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php //ADDED TO Styles functions.php Enqueue?>
-<?php //MOVE TO functions.php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-<?php // wp_head hook - http://codex.wordpress.org/Plugin_API/Action_Reference/wp_head ?>
-<?php wp_head(); ?>
+<?php wp_head(); //http://codex.wordpress.org/Plugin_API/Action_Reference/wp_head ?>
 </head>
 <body <?php body_class(); ?>>
-
-<?php // Schema 'hfeed' http://microformats.org/wiki/hatom ?>
     <div class="hfeed page">
-
-<?php //ARIA 'role' http://www.paciellogroup.com/blog/2012/06/html5-accessibility-chops-when-to-use-an-aria-role/ ?>
         <header role="banner">
             <hgroup>
                 <h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -64,4 +48,4 @@
             </nav><?php //access -?>
         </header><?php //branding ?>
 
-        <section id="content" class="group main-wrapper">
+        <div id="content" class="group main-wrapper">

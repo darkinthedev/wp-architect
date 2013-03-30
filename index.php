@@ -14,8 +14,7 @@
 
 get_header(); ?>
 
-		<div class="primary content-area">
-			<div role="main">
+		<div class="primary" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -80,8 +79,7 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			</div><?php //role main ?>
-		</div><?php //.primary .content-area ?>
+		</div><?php //.primary?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

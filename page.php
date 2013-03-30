@@ -13,8 +13,7 @@
 
 get_header(); ?>
 
-		<div class="primary content-area">
-			<div role="main">
+		<div class="primary" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -24,8 +23,7 @@ get_header(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
-			</div><?php //role main ?>
-		</div><?php //.primary .content-area ?>
+		</div><?php //.primary ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
