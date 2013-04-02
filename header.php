@@ -44,7 +44,7 @@
             <nav role="navigation">
                 <h1 class="assistive-text section-heading"><?php _e( 'Main menu', 'wp_arch' ); ?></h1>
                 <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'wp_arch' ); ?>"><?php _e( 'Skip to content', 'wp_archstarter' ); ?></a></div>
-                <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+                <?php wp_nav_menu( array( 'theme_location' => 'main-nav') ); ?>
             </nav><?php //access -?>
         </header><?php //branding ?>
 

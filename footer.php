@@ -13,6 +13,9 @@
 	<footer class="page-footer" role="contentinfo">
 		<div class="site-info">
 			<p>Testing</p>
+			<nav>
+			<?php wp_nav_menu( array('theme_location' => 'footer-links') ); ?>
+			</nav>
 		</div><?php //.site-info ?>
 	</footer><?php // .page-footer ?>
 
