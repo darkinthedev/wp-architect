@@ -81,6 +81,18 @@ a img.aligncenter {
     padding: 0 4px 5px;
 }
 
+nav.paging-navigation,
+nav.post-navigation {
+    margin-bottom: 2em;
+
+    div.nav-previous {
+        float: left;
+    }
+    div.nav-next {
+        float: right;
+    }
+}
+
 /* =WordPress Core – Comments
 -------------------------------------------------------------- */
 // @Toolbox – Entire Comments block
@@ -94,7 +106,12 @@ a img.aligncenter {
 
 // @Toolbox – All text and forms associated with the comment form (clicking Reply)
 #respond {
-    font-size: .75em;
+    
+    border-top:1px solid #EEE;
+
+    h3#reply-title {
+        font-size: 1.5em;
+    }
   
     input[type=text] {
         display: block;

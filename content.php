@@ -32,29 +32,32 @@
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( __( ', ', 'wp_arch' ) );
-				if ( $categories_list && wp_arch_categorized_blog() ) :
+				if ( $categories_list ) :
 			?>
 			<span class="cat-links">
 				<?php printf( __( 'Posted in %1$s', 'wp_arch' ), $categories_list ); ?>
 			</span>
+			<span class="sep"> | </span>
 			<?php endif; // End if categories ?>
-
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$tags_list = get_the_tag_list( '', __( ', ', 'wp_arch' ) );
 				if ( $tags_list ) :
 			?>
-			<span class="sep"> | </span>
 			<span class="tags-links">
 				<?php printf( __( 'Tagged %1$s', 'wp_arch' ), $tags_list ); ?>
 			</span>
+			<span class="sep"> | </span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'wp_arch' ), __( '1 Comment', 'wp_arch' ), __( '% Comments', 'wp_arch' ) ); ?></span>
-		<span class="sep"> | </span>
-		<?php endif; ?>
+		<?php if ( 'post' == get_post_type() ) { ?>
+
+			<?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
+			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'wp_arch' ), __( '1 Comment', 'wp_arch' ), __( '% Comments', 'wp_arch' ) ); ?></span>
+			<?php endif; ?>
+		
+		<?php } ?>
 
 		<?php edit_post_link( __( 'Edit', 'wp_arch' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 	</footer><?php //.entry-meta ?>

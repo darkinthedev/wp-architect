@@ -6,6 +6,12 @@
  * @since wp_arch 1.0
  */
 ?>
+
+<?php 
+	// Variable for testing for blog area
+	$isblog = is_home() || is_archive() || is_single() || is_search();
+
+?>
 		<div class="secondary widget-area" role="complementary">
 			<?php do_action( 'before_sidebar' ); ?>
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>

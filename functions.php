@@ -217,9 +217,9 @@ function wp_arch_content_nav( $nav_id ) {
     if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
         return;
 
-    $nav_class = 'site-navigation paging-navigation';
+    $nav_class = 'site-navigation paging-navigation group';
     if ( is_single() )
-        $nav_class = 'site-navigation post-navigation';
+        $nav_class = 'site-navigation post-navigation group';
 
     ?>
     <nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
@@ -364,6 +364,22 @@ function wp_arch_comment( $comment, $args, $depth ) {
             break;
     endswitch;
 }
-endif; // ends check for wp_arch_comment()    
+endif; // ends check for wp_arch_comment()
+
+// Short Codes
+
+/*
+Blockquote Short Code
+In WordPress: [blockquote cite="" quote="" author=""][/blockquote]
+*/
+function wp_arch_blockquote( $atts, $quote = null ) {
+    extract(shortcode_atts( array(
+        "cite" => '',
+        "quote" => '',
+        "author" => ''
+        ), $atts));  
+    return '<blockquote cite="'.$cite.'">'.'<p>'.$quote.'</p>'.'<footer><p>'.$author.'</p></footer>'.'</blockquote>';  
+}
+add_shortcode("blockquote", "wp_arch_blockquote"); 
 
  ?>
