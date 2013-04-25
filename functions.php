@@ -204,9 +204,6 @@ add_action( 'widgets_init', 'wp_arch_widgets_init' );
 
 // 4 Custom Functions  /////////////////////////////////////////////////////////////////// 
 
-// Optional: Fancybox Gallery
-include_once 'library/modules/fancybox-gallery.php';
-
 // Display navigation to next/previous pages when applicable
 if ( ! function_exists( 'wp_arch_content_nav' ) ) :
 function wp_arch_content_nav( $nav_id ) {
