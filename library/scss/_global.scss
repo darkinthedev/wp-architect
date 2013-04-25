@@ -12,9 +12,6 @@ textarea {
 
 /* =Global - Headings
 -------------------------------------------------------------- */
-h1,h2,h3,h4,h5,h6 {
-    clear: both;
-}
 hr {
     background-color: #ccc;
     border: 0;
@@ -141,6 +138,13 @@ button,
 input {
     line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
     *overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+input, 
+select {
+    display: block;
+}
+input[type="checkbox"] {
+    display: inline;
 }
 button,
 html input[type="button"],

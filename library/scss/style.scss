@@ -17,30 +17,30 @@
 html {}
 body {}
 
-.page {
+div.page {
     width:80%;
     margin:0 auto;
 }
 
-header [role="banner"] {}
+header[role="banner"] {}
 
-.main-wrapper {
-    .primary {
+div.main-wrapper {
+    div.primary {
         width:50%;
         float:left;
         margin-right: 10%;
     }
-    .secondary {
+    aside.secondary {
         width:40%;
         float:right;
     }
 }
 
-.page-footer {}
+footer.page-footer {}
 
 
 
-@import "wpcore.scss";
+@import "wpcore";
 @import "helperClasses";
-@import "mediaq.scss";
-@import "print.scss";
+@import "mediaq";
+@import "print";
