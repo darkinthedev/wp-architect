@@ -51,8 +51,6 @@ get_header(); ?>
 
 				<?php wp_arch_content_nav( 'nav-above' ); ?>
 
-				<?php np_function();?>
-
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
