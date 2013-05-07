@@ -131,7 +131,7 @@ function wp_arch_scripts_and_styles() {
         wp_enqueue_script('wp_arch_jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js", array(), '1.8', true);
 
         // enqueue modernizr.js | @Dependents: jQuery
-        wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr-2.0.6.min.js',array('wp_arch_jquery'), '2.0.6', false);
+        // wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr-2.0.6.min.js',array('wp_arch_jquery'), '2.0.6', false);
 
         // enqueue jquery.validate.min.js | @Dependents: JQuery
         // http://bassistance.de/jquery-plugins/jquery-plugin-validation/
