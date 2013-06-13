@@ -30,12 +30,12 @@ body, button, input, select, textarea {
   color: #222; }
 
 ::-moz-selection {
-  background: #fe57a1;
+  background: #333;
   color: #fff;
   text-shadow: none; }
 
 ::selection {
-  background: #fe57a1;
+  background: #333;
   color: #fff;
   text-shadow: none; }
 
@@ -217,9 +217,6 @@ textarea {
 
 /* =Global - Headings
 -------------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6 {
-  clear: both; }
-
 hr {
   background-color: #ccc;
   border: 0;
@@ -232,7 +229,7 @@ p {
   margin-bottom: 1.5em; }
 
 ul, ol {
-  margin: 0 0 1.5em 3em; }
+  margin: 0 0 1.5em 1.5em; }
 
 ul {
   list-style: disc; }
@@ -323,6 +320,8 @@ table {
 th {
   font-weight: bold; }
 
+/* =Global – Form elements
+-------------------------------------------------------------- */
 button,
 input,
 select,
@@ -342,6 +341,13 @@ input {
   /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
   *overflow: visible;
   /* Corrects inner spacing displayed oddly in IE6/7 */ }
+
+input,
+select {
+  display: block; }
+
+input[type="checkbox"] {
+  display: inline; }
 
 button,
 html input[type="button"],
@@ -449,56 +455,34 @@ a:focus,
 a:active {
   color: midnightblue; }
 
+/* =Variables
+-------------------------------------------------------------- */
 /* ==|== primary styles =====================================================
    Author: 
    ========================================================================== */
-/* =Variables
--------------------------------------------------------------- */
 /* =Layout
 -------------------------------------------------------------- */
-.hfeed {
+div.page {
   width: 80%;
   margin: 0 auto; }
 
-.main-wrapper .primary {
+div.main-wrapper div.primary {
   width: 50%;
   float: left;
   margin-right: 10%; }
-.main-wrapper .secondary {
+div.main-wrapper aside.secondary {
   width: 40%;
   float: right; }
 
-/* =WordPress Core - Responsive
--------------------------------------------------------------- */
-.entry-content img,
-.comment-content img,
-.widget img {
-  max-width: 100%;
-  /* Fluid images for posts, comments, and widgets */ }
-
-img[class*="align"],
-img[class*="wp-image-"],
-img[class*="attachment-"] {
-  height: auto;
-  /* Make sure images with WordPress-added height and width attributes are scaled correctly */ }
-
-img.size-full,
-img.size-large,
-img.header-image,
-img.wp-post-image {
-  max-width: 100%;
-  height: auto;
-  /* Make sure images with WordPress-added height and width attributes are scaled correctly */ }
-
-/* Make sure videos and embeds fit their containers */
-embed,
-iframe,
-object,
-video {
-  max-width: 100%; }
-
 /* =WordPress Core -  Globals
 -------------------------------------------------------------- */
+.sticky {
+  background-color: #ddd;
+  padding: 2%; }
+
+.bypostauthor {
+  font-weight: bold; }
+
 .alignnone {
   margin: 5px 20px 20px 0; }
 
@@ -566,6 +550,16 @@ a img.aligncenter {
   margin: 0;
   padding: 0 4px 5px; }
 
+nav.paging-navigation,
+nav.post-navigation {
+  margin-bottom: 2em; }
+  nav.paging-navigation div.nav-previous,
+  nav.post-navigation div.nav-previous {
+    float: left; }
+  nav.paging-navigation div.nav-next,
+  nav.post-navigation div.nav-next {
+    float: right; }
+
 /* =WordPress Core – Comments
 -------------------------------------------------------------- */
 .comment-meta {
@@ -573,7 +567,9 @@ a img.aligncenter {
   text-transform: uppercase; }
 
 #respond {
-  font-size: .75em; }
+  border-top: 1px solid #eeeeee; }
+  #respond h3#reply-title {
+    font-size: 1.5em; }
   #respond input[type=text] {
     display: block;
     width: 60%; }
@@ -587,7 +583,7 @@ a img.aligncenter {
   #respond .form-allowed-tags code {
     display: block; }
 
-.commentlist, .children {
+.commentlist {
   list-style-type: none;
   border-left: 1px solid #dddddd; }
 
@@ -647,6 +643,35 @@ article.comment {
     display: block;
     margin: 0 auto;
     text-align: center; }
+
+/* =WordPress Core - Responsive
+-------------------------------------------------------------- */
+.entry-content img,
+.comment-content img,
+.widget img {
+  max-width: 100%;
+  /* Fluid images for posts, comments, and widgets */ }
+
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"] {
+  height: auto;
+  /* Make sure images with WordPress-added height and width attributes are scaled correctly */ }
+
+img.size-full,
+img.size-large,
+img.header-image,
+img.wp-post-image {
+  max-width: 100%;
+  height: auto;
+  /* Make sure images with WordPress-added height and width attributes are scaled correctly */ }
+
+/* Make sure videos and embeds fit their containers */
+embed,
+iframe,
+object,
+video {
+  max-width: 100%; }
 
 .ir {
   display: block;

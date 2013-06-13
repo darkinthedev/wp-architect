@@ -157,7 +157,9 @@ function wp_arch_theme_support() {
     // 3A - wp thumbnails
     add_theme_support('post-thumbnails');
     // default thumb size
-    // set_post_thumbnail_size(125, 125, true);
+    set_post_thumbnail_size(125, 125, true);
+
+    
 
     // rss thingy
     add_theme_support('automatic-feed-links');
@@ -187,6 +189,9 @@ function wp_arch_theme_support() {
             'footer-links' => __( 'Footer Links', 'wp_arch' ) // secondary nav in footer
         )
     );
+
+    add_editor_style( 'custom-editor-style.css' );
+
 } /* end wp_arch theme support */  
 
 /*Register widgetized area and update sidebar with default widgets*/
