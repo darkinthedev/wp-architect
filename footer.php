@@ -12,7 +12,7 @@
 
 	<footer class="page-footer" role="contentinfo">
 		<div class="site-info">
-			<p>Testing</p>
+			<p>Copyright &copy; <?php echo date("Y") ?> </p>
 			<nav>
 			<?php wp_nav_menu( array('theme_location' => 'footer-links') ); ?>
 			</nav>
