@@ -7,6 +7,7 @@
 .bypostauthor {
     font-weight: bold;
 }
+
 .alignnone {
     margin: 5px 20px 20px 0;
 }
@@ -116,6 +117,7 @@ nav.post-navigation {
     
     border-top:1px solid #EEE;
 
+
     h3#reply-title {
         font-size: 1.5em;
     }
@@ -139,6 +141,12 @@ nav.post-navigation {
     .form-allowed-tags code {
         display: block;
     }
+
+}
+// Threaded comments
+ul.children {
+    list-style: none;
+    border-left: 1px solid #ccc;
 }
 
 .commentlist {

@@ -442,4 +442,11 @@ function wp_arch_header3($atts, $content = null ) {
 }
 add_shortcode('h3','wp_arch_header3');
 
+ 
+    // Added 2013_06_25 MRE – Fixes conflict with Events Manager Plugin 
+    function my_em_disable_gallery(){
+      remove_action('init','em_event_gallery_override_init', 1000);
+    }
+    add_action('init', 'my_em_disable_gallery');
+
  ?>
