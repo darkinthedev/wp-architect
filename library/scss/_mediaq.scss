@@ -1,3 +1,12 @@
+// RWD – All Modern Browsers Get Max-Width Constraints 
+img,
+embed,
+object,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
 //Tablet
 @media only screen and (max-width: 768px) {
 
