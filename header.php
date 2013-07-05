@@ -36,11 +36,10 @@
 <body <?php body_class(); ?>>
     <div class="hfeed page">
         <header role="banner">
-            <hgroup>
+            <div class="hwrap">
                 <h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 <h2><?php bloginfo( 'description' ); ?></h2>
-            </hgroup>
-
+            </div>
             <nav role="navigation">
                 <h1 class="assistive-text section-heading visuallyhidden"><?php _e( 'Main menu', 'wp_arch' ); ?></h1>
                 <div class="skip-link screen-reader-text visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'wp_arch' ); ?>"><?php _e( 'Skip to content', 'wp_archstarter' ); ?></a></div>
