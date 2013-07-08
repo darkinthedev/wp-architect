@@ -1,57 +1,47 @@
 /* =Menu
 -------------------------------------------------------------- */
 
-div.menu-primary-container {
-    background: #eee;
-    display: block;
-    float: left;
-    margin: 0 auto 1em;
-    width: 100%;
-}
-div.menu-primary-container ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-}
-div.menu-primary-container li {
-    float: left;
+nav[role="navigation"] li {
     position: relative;
+
 }
-div.menu-primary-container a {
-    display: block;
-    line-height: 2em;
-    padding: 0 1em;
-    text-decoration: none;
+
+nav[role="navigation"] ul ul li {
+    position: relative;
+    float:left;
 }
-div.menu-primary-container ul ul {
+
+nav[role="navigation"] ul ul {
+    background-color: #000;
     box-shadow: 0 3px 3px rgba(0,0,0,0.2);
     -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
     -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
     display: none;
-    float: left;
     position: absolute;
     top: 2em;
     left: 0;
     z-index: 99999;
+    border: 1px solid blue;
+    width: auto;
 }
-div.menu-primary-container ul ul ul {
+nav[role="navigation"] ul ul ul {
     left: 100%;
     top: 0;
 }
-div.menu-primary-container ul ul a {
-    background: #dedede;
+nav[role="navigation"] ul ul a {
+    border: 1px solid red;
     line-height: 1em;
     padding: .5em .5em .5em 1em;
     width: 10em;
     height: auto;
 }
-div.menu-primary-container li:hover > a,
-div.menu-primary-container ul ul :hover > a {
-    background: #dedede;
+nav[role="navigation"] li:hover > a,
+nav[role="navigation"] ul ul :hover > a {
+    background: #000;
 }
-div.menu-primary-container ul ul a:hover {
-    background: #cecece;
+nav[role="navigation"] ul ul a:hover {
+    background: #000;
 }
-div.menu-primary-container ul li:hover > ul {
+nav[role="navigation"] ul li:hover > ul {
     display: block;
 }
