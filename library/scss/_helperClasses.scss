@@ -1,10 +1,74 @@
+// Helper classes to practice DRY priciples 
+
+// TODO: Consider Using/Adding @mixin OR @extend in SCSS stylesheets.
+// http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins
+// http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend
+
+
+/* 
+    @extend properies
+*/
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
 .ir br { display: none; }
-//http://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/
 .hidden { display: none !important; visibility: hidden; }
+.invisible { visibility: hidden; }
+
+/* 
+    @mixin properies
+*/
+
+// @mixin New Link Set
+@mixin link-set($color, $colorVisited, $colorHover, $colorFocus) {
+    text-decoration: none;
+    color: $color;
+    &:visited {color: $colorVisited;}
+    &:hover {color: $colorHover;}
+    &:focus {color: $colorFocus;}
+    &:active {color: $colorFocus;}
+}
+
+// @mixin Unstyled List
+@mixin list-type-none { 
+    list-style-type: none; 
+    margin-left:0; 
+    padding-left:0;
+}
+
+// @mixin Inline List
+@mixin inline-block { 
+    @include list-type-none;
+
+    li {
+        display: inline-block;
+        zoom: 1; // IE
+        *display: inline; // IE
+    }
+}
+
+// @mixin Clear Fix
+@mixin clearfix {
+    zoom: 1;
+    &:after { clear: both; }
+    &:after, &:before {
+        content: ""; 
+        display: table;
+    }
+}
+
+.clearfix {
+    zoom: 1;
+    &:after { clear: both; }
+    &:after, &:before {
+        content: ""; 
+        display: table;
+    }
+}
+
+
+// ARIA Friendly Element hiding
+// http://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/
 .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 .visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
-.invisible { visibility: hidden; }
-.group:before, .group:after { content: ""; display: table; }
-.group:after { clear: both; }
-.group { zoom: 1; }
+
+
+
