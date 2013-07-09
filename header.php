@@ -50,4 +50,4 @@
             </nav><?php //access -?>
         </header><?php //branding ?>
 
-        <div id="content" class="group main-wrapper">
+        <div id="content" class="main-wrapper">
