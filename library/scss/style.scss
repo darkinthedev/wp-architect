@@ -1,4 +1,5 @@
 @import "normalize";
+@import "helperClasses";
 
 /* =Variables
 -------------------------------------------------------------- */
@@ -100,6 +101,5 @@ footer.page-footer {}
 
 
 @import "wpcore";
-@import "helperClasses";
 @import "mediaq";
 @import "print";
