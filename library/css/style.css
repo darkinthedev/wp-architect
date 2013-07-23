@@ -103,35 +103,39 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 td { vertical-align: top; }
 
+/*  @extend properies
+*/
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+.ir br { display: none; }
+
+.hidden { display: none !important; visibility: hidden; }
+
+.invisible { visibility: hidden; }
+
+.col-940 { width: 100%; max-width: 940px; margin: 0 auto; }
+
+/*  @mixin properies
+*/
+.group { zoom: 1; }
+.group:after { clear: both; }
+.group:after, .group:before { content: ""; display: table; }
+
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
 /* =Variables
 -------------------------------------------------------------- */
-/* ==|== primary styles ===================================================== Author:  ========================================================================== */
-/* =Primary Navigation Dropdown Menu
+/* =Globals 
 -------------------------------------------------------------- */
-/* =Menu
--------------------------------------------------------------- */
-div.menu-primary-container { background: #eee; display: block; float: left; margin: 0 auto 1em; width: 100%; }
+a { text-decoration: none; color: #0093d0; }
+a:visited { color: #0093d0; }
+a:hover { color: #0093d0; }
+a:focus { color: #0093d0; }
+a:active { color: #0093d0; }
+a:hover { text-decoration: underline; }
 
-div.menu-primary-container ul { list-style: none; margin: 0; padding-left: 0; }
-
-div.menu-primary-container li { float: left; position: relative; }
-
-div.menu-primary-container a { display: block; line-height: 2em; padding: 0 1em; text-decoration: none; }
-
-div.menu-primary-container ul ul { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); display: none; float: left; position: absolute; top: 2em; left: 0; z-index: 99999; }
-
-div.menu-primary-container ul ul ul { left: 100%; top: 0; }
-
-div.menu-primary-container ul ul a { background: #dedede; line-height: 1em; padding: .5em .5em .5em 1em; width: 10em; height: auto; }
-
-div.menu-primary-container li:hover > a, div.menu-primary-container ul ul :hover > a { background: #dedede; }
-
-div.menu-primary-container ul ul a:hover { background: #cecece; }
-
-div.menu-primary-container ul li:hover > ul { display: block; }
-
-/* =Globals
--------------------------------------------------------------- */
 blockquote { margin: 1em .5em; }
 blockquote > p { font-style: oblique; font-size: 1.1em; }
 blockquote > p:before { content: '“'; }
@@ -139,14 +143,38 @@ blockquote > p:after { content: '”'; }
 blockquote footer > p { font-size: .875em; text-align: right; }
 blockquote footer > p:before { content: "– "; }
 
+button, input[type="button"], input[type="reset"], input[type="submit"] { background: #cccccc; border-radius: 3px; border-color: #cccccc #cccccc #bbbbbb #cccccc; border: 1px solid #cccccc; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05); color: rgba(0, 0, 0, 0.8); padding: .25em; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { border-color: #cccccc #bbbbbb #aaaaaa #bbbbbb; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
+button:focus, button:active, input[type="button"]:focus, input[type="button"]:active, input[type="reset"]:focus, input[type="reset"]:active, input[type="submit"]:focus, input[type="submit"]:active { border-color: #aaaaaa #bbbbbb #bbbbbb #bbbbbb; -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); -moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
+
+/* =Primary Navigation Dropdown Menu
+-------------------------------------------------------------- */
+/* =Menu
+-------------------------------------------------------------- */
+header[role="banner"] nav[role="navigation"] ul { text-align: justify; }
+header[role="banner"] nav[role="navigation"] ul ul { visibility: hidden; background-color: #fff; -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); position: absolute; top: 40px; left: 0; z-index: 99999; width: 15em; padding: 1em 0; }
+.cssanimations header[role="banner"] nav[role="navigation"] ul ul { margin: -20px 0 0 0; _margin: 0; /*IE6 only*/ transition: all .2s ease-in-out; opacity: 0; }
+header[role="banner"] nav[role="navigation"] ul ul li { position: relative; display: block; margin: 0; padding: 0 0 0 1em; line-height: 2; }
+header[role="banner"] nav[role="navigation"] ul ul li a { display: block; text-transform: capitalize; font-weight: normal; }
+header[role="banner"] nav[role="navigation"] ul ul ul { left: 100%; top: 0; }
+header[role="banner"] nav[role="navigation"] ul li { position: relative; display: inline-block; *display: inline; *zoom: 1; line-height: 40px; }
+header[role="banner"] nav[role="navigation"] ul li:hover > ul { visibility: visible; }
+.cssanimations header[role="banner"] nav[role="navigation"] ul li:hover > ul { opacity: 1; margin: 0; }
+header[role="banner"] nav[role="navigation"] li.menuParent:after { content: "▼"; color: #ccc; font-size: .75em; }
+header[role="banner"] nav[role="navigation"] ul:after { content: ''; width: 100%; display: inline-block; font-size: 0; line-height: 0; }
+
 /* =Layout
 -------------------------------------------------------------- */
 div.page { width: 80%; margin: 0 auto; }
 
+div.main-wrapper { zoom: 1; }
+div.main-wrapper:after { clear: both; }
+div.main-wrapper:after, div.main-wrapper:before { content: ""; display: table; }
 div.main-wrapper div.primary { width: 50%; float: left; margin-right: 10%; }
 div.main-wrapper div.secondary { width: 40%; float: right; }
 
-/* =WordPress Core -  Globals
+/* =WordPress Core 
+/* http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 -------------------------------------------------------------- */
 .sticky { background-color: #ddd; padding: 2%; }
 
@@ -238,23 +266,7 @@ img.size-full, img.size-large, img.header-image, img.wp-post-image { max-width: 
 /* Make sure videos and embeds fit their containers */
 embed, iframe, object, video { max-width: 100%; }
 
-.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
-
-.ir br { display: none; }
-
-.hidden { display: none !important; visibility: hidden; }
-
-.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
-
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
-
-.invisible { visibility: hidden; }
-
-.group:before, .group:after { content: ""; display: table; }
-
-.group:after { clear: both; }
-
-.group { zoom: 1; }
+img, embed, object, video { max-width: 100%; height: auto; }
 
 @media print { * { background: transparent !important; color: black !important; text-shadow: none !important; filter: none !important; -ms-filter: none !important; }
   a, a:visited { text-decoration: underline; }

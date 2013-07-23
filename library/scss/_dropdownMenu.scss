@@ -6,19 +6,26 @@ header[role="banner"] {
     nav[role="navigation"] {
 
             ul { // First Tier Navigation
+                text-align: justify;
                 
                 ul { // Second Tier Navigation (dropdown)
-                    background-color: #0a5584;
-                    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-                    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+                    visibility: hidden;
+                    background-color: #fff;
                     -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-                    display: none;
+                    -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+                    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
                     position: absolute;
-                    top: 3em;
+                    top: 40px;
                     left: 0;
                     z-index: 99999;
                     width: 15em;
                     padding: 1em 0;
+                    .cssanimations & {
+                        margin: -20px 0 0 0;
+                        _margin: 0; /*IE6 only*/
+                        transition: all .2s ease-in-out;
+                        opacity: 0;
+                    }
                         li {
                             position: relative;
                             display: block; 
@@ -49,12 +56,33 @@ header[role="banner"] {
 
             li {
                 position: relative; // Position dropdown relative to menu item
+                display:inline-block;
+                *display: inline;
+                *zoom: 1;
+                line-height: 40px;
                 &:hover {
                     > ul {
-                        display: block; // Display Dropdown
+                        visibility: visible; // Display Dropdown
+                        .cssanimations & {
+                            opacity: 1;
+                            margin: 0;
+                        }
                     }
                 }
             }
+        }
+        li.menuParent:after {
+          content: "▼";
+          color: #ccc;
+          font-size: .75em;
+        }
+
+        ul:after {
+          content: '';
+          width: 100%;
+          display: inline-block;
+          font-size: 0;
+          line-height: 0;
         }
     }
 }

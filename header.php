@@ -31,7 +31,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php wp_head(); //http://codex.wordpress.org/Plugin_API/Action_Reference/wp_head ?>
+<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
     <div class="hfeed page">
@@ -47,7 +47,7 @@
                 'theme_location' => 'main-nav',
                 'depth' => 2,
                 'items_wrap' => '<ul class="%1$s" role="navigation"><li id="item-id"></li>%3$s</ul>') ); ?>
-            </nav><?php //access -?>
-        </header><?php //branding ?>
+            </nav>
+        </header>
 
         <div id="content" class="main-wrapper">
