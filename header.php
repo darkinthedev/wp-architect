@@ -46,7 +46,7 @@
                 <?php wp_nav_menu( array( 
                 'theme_location' => 'main-nav',
                 'depth' => 2,
-                'items_wrap' => '<ul class="%1$s" role="navigation"><li id="item-id"></li>%3$s</ul>') ); ?>
+                'items_wrap' => '<ul class="%1$s">%3$s</ul>') ); ?>
             </nav>
         </header>
 
