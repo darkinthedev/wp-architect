@@ -2,8 +2,9 @@
 ============
 ###Just Another Boilerplate for Crafting Custom WordPress Themes
 
-The goal and purpose of this theme is to collect best practices and document them into a single theme.
-This theme is meant for learning and developing custom WordPress themes!
+wp-architect is a academic theme focused on documentation, tips and references
+for theme developers. This theme can also be used as a boilerplate for building
+custom WordPress themes.  
 
 <hr>
 
@@ -11,8 +12,64 @@ This theme is meant for learning and developing custom WordPress themes!
 * HTML5 Boilerplate
 * Modernizr
 * Normalize
-* SCSS
+* SCSS and Mixins
+* Grunt.JS ready
+* Shortcodes
 * Functions.php filled with comments, helpful tools and best practices
+
+##Shortcodes
+
+###Blockquote
+
+```
+[blockquote cite="" quote="" author=""] [/blockquote]
+```
+returns
+
+```html
+<blockquote cite="">
+    <p></p>
+    <footer>
+        <p></p>
+    </footer>
+</blockquote>';
+```
+
+```
+[p] [/p]
+```
+returns
+
+```html
+<p></p>
+```
+
+```
+[h1] [/h1]
+```
+returns
+
+```html
+<h1></h1>
+```
+
+```
+[h2] [/h2]
+```
+returns
+
+```html
+<h2></h2>
+```
+
+```
+[h3] [/h3]
+```
+returns
+
+```html
+<h3></h3>
+```
 
 ##References
 Lots of help from:

@@ -391,16 +391,6 @@ function wp_arch_blockquote( $atts, $quote = null ) {
 add_shortcode("blockquote", "wp_arch_blockquote"); 
 
 /*
-Link Lists Short Code
-In WordPress: [linklist][/linklist]
-*/
-function wp_arch_linklist($atts, $content = null ) {
-
-    return '<div class="link-list-cols group">'.$content.'</div>';
-}
-add_shortcode('linklist','wp_arch_linklist');
-
-/*
 Paragraph Short Code
 In WordPress: [p][/p]
 */
