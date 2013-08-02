@@ -36,7 +36,7 @@ blockquote {
     }
 }
 
-button, input[type="button"], input[type="reset"], input[type="submit"] {
+.button, button, input[type="button"], input[type="reset"], input[type="submit"] {
     @include button(#ccc);
 }
 
