@@ -152,12 +152,23 @@ function wp_arch_scripts_and_styles() {
 // 3 Theme Support  /////////////////////////////////////////////////////////////////// 
 function wp_arch_theme_support() {
 
-    // 3A - wp thumbnails
+    // 3A - Thumbnails & Custom Image Sizes
+    // http://codex.wordpress.org/Function_Reference/add_image_size
+    
+    //optional: add_theme_support('post-thumbnails', array( 'custom-post-type'));
     add_theme_support('post-thumbnails');
     // default thumb size
     set_post_thumbnail_size(125, 125, true);
+    // Custom thumb size
+    add_image_size( 'big-thumb', 300, 300, true );
+    // Make custom sizes selectable from WordPress admin	
+    add_filter( 'image_size_names_choose', 'wp_arch_custom_sizes' );
 
-    
+    function wp_arch_custom_sizes( $sizes ) {
+        return array_merge( $sizes, array(
+            'big-thumb' => __('Big Thumb'),
+        ) );
+    }
 
     // rss thingy
     add_theme_support('automatic-feed-links');
