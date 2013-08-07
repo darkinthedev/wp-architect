@@ -7,6 +7,16 @@ $link : #0093d0;
 
 /* =Globals 
 -------------------------------------------------------------- */
+
+// Typography 
+
+h1 {font-size: 1.5em;}
+h2 {font-size: 1.25em;}
+h3 {font-size: 1em;}
+h4 {font-size: 1em;}
+h5 {font-size: 1em}
+h6 {font-size: 1em}
+
 a {
     @include link-set($link, $link, $link, $link);
         &:hover {text-decoration: underline;}
@@ -34,6 +44,34 @@ blockquote {
         }
 
     }
+}
+
+// Form Elements
+
+label {
+    margin-top: 1em;
+    display: inline-block;*display: inline;*zoom: 1;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+textarea {
+    width: 98%;
+    line-height: 1.75;
+}
+select,
+input[type="checkbox"], 
+input[type="radio"] {
+    display: inline-block; *display: inline; *zoom: 1;
+}
+
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+    clear: both;
+    margin: 1em 0;
 }
 
 .button, button, input[type="button"], input[type="reset"], input[type="submit"] {

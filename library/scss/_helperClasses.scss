@@ -66,7 +66,7 @@
 }
 
 // @mixin Inline List
-@mixin inline-block { 
+@mixin inline-block-list { 
     @include list-type-none;
 
     li {
