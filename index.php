@@ -41,6 +41,9 @@ get_header(); ?>
 							elseif ( is_month() ) :
 								printf( __( 'Monthly Archives: %s', 'wp_arch' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 							elseif ( is_year() ) :
+								printf( __( 'Yearly Archives: %s', 'wp_arch' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+							elseif ( is_post_type_archive() ) :
+								echo ucwords( get_post_type() );
 							else :
 								_e( 'Archives', 'wp_arch' );
 							endif;
