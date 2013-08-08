@@ -34,46 +34,6 @@ returns
     </footer>
 </blockquote>
 ```
-###Paragraph
-
-```
-[p] [/p]
-```
-returns
-
-```html
-<p></p>
-```
-###Header 1
-
-```
-[h1] [/h1]
-```
-returns
-
-```html
-<h1></h1>
-```
-###Header 2
-
-```
-[h2] [/h2]
-```
-returns
-
-```html
-<h2></h2>
-```
-###Header 3
-
-```
-[h3] [/h3]
-```
-returns
-
-```html
-<h3></h3>
-```
 
 ##References
 Lots of help from:
