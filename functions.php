@@ -53,8 +53,9 @@ function wp_arch_start() {
 
     //Disable autop filter (WordPress will automatically insert <p> and </p> 
     //tags for you to separate content breaks within a post or page)
+    // WARNING: Breaks WYSIWYG Editor
     //http://wordpress.stackexchange.com/questions/13798/remove-empty-paragraphs-from-the-content
-    remove_filter('the_content', 'wpautop');
+    //remove_filter('the_content', 'wpautop');
 }
 
 
@@ -159,6 +160,7 @@ function wp_arch_theme_support() {
     add_theme_support('post-thumbnails');
     // default thumb size
     set_post_thumbnail_size(125, 125, true);
+    
     // Custom thumb size
     add_image_size( 'big-thumb', 300, 300, true );
     // Make custom sizes selectable from WordPress admin	
@@ -397,49 +399,9 @@ function wp_arch_blockquote( $atts, $quote = null ) {
         "quote" => '',
         "author" => ''
         ), $atts));  
-    return '<blockquote cite="'.$cite.'">'.'<p>'.$quote.'</p>'.'<footer><p>'.$author.'</p></footer>'.'</blockquote>';  
+    return '<blockquote cite="'.$cite.'">'.$quote.'<footer><p>'.$author.'</p></footer>'.'</blockquote>';  
 }
 add_shortcode("blockquote", "wp_arch_blockquote"); 
-
-/*
-Paragraph Short Code
-In WordPress: [p][/p]
-*/
-function wp_arch_paragraph($atts, $content = null ) {
-
-    return '<p>'.$content.'</p>';
-}
-add_shortcode('p','wp_arch_paragraph');
-
-/*
-Header 1 Short Code
-In WordPress: [h1][/h1]
-*/
-function wp_arch_header1($atts, $content = null ) {
-
-    return '<h1>'.$content.'</h1>';
-}
-add_shortcode('h1','wp_arch_header1');
-
-/*
-Header 2 Short Code
-In WordPress: [h2][/h2]
-*/
-function wp_arch_header2($atts, $content = null ) {
-
-    return '<h2>'.$content.'</h2>';
-}
-add_shortcode('h2','wp_arch_header2');
-
-/*
-Header 3 Short Code
-In WordPress: [h3][/h3]
-*/
-function wp_arch_header3($atts, $content = null ) {
-
-    return '<h3>'.$content.'</h3>';
-}
-add_shortcode('h3','wp_arch_header3');
 
 /// Bug Fixes
  
@@ -449,7 +411,9 @@ function my_em_disable_gallery(){
 }
 add_action('init', 'my_em_disable_gallery');
 
- // Custom Post Types 
+// 6. Custom Post Type Snippet
+
+// Custom Post Types 
 // add_action('init', 'wp_arch_cpts');
 // function wp_arch_cpts() { 
 //     // Testimonials

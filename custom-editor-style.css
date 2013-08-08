@@ -2,3 +2,45 @@
  * Description: Allows theme developers to link a custom stylesheet file to the TinyMCE visual editor.
  * Codex:  http://codex.wordpress.org/Editor_Style
 */
+
+body {
+    font-family: sans-serif;
+}
+
+
+blockquote {
+    margin:1em .5em;
+    font-style:oblique;
+    font-size:1em;
+}
+blockquote:before { content:'“'; }
+blockquote:after { content:'”'; }
+
+/* = Form Elements
+-------------------------------------------------------------- */
+
+label {
+    margin-top: 1em;
+    display: inline-block;*display: inline;*zoom: 1;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+textarea {
+    width: 98%;
+    padding: .25em; // line height does not compute in FF
+}
+select,
+input[type="checkbox"], 
+input[type="radio"] {
+    display: inline-block; *display: inline; *zoom: 1;
+}
+
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+    clear: both;
+    margin: 1em 0;
+}

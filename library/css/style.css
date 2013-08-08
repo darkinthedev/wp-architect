@@ -144,16 +144,15 @@ a:focus { color: #0093d0; }
 a:active { color: #0093d0; }
 a:hover { text-decoration: underline; }
 
-blockquote { margin: 1em .5em; }
-blockquote > p { font-style: oblique; font-size: 1.1em; }
-blockquote > p:before { content: '“'; }
-blockquote > p:after { content: '”'; }
+blockquote { margin: 1em .5em; font-style: oblique; font-size: 1.1em; }
+blockquote:before { content: '“'; }
+blockquote:after { content: '”'; }
 blockquote footer > p { font-size: .875em; text-align: right; }
 blockquote footer > p:before { content: "– "; }
 
 label { margin-top: 1em; display: inline-block; *display: inline; *zoom: 1; }
 
-input[type="text"], input[type="password"], input[type="search"], textarea { width: 98%; line-height: 1.75; }
+input[type="text"], input[type="password"], input[type="search"], textarea { width: 98%; padding: .25em; }
 
 select, input[type="checkbox"], input[type="radio"] { display: inline-block; *display: inline; *zoom: 1; }
 

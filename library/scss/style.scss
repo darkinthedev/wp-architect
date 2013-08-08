@@ -24,14 +24,12 @@ a {
 
 blockquote {
     margin:1em .5em;
-    > p {
-        font-style:oblique;
-        font-size:1.1em; //18/16
-    }
-    > p:before {
+    font-style:oblique;
+    font-size:1.1em; //18/16
+    &:before {
         content:'“';
     }
-    > p:after {
+    &:after {
         content:'”';
     }
     footer {
@@ -58,7 +56,7 @@ input[type="password"],
 input[type="search"],
 textarea {
     width: 98%;
-    line-height: 1.75;
+    padding: .25em; // line height does not compute in FF
 }
 select,
 input[type="checkbox"], 
