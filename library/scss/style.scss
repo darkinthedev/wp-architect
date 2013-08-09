@@ -54,6 +54,8 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="search"],
+input[type="tel"],
+input[type="email"],
 textarea {
     width: 98%;
     padding: .25em; // line height does not compute in FF
