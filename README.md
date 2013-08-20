@@ -13,6 +13,7 @@ custom WordPress themes.
 * Modernizr
 * Normalize
 * SCSS and Mixins
+* Grid System
 * Grunt.JS ready
 * Shortcodes
 * Functions.php filled with comments, helpful tools and best practices
