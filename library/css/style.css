@@ -152,7 +152,7 @@ blockquote footer > p:before { content: "– "; }
 
 label { margin-top: 1em; display: inline-block; *display: inline; *zoom: 1; }
 
-input[type="text"], input[type="password"], input[type="search"], textarea { width: 98%; padding: .25em; }
+input[type="text"], input[type="password"], input[type="search"], input[type="tel"], input[type="email"], textarea { width: 98%; padding: .25em; }
 
 select, input[type="checkbox"], input[type="radio"] { display: inline-block; *display: inline; *zoom: 1; }
 
@@ -180,13 +180,43 @@ header[role="banner"] nav[role="navigation"] ul:after { content: ''; width: 100%
 
 /* =Layout
 -------------------------------------------------------------- */
-div.page { width: 80%; margin: 0 auto; }
+/* =Grid Variables and Mixins
+-------------------------------------------------------------- */
+/* =Grid Columns – Based on 960gs
+-------------------------------------------------------------- */
+.one-col-span { width: 6.25%; float: left; margin: 0 1.042%; }
+
+.two-col-span { width: 14.583%; float: left; margin: 0 1.042%; }
+
+.three-col-span { width: 22.917%; float: left; margin: 0 1.042%; }
+
+.four-col-span, div.main-wrapper div.secondary { width: 31.25%; float: left; margin: 0 1.042%; }
+
+.five-col-span { width: 39.583%; float: left; margin: 0 1.042%; }
+
+.six-col-span { width: 47.917%; float: left; margin: 0 1.042%; }
+
+.seven-col-span { width: 56.25%; float: left; margin: 0 1.042%; }
+
+.eight-col-span, div.main-wrapper div.primary { width: 64.583%; float: left; margin: 0 1.042%; }
+
+.nine-col-span { width: 72.917%; float: left; margin: 0 1.042%; }
+
+.ten-col-span { width: 81.25%; float: left; margin: 0 1.042%; }
+
+.eleven-col-span { width: 89.583%; float: left; margin: 0 1.042%; }
+
+.twelve-col-span, header[role="banner"], footer.page-footer { width: 97.917%; float: left; margin: 0 1.042%; }
+
+/* =Grid Media Queries
+-------------------------------------------------------------- */
+@media only screen and (max-width: 780px) { .ten-col-span { width: 97.917%; float: left; margin: 0 1.042%; float: none; } }
+@media only screen and (max-width: 480px) { .one-col-span, .two-col-span, .three-col-span, .four-col-span, div.main-wrapper div.secondary, .five-col-span, .six-col-span, .seven-col-span, .eight-col-span, div.main-wrapper div.primary, .nine-col-span, .ten-col-span, .eleven-col-span, .twelve-col-span, header[role="banner"], footer.page-footer { width: 97.917%; float: left; margin: 0 1.042%; float: none; } }
+div.page { width: 100%; max-width: 960px; margin: 0 auto; }
 
 div.main-wrapper { zoom: 1; }
 div.main-wrapper:after { clear: both; }
 div.main-wrapper:after, div.main-wrapper:before { content: ""; display: table; }
-div.main-wrapper div.primary { width: 50%; float: left; margin-right: 10%; }
-div.main-wrapper div.secondary { width: 40%; float: right; }
 
 /* =WordPress Core 
 /* http://codex.wordpress.org/CSS#WordPress_Generated_Classes

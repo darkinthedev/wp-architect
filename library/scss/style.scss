@@ -84,30 +84,34 @@ input[type="submit"] {
 
 /* =Layout
 -------------------------------------------------------------- */
+@import "grid";
+
 html {}
 body {}
 
 div.page {
-    width:80%;
-    margin:0 auto;
+  width: $wrapperwidth;
+  max-width:960px;
+  margin:0 auto;
 }
 
-header[role="banner"] {}
+header[role="banner"] {
+    @extend .twelve-col-span;
+}
 
 div.main-wrapper {
    @include clearfix;
     div.primary {
-        width:50%;
-        float:left;
-        margin-right: 10%;
+        @extend .eight-col-span;
     }
     div.secondary {
-        width:40%;
-        float:right;
+        @extend .four-col-span;
     }
 }
 
-footer.page-footer {}
+footer.page-footer {
+    @extend .twelve-col-span;
+}
 
 
 
