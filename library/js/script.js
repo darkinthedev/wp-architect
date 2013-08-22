@@ -12,7 +12,7 @@ $(document).ready(function() {
         $("li:first-child, tr:first-child, td:first-child").addClass('first-child');
         $("li:last-child, tr:last-child, td:last-child").addClass('last-child');
         
-        // Add Some Navigation Helper Classes
+        // Add Some Navigation Hook Classes
         var menuParent = $('nav[role="navigation"] ul > li').has('ul').addClass('menuParent');
         var subMenu = $('nav[role="navigation"] ul > li > ul').addClass('subMenu');
 
@@ -22,6 +22,11 @@ $(document).ready(function() {
         }, function() {
             $(this).removeClass('hover');
             $(this).children('ul.hover').removeClass('hover');
+        });
+
+        // Removes Empty <p> tags that WordPress will sometimes insert automtically.
+        $('.primary p:empty').each(function() {
+          $(this).remove();
         });
     }
 
