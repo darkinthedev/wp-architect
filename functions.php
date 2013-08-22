@@ -403,6 +403,27 @@ function wp_arch_blockquote( $atts, $quote = null ) {
 }
 add_shortcode("blockquote", "wp_arch_blockquote"); 
 
+/*
+Column Group Short Code
+In WordPress: [colgroup][/colgroup]
+*/
+function wp_arch_col_group_shortcode( $atts, $content = null ) {
+   return '<div class="group">' . do_shortcode($content) . '</div>';
+}
+add_shortcode("colgroup", "wp_arch_col_group_shortcode");
+
+/*
+Column Short Code
+In WordPress: [col span=""][/col]
+*/
+function wp_arch_col_shortcode( $atts, $content = null ) {
+    extract(shortcode_atts( array(
+        "span" => 'one-col-span'
+        ), $atts)); 
+   return '<div class="'.$span.' col">' . do_shortcode($content) . '</div>';
+}
+add_shortcode("col", "wp_arch_col_shortcode");
+
 /// Bug Fixes
  
 // Added 2013_06_25 MRE – Fixes conflict with Events Manager Plugin 
