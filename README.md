@@ -4,7 +4,10 @@
 
 wp-architect is a academic theme focused on documentation, tips and references
 for theme developers. This theme can also be used as a boilerplate for building
-custom WordPress themes.  
+custom WordPress themes. 
+
+* [Project Page](http://www.wp-architect.com/)
+* [Demo](http://demo.wp-architect.com/)
 
 <hr>
 
@@ -13,6 +16,7 @@ custom WordPress themes.
 * Modernizr
 * Normalize
 * SCSS and Mixins
+* Grid System
 * Grunt.JS ready
 * Shortcodes
 * Functions.php filled with comments, helpful tools and best practices
