@@ -39,6 +39,18 @@ returns
 </blockquote>
 ```
 
+## Install Grunt
+
+### Step 1 - Install Package
+```unix
+npm install
+```
+
+### Step 2 – Run Grunt
+```unix
+grunt
+```
+
 ##References
 Lots of help from:
 * [Themeshaper](http://themeshaper.com/2012/10/22/the-themeshaper-wordpress-theme-tutorial-2nd-edition/)
