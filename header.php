@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes() ?>> <!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+ <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
 <title><?php //Adopted from toolbox Theme
     /*
      * Print the <title> tag based on what is being viewed.
