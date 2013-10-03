@@ -1,24 +1,34 @@
+/* =vars
+-------------------------------------------------------------- */
+$navlink_color: #000;
+$navlink_bg: #666;
+$menulink_bg: #999;
+
 /* =Menu
 -------------------------------------------------------------- */
 
-header[role="banner"] {
-
+div.nav-wrap {
+  border-bottom: 1px solid $navlink_color;
+    
+  a.menu-link, span.touch-button { display: none; }
+    
     nav[role="navigation"] {
 
             ul { // First Tier Navigation
                 text-align: justify;
+                padding-left: 0;
                 
                 ul { // Second Tier Navigation (dropdown)
                     visibility: hidden;
-                    background-color: #fff;
+                    background-color: $navlink_bg;
                     -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
                     -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
                     box-shadow: 0 3px 3px rgba(0,0,0,0.2);
                     position: absolute;
-                    top: 40px;
+                    /*top: 40px;*/
                     left: 0;
                     z-index: 99999;
-                    width: 15em;
+                    width: 19em;
                     padding: 1em 0;
                     .cssanimations & {
                         margin: -20px 0 0 0;
@@ -35,7 +45,6 @@ header[role="banner"] {
                             a {
                                 display: block;
                                 text-transform: capitalize;
-                                font-weight: normal;
                                 &:hover {
                                     
                                 }
@@ -43,6 +52,7 @@ header[role="banner"] {
                         }
 
                     ul { // Third Tier Navigation (flyout)
+                        background-color: #eee;
                         left: 100%;
                         top: 0;
 
@@ -72,9 +82,10 @@ header[role="banner"] {
             }
         }
         li.menuParent:after {
-          content: "▼";
-          color: #ccc;
+          content: " ▼";
+          color: $navlink_color;
           font-size: .75em;
+          padding-left: .25em;
         }
 
         ul:after {
@@ -87,5 +98,104 @@ header[role="banner"] {
     }
 }
 
+//Menu Break
+@media only screen and (max-width: 480px) {
 
+    div.nav-wrap {
 
+        a.menu-link {
+            display: block;
+            color: $navlink_color;
+            background-color: $menulink_bg;
+            text-decoration: none;
+            padding: 1em;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 1px solid #fff;
+        }
+
+        #mainmenu {
+            overflow: hidden;
+            max-height: 0;
+            &.active, 
+            & > ul ul.active {
+                max-height: 55em;
+            }
+        }
+
+        span.touch-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            font-size: 1.5em;
+            padding: 0 1em;
+            color: $navlink_color;
+            background: rgba(0,0,0,0.1);
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        nav[role="navigation"] {
+
+            ul {
+                text-align: left;
+
+                li {
+                    border-bottom: 1px solid $navlink_color;
+                    display: block;
+                    *display: block;
+                    &.last-child {
+                        border: 0;
+                    }
+                    a {
+                        display: block;
+                        padding: .5em;
+                    }
+                }
+
+                ul { // Second Tier Navigation
+                    display: none;
+                    visibility: visible;
+                    position: relative;
+                    top: 0;
+                    width: 100%;
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    box-shadow: none;
+                    padding: 0;
+                    border-top: 1px solid $navlink_color;
+                    .cssanimations & {
+                        margin: 0;
+                        transition: none;
+                        opacity: 1;
+                    }
+                    li {
+                        padding-left: 0;
+                        background-color: $navlink_bg;
+                        a {
+                        }
+            
+                        ul { // Third Tier Navigation (flyout)
+                          left: 0;
+                          a {
+                            &:hover {
+                          }
+                        }
+                    }
+                    }
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+            li.menuParent:after {
+              display: none;
+            }
+            ul:after {
+              display: none;
+            }
+        }
+    }
+} // end @media
