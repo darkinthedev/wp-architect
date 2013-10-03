@@ -38,8 +38,15 @@ $(document).ready(function() {
         $menuTrigger.click(function(e) {
             e.preventDefault();
             var $this = $(this);
-            $this.toggleClass('active').prev('ul.subMenu').toggleClass('active');
-        });
+            if ($this.prev('ul.subMenu').is(':visible')) {
+                $this.prev('ul.subMenu').removeClass('active');
+                $this.removeClass('active')
+            } else {
+               $this.closest('ul').find('.active').prev('ul.subMenu').removeClass('active');
+               $this.prev('ul.subMenu').addClass('active');
+               $this.addClass('active');
+            }
+        });  
     }
 
 });
