@@ -62,6 +62,10 @@ div.nav-wrap {
                             }
                         }
                     }
+                    
+                    &:after {
+                        display: none;
+                    }
                 }
 
             li {
