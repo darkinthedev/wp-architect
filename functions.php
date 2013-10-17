@@ -432,7 +432,7 @@ function my_em_disable_gallery(){
 }
 add_action('init', 'my_em_disable_gallery');
 
-// 6. Custom Post Type Snippet
+// 6. Custom Post Type Snippet Example
 
 // Custom Post Types 
 // add_action('init', 'wp_arch_cpts');
@@ -454,8 +454,10 @@ add_action('init', 'my_em_disable_gallery');
 //                 'parent_item_colon' => ''
 //             ),
 //             'public' => true,  
-//             'description'  => 'Nationwide Security Testimonials',
-//             'exclude_from_search' => true,
+//             'description'  => 'Our Testimonials',
+//             'exclude_from_search' => true/,
+//                'has_archive' => true,
+//                'rewrite' => array('slug' => 'testimonials'),
 //             'hierarchical' => true,
 //             'supports' => array(  
 //                 'title',  
