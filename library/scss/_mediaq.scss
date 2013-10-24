@@ -1,4 +1,4 @@
-// RWD – All Modern Browsers Get Max-Width Constraints 
+// All Modern Browsers Get Max-Width Constraints 
 img,
 embed,
 object,
@@ -7,13 +7,21 @@ video {
     height: auto;
 }
 
-//Tablet
+// Let your content determine breakpoints
+
+//Large
+@media only screen and (max-width: 1024px) {
+
+} // end @media
+
+
+//Medium
 @media only screen and (max-width: 768px) {
 
 } // end @media
 
 
-//Mobile
+//Small
 @media only screen and (max-width: 480px) {
 
 
