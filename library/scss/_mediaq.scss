@@ -1,10 +1,10 @@
-// All Modern Browsers Get Max-Width Constraints 
+/* Make sure videos and embeds fit their containers */
 img,
 embed,
+iframe,
 object,
 video {
     max-width: 100%;
-    height: auto;
 }
 
 // Let your content determine breakpoints

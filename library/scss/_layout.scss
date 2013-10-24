@@ -26,28 +26,6 @@ $colwidth: $wrapperwidth / 12; // 60/94
 .eleven-col-span { @include col ($colwidth * 11 - $colmargin * 2); }
 .twelve-col-span { @include col ($colwidth * 12 - $colmargin * 2); }
 
-/* =Grid Media Queries
--------------------------------------------------------------- */
-
-//Tablet
-@media only screen and (max-width: 780px) {
-  .ten-col-span { @include col ($colwidth * 12 - $colmargin * 2);
-  float:none;
-  }
-
-} // end @media
-
-
-//Mobile
-@media only screen and (max-width: 480px) {
-  .one-col-span, .two-col-span, .three-col-span, .four-col-span,
-  .five-col-span, .six-col-span, .seven-col-span, .eight-col-span,
-  .nine-col-span, .ten-col-span, .eleven-col-span, .twelve-col-span {
-    @include col ($colwidth * 12 - $colmargin * 2);
-    float:none;
-  }
-} // end @media
-
 
 
 

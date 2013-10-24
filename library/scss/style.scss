@@ -7,76 +7,7 @@ $link : #0093d0;
 
 /* =Globals 
 -------------------------------------------------------------- */
-
-// Typography 
-
-h1 {font-size: 1.5em;}
-h2 {font-size: 1.25em;}
-h3 {font-size: 1em;}
-h4 {font-size: 1em;}
-h5 {font-size: 1em}
-h6 {font-size: 1em}
-
-a {
-    @include link-set($link, $link, $link, $link);
-        &:hover {text-decoration: underline;}
-}
-
-blockquote {
-    margin:1em .5em;
-    font-style:oblique;
-    font-size:1.1em; //18/16
-    &:before {
-        content:'“';
-    }
-    &:after {
-        content:'”';
-    }
-    footer {
-        > p {
-            font-size:.875em;
-            text-align: right;
-        }
-        > p:before {
-            content: "– ";
-        }
-
-    }
-}
-
-// Form Elements
-
-label {
-    margin-top: 1em;
-    display: inline-block;*display: inline;*zoom: 1;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="email"],
-textarea {
-    width: 98%;
-    padding: .25em; // line height does not compute in FF
-}
-select,
-input[type="checkbox"], 
-input[type="radio"] {
-    display: inline-block; *display: inline; *zoom: 1;
-}
-
-button, 
-input[type="button"], 
-input[type="reset"], 
-input[type="submit"] {
-    clear: both;
-    margin: 1em 0;
-}
-
-.button, button, input[type="button"], input[type="reset"], input[type="submit"] {
-    @include button(#ccc);
-}
+@import "globals";
 
 /* =Primary Navigation Dropdown Menu
 -------------------------------------------------------------- */
@@ -84,7 +15,10 @@ input[type="submit"] {
 
 /* =Layout
 -------------------------------------------------------------- */
-@import "grid";
+@import "layout";
+
+/* =Primary Styles
+-------------------------------------------------------------- */
 
 html {}
 body {}
