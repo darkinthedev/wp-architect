@@ -2,4 +2,4 @@
 *.log
 /.sass-cache/*
 /node_modules/*
-/css/*
+/build/*

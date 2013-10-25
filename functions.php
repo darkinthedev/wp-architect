@@ -129,7 +129,10 @@ function wp_arch_scripts_and_styles() {
         // http://css-tricks.com/snippets/wordpress/include-jquery-in-wordpress-theme/  
         wp_enqueue_script('wp_arch_jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js", array(), '1.8', true);
         
-        // enqueue scripts.js | @Dependents: jQuery
+        // modernizr-custom.js | @Dependents: jQuery
+        wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/build/js/libs/modernizr-custom.js', array('wp_arch_jquery'), "1", true);
+
+        // enqueue site.min.js | @Dependents: jQuery
         wp_enqueue_script('wp_arch_scripts', get_stylesheet_directory_uri() . '/library/build/js/site.min.js', array('wp_arch_jquery'), "1", true);
         
         // enqueue style.css // http://codex.wordpress.org/Function_Reference/wp_register_style
