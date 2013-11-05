@@ -1,31 +1,26 @@
-/* =Grid Variables and Mixins
--------------------------------------------------------------- */
-$colmargin: 01.0416667%; //10/960
-$wrapperwidth: 100%;
-$colwidth: $wrapperwidth / 12; // 60/94
+html {}
+body {}
 
-@mixin col ($width) {
-  width: $width;
-  float: left;
-  margin: 0 $colmargin;
+div.page {
+  width: $base-grid-wrapperwidth;
+  max-width:960px;
+  margin:0 auto;
 }
 
-/* =Grid Columns – Based on 960gs
--------------------------------------------------------------- */
-//Utility Classes
-.one-col-span { @include col ($colwidth - $colmargin * 2); }
-.two-col-span { @include col ($colwidth * 2- $colmargin * 2); }
-.three-col-span { @include col ($colwidth * 3 - $colmargin * 2); }
-.four-col-span { @include col ($colwidth * 4 - $colmargin * 2); }
-.five-col-span { @include col ($colwidth * 5 - $colmargin * 2); }
-.six-col-span { @include col ($colwidth * 6 - $colmargin * 2); }
-.seven-col-span { @include col ($colwidth * 7 - $colmargin * 2); }
-.eight-col-span { @include col ($colwidth * 8 - $colmargin * 2); }
-.nine-col-span { @include col ($colwidth * 9 - $colmargin * 2); }
-.ten-col-span { @include col ($colwidth * 10 - $colmargin * 2); }
-.eleven-col-span { @include col ($colwidth * 11 - $colmargin * 2); }
-.twelve-col-span { @include col ($colwidth * 12 - $colmargin * 2); }
+header[role="banner"] {
+    @extend %twelve-col-span;
+}
 
+div.main-wrapper {
+   @include clearfix;
+    div.primary {
+        @extend %eight-col-span;
+    }
+    div.secondary {
+        @extend %four-col-span;
+    }
+}
 
-
-
+footer.page-footer {
+    @extend %twelve-col-span;
+}

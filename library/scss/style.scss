@@ -1,54 +1,17 @@
-@import "normalize";
-@import "helperClasses";
+// Reset (normalize)
+@import "vendor/normalize";
 
-/* =Variables
--------------------------------------------------------------- */
-$link : #0093d0;
+// Mixins and Variables
+@import "variables";
+@import "mixins";
 
-/* =Globals 
--------------------------------------------------------------- */
-@import "globals";
-
-/* =Primary Navigation Dropdown Menu
--------------------------------------------------------------- */
-@import "dropdownMenu";
-
-/* =Layout
--------------------------------------------------------------- */
+// Main Styles
+@import "base";
 @import "layout";
+@import "modules";
 
-/* =Primary Styles
--------------------------------------------------------------- */
+// Third-Party
+@import "vendor/ddmenu";
+@import "vendor/wpcore";
+@import "vendor/bpprint";
 
-html {}
-body {}
-
-div.page {
-  width: $wrapperwidth;
-  max-width:960px;
-  margin:0 auto;
-}
-
-header[role="banner"] {
-    @extend .twelve-col-span;
-}
-
-div.main-wrapper {
-   @include clearfix;
-    div.primary {
-        @extend .eight-col-span;
-    }
-    div.secondary {
-        @extend .four-col-span;
-    }
-}
-
-footer.page-footer {
-    @extend .twelve-col-span;
-}
-
-
-
-@import "wpcore";
-@import "mediaq";
-@import "print";

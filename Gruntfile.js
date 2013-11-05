@@ -85,13 +85,13 @@ module.exports = function(grunt) {
         watch: {
           
           sass: {
-            files: ['library/scss/*.scss'],
-            tasks: ['sass', 'modernizr']
+            files: ['library/scss/**/*.scss'],
+            tasks: ['sass']
           },
 
           js: {
             files: ['library/js/**/*.js'],
-            tasks: ['uglify', 'modernizr']
+            tasks: ['uglify']
           },
 
           // watch for image files 

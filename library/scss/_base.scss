@@ -1,4 +1,6 @@
-// Typography 
+/* =Typography 
+-------------------------------------------------------------- */
+body {font-family: $base-font-family;}
 
 h1 {font-size: 1.5em;}
 h2 {font-size: 1.25em;}
@@ -8,7 +10,7 @@ h5 {font-size: 1em}
 h6 {font-size: 1em}
 
 a {
-    @include link-set($link, $link, $link, $link);
+    @include link-set($base-link-color, $base-link-color, $base-link-color, $base-link-color);
         &:hover {text-decoration: underline;}
 }
 
@@ -16,11 +18,11 @@ blockquote {
     margin:1em .5em;
     font-style:oblique;
     font-size:1.1em; //18/16
-    &:before {
-        content:'“';
+    & p:before {
+        content:'“ ';
     }
-    &:after {
-        content:'”';
+    & p:after {
+        content:' ”';
     }
     footer {
         > p {
@@ -34,11 +36,12 @@ blockquote {
     }
 }
 
-// Form Elements
+/* =Form Elements
+-------------------------------------------------------------- */
 
 label {
     margin-top: 1em;
-    display: inline-block;*display: inline;*zoom: 1;
+    display: inline-block;
 }
 
 input[type="text"],
@@ -53,7 +56,7 @@ textarea {
 select,
 input[type="checkbox"], 
 input[type="radio"] {
-    display: inline-block; *display: inline; *zoom: 1;
+    display: inline-block;
 }
 
 button, 

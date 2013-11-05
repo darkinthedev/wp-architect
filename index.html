@@ -1,5 +1,4 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
@@ -28,7 +27,17 @@
         <a class="menu-link" href="#"> &#9776; Menu</a>
         <nav id="mainmenu" role="navigation">
           <ul>
-        
+            <li><a href="#">Link 1</a>
+              <ul>
+                <li><a href="#">Sub-link 1</a></li>
+                <li><a href="#">Sub-link 2</a></li>
+                <li><a href="#">Sub-link 3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 5</a></li>
           </ul>
         </nav>
       </div>
@@ -36,7 +45,7 @@
 
     <div id="content" class="main-wrapper">
       <div class="primary" role="main">
-        <h1>HTML Ipsum Presents</h1>
+        <h1>Primary</h1>
          
         <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
 
@@ -121,6 +130,7 @@
       </div>
 
       <div class="secondary" role="complementary">
+        <h1>Secondary</h1>
       </div>
     </div>
     
@@ -140,12 +150,6 @@
       load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
     });
   </script>
-
-
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
   
 </body>
 </html>

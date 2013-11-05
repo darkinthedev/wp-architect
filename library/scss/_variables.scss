@@ -1,0 +1,16 @@
+/* =Typography
+-------------------------------------------------------------- */
+$base-font-family:               sans-serif;
+
+/* =Links
+-------------------------------------------------------------- */
+$base-link-color:                #0093d0;
+$base-visited-link-color:        #0093d0;
+$base-hover-link-color:          #0093d0;
+$base-active-link-color:         #0093d0;
+
+/* =Grid
+-------------------------------------------------------------- */
+$base-grid-wrapperwidth:         100%;
+$base-grid-colmargin:            01.0416667%; //10/960
+$base-grid-colwidth:             $base-grid-wrapperwidth / 12; // 60/94

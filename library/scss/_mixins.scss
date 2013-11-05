@@ -1,0 +1,91 @@
+/*
+    mixin directives
+    – http://sass-lang.com/documentation/file.SASS_REFERENCE.html#defining_a_mixin
+*/
+
+// Grid - Column
+@mixin col ($width) {
+  width: $width;
+  float: left;
+  margin: 0 $base-grid-colmargin;
+}
+
+// Clear Fix
+@mixin clearfix {
+    zoom: 1;
+    &:after { clear: both; }
+    &:after, &:before {
+        content: ""; 
+        display: table;
+    }
+}
+
+// New Button
+@mixin button ($color) {
+    background: $color;
+    border-radius: 3px;
+    border-color: #cccccc #cccccc #bbbbbb #cccccc;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.8);
+    padding: .5em 1em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    &:hover{
+        border-color: #cccccc #bbbbbb #aaaaaa #bbbbbb;
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
+    &:focus, &:active {
+        border-color: #aaaaaa #bbbbbb #bbbbbb #bbbbbb;
+        -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+        box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
+}
+
+// New Link Set
+@mixin link-set($color, $colorVisited, $colorHover, $colorFocus) {
+    text-decoration: none;
+    color: $color;
+    &:visited {color: $colorVisited;}
+    &:hover {color: $colorHover;}
+    &:focus {color: $colorFocus;}
+    &:active {color: $colorFocus;}
+}
+
+/* 
+    extend-only selectors
+    – http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholders
+*/
+// Image replacement
+
+%ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+%ir br { display: none; }
+// ARIA Friendly Element hiding
+// http://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/
+%visuallyhidden, %screen-reader-text { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+%visuallyhidden.focusable:active, %visuallyhidden.focusable:focus
+%screen-reader-text.focusable:active, %screen-reader-text.focusable:focus  { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+%group {
+    zoom: 1;
+    &:after { clear: both; }
+    &:after, &:before {
+        content: ""; 
+        display: table;
+    }
+}
+
+// Grid – Column Placeholders
+%one-col-span { @include col ($base-grid-colwidth - $base-grid-colmargin * 2); }
+%two-col-span { @include col ($base-grid-colwidth * 2- $base-grid-colmargin * 2); }
+%three-col-span { @include col ($base-grid-colwidth * 3 - $base-grid-colmargin * 2); }
+%four-col-span { @include col ($base-grid-colwidth * 4 - $base-grid-colmargin * 2); }
+%five-col-span { @include col ($base-grid-colwidth * 5 - $base-grid-colmargin * 2); }
+%six-col-span { @include col ($base-grid-colwidth * 6 - $base-grid-colmargin * 2); }
+%seven-col-span { @include col ($base-grid-colwidth * 7 - $base-grid-colmargin * 2); }
+%eight-col-span { @include col ($base-grid-colwidth * 8 - $base-grid-colmargin * 2); }
+%nine-col-span { @include col ($base-grid-colwidth * 9 - $base-grid-colmargin * 2); }
+%ten-col-span { @include col ($base-grid-colwidth * 10 - $base-grid-colmargin * 2); }
+%eleven-col-span { @include col ($base-grid-colwidth * 11 - $base-grid-colmargin * 2); }
+%twelve-col-span { @include col ($base-grid-colwidth * 12 - $base-grid-colmargin * 2); }
