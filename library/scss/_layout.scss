@@ -1,26 +1,28 @@
+// TODO Standard setup
 html {}
 body {}
 
+.layout {
+  @include container;
+}
+
 div.page {
-  width: $base-grid-wrapperwidth;
-  max-width:960px;
-  margin:0 auto;
+  
 }
 
 header[role="banner"] {
-    @extend %twelve-col-span;
+    clear: both;
 }
 
 div.main-wrapper {
-   @include clearfix;
     div.primary {
-        @extend %eight-col-span;
+        @include span-columns(6,9);
     }
     div.secondary {
-        @extend %four-col-span;
+        @include span-columns(3 omega,9);
     }
 }
 
 footer.page-footer {
-    @extend %twelve-col-span;
+    clear: both;
 }

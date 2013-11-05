@@ -1,5 +1,10 @@
 module.exports = function(grunt) {
 
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks("grunt-modernizr");
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-compass');
+
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -15,15 +20,12 @@ module.exports = function(grunt) {
           }
         },
 
-        sass: {
-            dist: {
-              files: {
-                'library/build/css/style.css': 'library/scss/style.scss' // destination : source
-              },
-            },
-            options: {                       
-            style: 'compressed'   //Output style. Can be nested (default), compact, compressed, or expanded.
-          },
+        compass: {
+          dev: {
+            options: {
+              config: 'config.rb'
+            }
+          }
         },
 
         imagemin: {                          // Task
@@ -86,7 +88,7 @@ module.exports = function(grunt) {
           
           sass: {
             files: ['library/scss/**/*.scss'],
-            tasks: ['sass']
+            tasks: ['compass:dev']
           },
 
           js: {
@@ -112,11 +114,6 @@ module.exports = function(grunt) {
         }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks("grunt-modernizr");
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-
-  grunt.registerTask('default', ['imagemin', 'sass', 'watch', 'uglify', 'modernizr']);
+  grunt.registerTask('default', ['imagemin', 'compass', 'watch', 'uglify', 'modernizr']);
 
 }

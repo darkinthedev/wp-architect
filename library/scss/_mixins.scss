@@ -3,13 +3,6 @@
     – http://sass-lang.com/documentation/file.SASS_REFERENCE.html#defining_a_mixin
 */
 
-// Grid - Column
-@mixin col ($width) {
-  width: $width;
-  float: left;
-  margin: 0 $base-grid-colmargin;
-}
-
 // Clear Fix
 @mixin clearfix {
     zoom: 1;
@@ -75,17 +68,3 @@
         display: table;
     }
 }
-
-// Grid – Column Placeholders
-%one-col-span { @include col ($base-grid-colwidth - $base-grid-colmargin * 2); }
-%two-col-span { @include col ($base-grid-colwidth * 2- $base-grid-colmargin * 2); }
-%three-col-span { @include col ($base-grid-colwidth * 3 - $base-grid-colmargin * 2); }
-%four-col-span { @include col ($base-grid-colwidth * 4 - $base-grid-colmargin * 2); }
-%five-col-span { @include col ($base-grid-colwidth * 5 - $base-grid-colmargin * 2); }
-%six-col-span { @include col ($base-grid-colwidth * 6 - $base-grid-colmargin * 2); }
-%seven-col-span { @include col ($base-grid-colwidth * 7 - $base-grid-colmargin * 2); }
-%eight-col-span { @include col ($base-grid-colwidth * 8 - $base-grid-colmargin * 2); }
-%nine-col-span { @include col ($base-grid-colwidth * 9 - $base-grid-colmargin * 2); }
-%ten-col-span { @include col ($base-grid-colwidth * 10 - $base-grid-colmargin * 2); }
-%eleven-col-span { @include col ($base-grid-colwidth * 11 - $base-grid-colmargin * 2); }
-%twelve-col-span { @include col ($base-grid-colwidth * 12 - $base-grid-colmargin * 2); }

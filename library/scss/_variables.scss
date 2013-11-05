@@ -14,3 +14,18 @@ $base-active-link-color:         #0093d0;
 $base-grid-wrapperwidth:         100%;
 $base-grid-colmargin:            01.0416667%; //10/960
 $base-grid-colwidth:             $base-grid-wrapperwidth / 12; // 60/94
+
+/* =Susy Grid
+-------------------------------------------------------------- */
+$total-columns:                  12;
+$columns-width:                  4em;
+$gutter-width:                   1em;
+$grid-padding:                   $gutter-width;
+
+// Correct box model 
+@include border-box-sizing;
+
+// Brakepoints
+// $small:                          10em;
+// $medium:                         20em;
+// $large:                          40em;
