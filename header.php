@@ -35,10 +35,10 @@
 <body <?php body_class(); ?>>
     <div class="hfeed page">
         <header role="banner">
-            <div class="hwrap">
+            <hgroup>
                 <h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 <h2><?php bloginfo( 'description' ); ?></h2>
-            </div>
+            </hgroup>
             <div class="nav-wrap">
                 <a class="menu-link" href="#mainmenu"> &#9776; Menu</a>
                 <nav id="mainmenu" role="navigation">

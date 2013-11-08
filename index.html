@@ -23,9 +23,15 @@
 
   <div class="hfeed page">
     <header role="banner">
+      <hgroup>
+          <h1><a href="/" rel="home">WP Architect</a></h1>
+          <h2>Just Another Boilerplate for Crafting WordPress Themes</h2>
+      </hgroup>
       <div class="nav-wrap">
         <a class="menu-link" href="#"> &#9776; Menu</a>
         <nav id="mainmenu" role="navigation">
+          <h1 class="assistive-text section-heading visuallyhidden">Main Menu</h1>
+          <div class="skip-link screen-reader-text visuallyhidden"><a href="#content" title="Skip to content">Skip to content</a></div>
           <ul>
             <li><a href="#">Link 1</a>
               <ul>
@@ -44,12 +50,12 @@
     </header>
 
     <div id="content" class="main-wrapper">
-      <div class="primary" role="main">
-        <h1>Primary</h1>
+      <section class="primary" role="main">
+        <h2>Primary</h2>
          
         <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
 
-        <h2>Header Level 2</h2>
+        <h3>Header Level 3</h3>
                  
         <ol>
            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
@@ -58,7 +64,7 @@
 
         <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
 
-        <h3>Header Level 3</h3>
+        <h4>Header Level 4</h4>
 
         <ul>
            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
@@ -95,7 +101,7 @@
           </div>
 
           <div>
-               <h4>Radio Button Choice</h4>
+               <h5>Radio Button Choice</h5>
 
                <label for="radio-choice-1">Choice 1</label>
                <input type="radio" name="radio-choice-1" id="radio-choice-1" tabindex="2" value="choice-1" />
@@ -127,11 +133,11 @@
             <input type="submit" value="Submit" />
         </div>
       </form>
-      </div>
+      </section>
 
-      <div class="secondary" role="complementary">
-        <h1>Secondary</h1>
-      </div>
+      <section class="secondary" role="complementary">
+        <h2>Secondary</h2>
+      </section>
     </div>
     
     <footer class="page-footer">
@@ -143,13 +149,5 @@
   </div> <!--! end of .page -->
 
   <script src="library/build/js/site-min.js"></script>
-
-  <script> // Change UA-XXXXX-X to be your site's ID
-    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
-  </script>
-  
 </body>
 </html>

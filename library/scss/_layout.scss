@@ -3,11 +3,12 @@ html {}
 body {}
 
 .layout {
-  @include container;
+
 }
 
 div.page {
-  
+  @include container;
+  @include susy-grid-background;
 }
 
 header[role="banner"] {
@@ -15,10 +16,10 @@ header[role="banner"] {
 }
 
 div.main-wrapper {
-    div.primary {
+    section.primary {
         @include span-columns(6,9);
     }
-    div.secondary {
+    section.secondary {
         @include span-columns(3 omega,9);
     }
 }

@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-		<div class="primary" role="main">
+		<section class="primary" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -23,7 +23,7 @@ get_header(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
-		</div><?php //.primary ?>
+		</section><?php //.primary ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
