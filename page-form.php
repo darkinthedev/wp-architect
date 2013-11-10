@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-        <div class="section" role="main">
+        <section class="primary" role="main">
 
                 <?php while ( have_posts() ) : the_post(); ?>
 
