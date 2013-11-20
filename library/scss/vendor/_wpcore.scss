@@ -92,6 +92,7 @@ a img.aligncenter {
 
 nav.paging-navigation,
 nav.post-navigation {
+    @include clearfix;
     margin: 2em 0;
     border-top: 1px solid #eee;
 
