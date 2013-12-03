@@ -12,12 +12,10 @@ custom WordPress themes.
 <hr>
 
 ##Features
-* HTML5 Boilerplate
-* Modernizr
+* Grunt.JS ready. Packaged with (Modernizr, ImageMin and other grunts)
 * Normalize
-* SCSS and Mixins
-* Grid System
-* Grunt.JS ready
+* Compass
+* [Susy Grid Framework](http://susy.oddbird.net/) Mobile-First
 * Shortcodes
 * Functions.php filled with comments, helpful tools and best practices
 
@@ -41,9 +39,9 @@ returns
 
 ## Install Grunt
 
-### Step 1 - Install Package
+### Step 1 - Install Packages
 ```unix
-npm install
+npm install grunt --save-dev
 ```
 
 ### Step 2 – Run Grunt

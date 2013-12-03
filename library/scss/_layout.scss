@@ -1,14 +1,10 @@
-// TODO Standard setup
-html {}
-body {}
-
 .layout {
-
+    @include container;
+    @include susy-grid-background;
 }
 
 div.page {
-  @include container;
-  @include susy-grid-background;
+
 }
 
 header[role="banner"] {
@@ -17,10 +13,10 @@ header[role="banner"] {
 
 div.main-wrapper {
     section.primary {
-        @include span-columns(6,9);
+
     }
     section.secondary {
-        @include span-columns(3 omega,9);
+        
     }
 }
 

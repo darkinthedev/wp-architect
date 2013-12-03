@@ -1,0 +1,13 @@
+General:
+ ☐ Fix image-min grunt. Condense Grunt tasks (Watch necessary?)
+ ☐ Look into adding Bower package management
+ ☐ Change: nav#mainmenu to class.dropdown (for modularization)
+ ☐ Run HTML5 outliner
+ ☐ Change over to REMS with px/em fallback (Mixin or Grunt?)
+ ☐ Demo – Replace dummy content with test pages and notes, tips and tricks.
+ ☐ Add Grunt-Newer? - https://npmjs.org/package/grunt-newer
+ ☐ Add Word-Wrap CSS3
+   Prevents long block level text from breaking layout, 
+   -ms-word-wrap: break-word;
+           word-wrap: break-word;
+ ☐ Update to Susy Alpha 5 - http://oddbird.net/2013/11/27/susy-alpha-5/
