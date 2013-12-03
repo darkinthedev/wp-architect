@@ -41,7 +41,7 @@ returns
 
 ### Step 1 - Install Packages
 ```unix
-npm install grunt --save-dev
+npm install
 ```
 
 ### Step 2 – Run Grunt
