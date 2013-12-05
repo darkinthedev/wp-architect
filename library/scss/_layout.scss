@@ -13,9 +13,11 @@ header[role="banner"] {
 
 div.main-wrapper {
     section.primary {
+        @include word-wrap;
 
     }
     section.secondary {
+        @include word-wrap;
         
     }
 }

@@ -25,7 +25,7 @@ $(document).ready(function() {
         var subMenu = $('nav[role="navigation"] ul > li > ul').addClass('subMenu');
         $(menuParent).append('<span class="touch-button">+</span>');
 
-        var $menu = $('#mainmenu'),
+        var $menu = $('div.dropdown-menu > nav[role="navigation"]'),
         $menulink = $('a.menu-link'),
         $menuTrigger = $('span.touch-button');
 

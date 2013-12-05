@@ -1,7 +1,7 @@
-/* =Menu
+/* =Dropdown Menu
 -------------------------------------------------------------- */
 
-div.nav-wrap {
+div.dropdown-menu {
   border-bottom: 1px solid #000;
   background-color: #eee;
     
@@ -98,9 +98,9 @@ div.nav-wrap {
 }
 
 //Menu Break
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 30em) { //480/16
 
-    div.nav-wrap {
+    div.dropdown-menu {
 
         a.menu-link {
             display: block;
@@ -113,14 +113,6 @@ div.nav-wrap {
             border-bottom: 1px solid #fff;
         }
 
-        #mainmenu {
-            overflow: hidden;
-            max-height: 0;
-            &.active, 
-            & > ul ul.active {
-                max-height: 55em;
-            }
-        }
 
         span.touch-button {
             position: absolute;
@@ -137,6 +129,13 @@ div.nav-wrap {
         }
 
         nav[role="navigation"] {
+
+            overflow: hidden;
+            max-height: 0;
+            &.active, 
+            & > ul ul.active {
+                max-height: 55em;
+            }
 
             ul {
                 text-align: left;

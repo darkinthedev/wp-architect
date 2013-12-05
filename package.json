@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "wp-architect",
   "version": "1.0.0",
   "devDependencies": {
     "grunt": "latest",

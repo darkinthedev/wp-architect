@@ -28,16 +28,64 @@ module.exports = function(grunt) {
           }
         },
 
-        imagemin: {                          // Task
-          options: {                       // Target options
-            optimizationLevel: 3,
-            progressive: true
+        // Image Minification 
+        // Ref: http://blog.grayghostvisuals.com/grunt/image-optimization/
+        imagemin: {
+            // png
+            png: {
+              options: {
+                optimizationLevel: 7
+              },
+              files: [
+                {
+                  // Set to true to enable the following options…
+                  expand: true,
+                  // cwd is 'current working directory'
+                  cwd: 'library/img/',
+                  src: ['**/*.png'],
+                  // Could also match cwd line above. i.e. project-directory/img/
+                  dest: 'library/img/',
+                  ext: '.png'
+                }
+              ]
+            },
+            // gif
+            gif: {
+              options: {
+                interlaced: true
+              },
+              files: [
+                {
+                  // Set to true to enable the following options…
+                  expand: true,
+                  // cwd is 'current working directory'
+                  cwd: 'library/img/',
+                  src: ['**/*.gif'],
+                  // Could also match cwd line above. i.e. project-directory/img/
+                  dest: 'library/img/',
+                  ext: '.gif'
+                }
+              ]
+            },
+            // jpg
+            jpg: {
+              options: {
+                progressive: true
+              },
+              files: [
+                {
+                  // Set to true to enable the following options…
+                  expand: true,
+                  // cwd is 'current working directory'
+                  cwd: 'library/img/',
+                  src: ['**/*.jpg'],
+                  // Could also match cwd. i.e. project-directory/img/
+                  dest: 'library/img/',
+                  ext: '.jpg'
+                }
+              ]
+            }
           },
-          files: {                         // Dictionary of files
-            'library/build/img/*.png': 'library/img/*.png', // 'destination': 'source'
-            'library/build/img/*.jpg': 'library/img/*.jpg'
-          },
-        },
 
         modernizr: {
 
@@ -83,28 +131,29 @@ module.exports = function(grunt) {
             // match user-contributed tests.
             "matchCommunityTests" : false,
         },
-      
+        
+        // Watch Task
         watch: {
           
+          // watch for js files
           sass: {
             files: ['library/scss/**/*.scss'],
-            tasks: ['compass:dev']
+            tasks: ['compass:dev'],
           },
 
+          // watch for js files 
           js: {
             files: ['library/js/**/*.js'],
             tasks: ['uglify']
           },
 
           // watch for image files 
-          
           img: {
-            files: ['library/build/img/*.jpg','library/build/img/*.png'],
+            files: ['library/img/*.jpg','library/img/*.png'],
             tasks: ['imagemin']
           },
 
           // watch our files for change, reload
-
           livereload: {
             files: ['*.html', '*.php', 'library/build/css/style.css'],
             options: {
@@ -113,7 +162,8 @@ module.exports = function(grunt) {
           },
         }
   });
+  
+  // Running grunt command starts 'watch' task and waits for changes
+  grunt.registerTask('default', 'watch');
 
-  grunt.registerTask('default', ['imagemin', 'compass', 'watch', 'uglify', 'modernizr']);
-
-}
+};

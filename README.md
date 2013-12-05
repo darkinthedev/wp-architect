@@ -15,6 +15,7 @@ custom WordPress themes.
 * Grunt.JS ready. Packaged with (Modernizr, ImageMin and other grunts)
 * Normalize
 * Compass
+* Collected Mixins
 * [Susy Grid Framework](http://susy.oddbird.net/) Mobile-First
 * Shortcodes
 * Functions.php filled with comments, helpful tools and best practices
@@ -37,14 +38,14 @@ returns
 </blockquote>
 ```
 
-## Install Grunt
+## With Grunt already installed:
 
 ### Step 1 - Install Packages
 ```unix
 npm install
 ```
 
-### Step 2 – Run Grunt
+### Step 2 – Run Grunt to start the watch command
 ```unix
 grunt
 ```
