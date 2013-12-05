@@ -1,4 +1,22 @@
-General:
+Site Launch List:
+ ☐ Generate Site Map of Current Website (XLS)
+ ☐ If Existing, Take Screenshot of Current Web Site
+ ☐ Validate HTML
+ ☐ Validate CSS
+ ☐ Run Google Page Speed Test
+ ☐ Test on Mobile Devices and Targeted Screen Sizes
+ ☐ Test IE 8, 9+
+ ☐ Test Safari, Chrome, Firefox (Mac + PC)
+ ☐ Install and Configure Google Analytics
+ ☐ Install and Configure Google Webmaster Tools 
+ ☐ Create and Submit XML Sitemap
+ ☐ 301 Redirects OK?
+ ☐ 404 Error Page OK?
+ ☐ Canonical Domain OK?
+ ☐ Confirm robots.txt is NOT blocking search engines
+ ☐ Confirm all settings and configurations are correct for client usage (i.e. WordPress, Shopify)
+ 
+wp-architect TODOs:
  ☐ Look into adding Bower package management
  ☐ Run HTML5 outliner
  ☐ Demo – Replace dummy content with test pages and notes, tips and tricks.
@@ -6,9 +24,9 @@ General:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
- ✔ Change over to REMS with px/em fallback (Mixin or Grunt?) @done (13-12-04 21:28) @project(General)
- ✔ Change: nav#mainmenu to class.dropdown (for modularization) @done (13-12-04 20:53) @project(General)
- ✔ Add Word-Wrap CSS3 @done (13-12-04 20:33) @project(General)
+ ✔ Change over to REMS with px/em fallback (Mixin or Grunt?) @done (13-12-04 21:28) @project(wp-architect TODOs)
+ ✔ Change: nav#mainmenu to class.dropdown (for modularization) @done (13-12-04 20:53) @project(wp-architect TODOs)
+ ✔ Add Word-Wrap CSS3 @done (13-12-04 20:33) @project(wp-architect TODOs)
   Prevents long block level text from breaking layout, 
- ✘ Add Grunt-Newer? - https://npmjs.org/package/grunt-newer @cancelled (13-12-04 20:27) @project(General)
- ✔ Fix image-min grunt. Condense Grunt tasks (Watch necessary?) @done (13-12-04 20:22) @project(General)
+ ✘ Add Grunt-Newer? - https://npmjs.org/package/grunt-newer @cancelled (13-12-04 20:27) @project(wp-architect TODOs)
+ ✔ Fix image-min grunt. Condense Grunt tasks (Watch necessary?) @done (13-12-04 20:22) @project(wp-architect TODOs)
