@@ -2,17 +2,12 @@
 ============
 ###Just Another Boilerplate for Crafting Custom WordPress Themes
 
-wp-architect is a academic theme focused on documentation, tips and references
-for theme developers. This theme can also be used as a boilerplate for building
-custom WordPress themes. 
+wp-architect is a academic theme focused on collecting best practices, 
+documentation, tips and references for theme developers. This theme can 
+also be used as a boilerplate for building custom WordPress themes. 
 
-* [Project Page](http://www.wp-architect.com/)
-* [Demo](http://demo.wp-architect.com/)
-
-<hr>
-
-##Features
-* Grunt.JS ready. Packaged with (Modernizr, ImageMin and other grunts)
+##Contains:
+* Grunt.JS. Packaged with (Modernizr, ImageMin and other grunts)
 * Normalize
 * Compass
 * Collected Mixins
@@ -20,37 +15,7 @@ custom WordPress themes.
 * Shortcodes
 * Functions.php filled with comments, helpful tools and best practices
 
-##Shortcodes
-
-###Blockquote
-
-```
-[blockquote cite="" quote="" author=""] [/blockquote]
-```
-returns
-
-```html
-<blockquote cite="">
-    <p></p>
-    <footer>
-        <p></p>
-    </footer>
-</blockquote>
-```
-
-## With Grunt already installed:
-
-### Step 1 - Install Packages
-```unix
-npm install
-```
-
-### Step 2 – Run Grunt to start the watch command
-```unix
-grunt
-```
-
-##References
+##References:
 Lots of help from:
 * [Themeshaper](http://themeshaper.com/2012/10/22/the-themeshaper-wordpress-theme-tutorial-2nd-edition/)
 * [Bones](http://themble.com/bones/)
