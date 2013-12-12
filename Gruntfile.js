@@ -135,9 +135,13 @@ module.exports = function(grunt) {
         // Watch Task
         watch: {
           
-          // watch for js files
+          options: {
+            livereload: true
+          },
+
+          // watch for scss files
           sass: {
-            files: ['library/scss/**/*.scss'],
+            files: ['library/scss/*.scss','library/scss/vendor/*.scss'],
             tasks: ['compass:dev'],
           },
 
@@ -151,14 +155,6 @@ module.exports = function(grunt) {
           img: {
             files: ['library/img/*.jpg','library/img/*.png'],
             tasks: ['imagemin']
-          },
-
-          // watch our files for change, reload
-          livereload: {
-            files: ['*.html', '*.php', 'library/build/css/style.css'],
-            options: {
-              livereload: true
-            },
           },
         }
   });
