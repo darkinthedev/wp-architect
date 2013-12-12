@@ -43,7 +43,7 @@
                 <h2><?php bloginfo( 'description' ); ?></h2>
             </hgroup>
             <div class="dropdown-menu">
-                <a class="menu-link"> &#9776; Menu</a>
+                <a class="menu-link" href="#"> &#9776; Menu</a>
                 <nav role="navigation">
                     <h1 class="assistive-text section-heading visuallyhidden"><?php _e( 'Main menu', 'wp_arch' ); ?></h1>
                     <div class="skip-link screen-reader-text visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'wp_arch' ); ?>"><?php _e( 'Skip to content', 'wp_archstarter' ); ?></a></div>
