@@ -1,6 +1,9 @@
 /* =Typography 
 -------------------------------------------------------------- */
-body {font-family: $base-font-family;}
+body {
+    font-family: $base-font-family;
+    -webkit-font-smoothing: antialiased; // http://maxvoltar.com/archive/-webkit-font-smoothing
+}
 
 #{headings()} {
     @include font-size(16);
