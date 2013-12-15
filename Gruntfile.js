@@ -90,7 +90,7 @@ module.exports = function(grunt) {
         modernizr: {
 
             // [REQUIRED] Path to the build you're using for development.
-            "devFile" : "library/js/libs/modernizr-2.0.6.min.js",
+            "devFile" : "library/pack/modernizr/modernizr.js",
 
             // [REQUIRED] Path to save out the built file.
             "outputFile" : "library/build/js/libs/modernizr-custom.js",

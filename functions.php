@@ -138,6 +138,9 @@ function wp_arch_scripts_and_styles() {
         // enqueue style.css // http://codex.wordpress.org/Function_Reference/wp_register_style
         wp_enqueue_style('wp_arch_wpstyles', get_stylesheet_uri(), array(), '01', 'all');
 
+        // enqueue /pack/normalize.css 
+        wp_enqueue_style('wp_arch_normalize', get_stylesheet_directory_uri() . '/library/pack/normalize-css/normalize.css', array(), '01', 'all');
+
         // enqueue /css/style.css 
         wp_enqueue_style('wp_arch_styles', get_stylesheet_directory_uri() . '/library/build/css/style.css', array(), '01', 'all');
     }

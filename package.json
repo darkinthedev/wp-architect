@@ -1,7 +1,9 @@
 {
   "name": "wp-architect",
   "version": "1.0.0",
+  
   "devDependencies": {
+    "bower": "latest",
     "grunt": "latest",
     "grunt-contrib-sass": "latest",
     "grunt-contrib-watch": "latest",
@@ -10,5 +12,9 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-compass": "latest",
     "matchdep": "latest"
+  },
+
+  "scripts": {
+    "prepublish": "bower install && grunt modernizr && grunt uglify"
   }
 }
