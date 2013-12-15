@@ -139,6 +139,11 @@ module.exports = function(grunt) {
             livereload: true
           },
 
+          // watch for html and php files
+            html: {
+            files: ['*.html', '*.php']
+          },
+
           // watch for scss files
           sass: {
             files: ['library/scss/*.scss','library/scss/vendor/*.scss'],
