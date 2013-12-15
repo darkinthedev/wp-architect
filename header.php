@@ -38,10 +38,8 @@
    <![endif]-->
     <div class="hfeed page">
         <header role="banner">
-            <hgroup>
-                <h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <h2><?php bloginfo( 'description' ); ?></h2>
-            </hgroup>
+            <h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h2><?php bloginfo( 'description' ); ?></h2>
             <div class="dropdown-menu">
                 <a class="menu-link" href="#"> &#9776; Menu</a>
                 <nav role="navigation">
