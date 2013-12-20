@@ -125,7 +125,7 @@ module.exports = function(grunt) {
 
             // When parseFiles = true, this task will crawl all *.js, *.css, *.scss files, except files that are in node_modules/.
             // You can override this by defining a "files" array below.
-            "files" : ['library/scss/*.scss', 'library/js/*.js' ],
+            "files" : ['library/scss/*.scss', 'library/scss/**/*.scss', 'library/js/*.js' ],
 
             // When parseFiles = true, matchCommunityTests = true will attempt to
             // match user-contributed tests.
