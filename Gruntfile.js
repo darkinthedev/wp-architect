@@ -4,12 +4,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-modernizr");
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+        // Uglify/Minification for JS files
         uglify: {
           options: {
             banner: '/*! Processed <%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %> */\n'
@@ -20,6 +22,18 @@ module.exports = function(grunt) {
           }
         },
 
+        // CSS.min
+        cssmin: {
+          minify: {
+            expand: true,
+            cwd: 'library/pack/normalize-css/',
+            src: ['*.css', '!*.min.css'],
+            dest: 'library/build/css/',
+            ext: '.min.css'
+          }
+        },
+
+        // Compass grunt – see config.rb
         compass: {
           dev: {
             options: {
@@ -87,6 +101,7 @@ module.exports = function(grunt) {
             }
           },
 
+        // Modernizr Grunt - custom modernizr build. 
         modernizr: {
 
             // [REQUIRED] Path to the build you're using for development.

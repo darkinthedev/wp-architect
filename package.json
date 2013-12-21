@@ -11,10 +11,11 @@
     "grunt-modernizr": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-compass": "latest",
+    "grunt-contrib-cssmin": "latest",
     "matchdep": "latest"
   },
 
   "scripts": {
-    "prepublish": "bower install && grunt modernizr && grunt uglify"
+    "prepublish": "bower install && grunt modernizr && grunt uglify && grunt compass:dev && grunt cssmin"
   }
 }
