@@ -22,7 +22,7 @@
 	<?php else : ?>
 	<div class="entry-content group">
 		<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-  the_post_thumbnail();
+  the_post_thumbnail('large');
 } ?>
 		<p><?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp_arch' ) ); ?></p>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'wp_arch' ), 'after' => '</div>' ) ); ?>
