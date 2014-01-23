@@ -172,19 +172,19 @@ function wp_arch_theme_support() {
     add_theme_support('automatic-feed-links');
 
     // adding post format support
-    add_theme_support( 'post-formats',
-        array(
-            'aside',             // title less blurb
-            'gallery',           // gallery of images
-            'link',              // quick link to other site
-            'image',             // an image
-            'quote',             // a quick quote
-            'status',            // a Facebook like status update
-            'video',             // video
-            'audio',             // audio
-            'chat'               // chat transcript
-        )
-    );
+    //add_theme_support( 'post-formats',
+    //    array(
+    //        'aside',             // title less blurb
+    //        'gallery',           // gallery of images
+    //        'link',              // quick link to other site
+    //        'image',             // an image
+    //        'quote',             // a quick quote
+    //        'status',            // a Facebook like status update
+    //        'video',             // video
+    //        'audio',             // audio
+    //        'chat'               // chat transcript
+    //    )
+    //);
 
     // wp menus
     add_theme_support( 'menus' );
@@ -389,44 +389,24 @@ endif; // ends check for wp_arch_comment()
 Blockquote Short Code
 In WordPress: [blockquote cite="" quote="" author=""][/blockquote]
 */
-function wp_arch_blockquote( $atts, $quote = null ) {
-    extract(shortcode_atts( array(
-        "cite" => '',
-        "quote" => '',
-        "author" => ''
-        ), $atts));  
-    return '<blockquote cite="'.$cite.'">'.$quote.'<footer><p>'.$author.'</p></footer>'.'</blockquote>';  
-}
-add_shortcode("blockquote", "wp_arch_blockquote"); 
+// function wp_arch_blockquote( $atts, $quote = null ) {
+//     extract(shortcode_atts( array(
+//         "cite" => '',
+//         "quote" => '',
+//         "author" => ''
+//         ), $atts));  
+//     return '<blockquote cite="'.$cite.'">'.$quote.'<footer><p>'.$author.'</p></footer>'.'</blockquote>';  
+// }
+// add_shortcode("blockquote", "wp_arch_blockquote"); 
 
-/*
-Column Group Short Code
-In WordPress: [colgroup][/colgroup]
-*/
-function wp_arch_col_group_shortcode( $atts, $content = null ) {
-   return '<div class="group">' . do_shortcode($content) . '</div>';
-}
-add_shortcode("colgroup", "wp_arch_col_group_shortcode");
-
-/*
-Column Short Code
-In WordPress: [col span=""][/col]
-*/
-function wp_arch_col_shortcode( $atts, $content = null ) {
-    extract(shortcode_atts( array(
-        "span" => 'one-col-span'
-        ), $atts)); 
-   return '<div class="'.$span.' col">' . do_shortcode($content) . '</div>';
-}
-add_shortcode("col", "wp_arch_col_shortcode");
 
 /// Bug Fixes
  
 // Added 2013_06_25 MRE – Fixes conflict with Events Manager Plugin 
-function my_em_disable_gallery(){
-  remove_action('init','em_event_gallery_override_init', 1000);
-}
-add_action('init', 'my_em_disable_gallery');
+// function my_em_disable_gallery(){
+//   remove_action('init','em_event_gallery_override_init', 1000);
+// }
+// add_action('init', 'my_em_disable_gallery');
 
 // 6. Custom Post Type Snippet Example
 
