@@ -125,15 +125,13 @@ function wp_arch_remove_recent_comments_style() {
 function wp_arch_scripts_and_styles() {
     if (!is_admin()) {
 
-        wp_deregister_script('jquery');
-        // http://css-tricks.com/snippets/wordpress/include-jquery-in-wordpress-theme/  
-        wp_enqueue_script('wp_arch_jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js", array(), '1.8', false);
+        wp_enqueue_script('jquery');
         
         // modernizr-custom.js | @Dependents: jQuery
-        wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/build/js/libs/modernizr-custom.js', array('wp_arch_jquery'), "1", false);
+        wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/build/js/libs/modernizr-custom.js', array('jquery'), "1", false);
 
         // enqueue site.min.js | @Dependents: jQuery
-        wp_enqueue_script('wp_arch_scripts', get_stylesheet_directory_uri() . '/library/build/js/site.min.js', array('wp_arch_jquery'), "1", true);
+        wp_enqueue_script('wp_arch_scripts', get_stylesheet_directory_uri() . '/library/build/js/site.min.js', array('jquery'), "1", true);
         
         // enqueue style.css // http://codex.wordpress.org/Function_Reference/wp_register_style
         wp_enqueue_style('wp_arch_wpstyles', get_stylesheet_uri(), array(), '01', 'all');
