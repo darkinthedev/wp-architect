@@ -125,7 +125,11 @@ function wp_arch_remove_recent_comments_style() {
 function wp_arch_scripts_and_styles() {
     if (!is_admin()) {
 
+        // Use jQuery from Google CDN - Faster load time for users that already have it cached.
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2');
         wp_enqueue_script('jquery');
+
         
         // modernizr-custom.js | @Dependents: jQuery
         wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/build/js/libs/modernizr-custom.js', array('jquery'), "1", false);
