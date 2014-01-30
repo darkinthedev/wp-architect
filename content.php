@@ -19,10 +19,14 @@
 	<?php if ( is_search() || is_archive() ) : // Only display Excerpts for Search and Archive pages ?>
 	
 		<div class="entry-summary">
+			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+				the_post_thumbnail();
+			} ?>
 			<?php the_excerpt(); ?>
 		</div><?php //.entry-summary ?>
 	
 	<?php else : // Display full content on all other posts and pages ?>
+		
 		<div class="entry-content group">
 			<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 				the_post_thumbnail('large');
@@ -30,6 +34,7 @@
 			<p><?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp_arch' ) ); ?></p>
 			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'wp_arch' ), 'after' => '</div>' ) ); ?>
 		</div><?php //.entry-content ?>
+		
 	<?php endif; ?>
 
 	<footer class="entry-meta">
