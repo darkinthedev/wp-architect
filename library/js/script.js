@@ -11,7 +11,7 @@ $(document).ready(function() {
     function hooksnhelpers () {
         //Add First and Last Child Class to List, Rows and Cells items
         $("li:first-child, tr:first-child, td:first-child").addClass('first-child');
-        $("li:last-child, tr:last-child, td:last-child").addClass('last-child');
+        $("li:last-child, tr:last-child, td:last-child, article:last").addClass('last-child');
 
         // Removes Empty <p> tags that WordPress will sometimes insert automtically.
         $('.primary p:empty').each(function() {

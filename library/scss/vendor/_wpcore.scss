@@ -263,10 +263,17 @@ img.wp-post-image {
     height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 
-/* Make sure videos and embeds fit their containers */
-embed,
-iframe,
-object,
-video {
-    max-width: 100%;
+/* =WP Architect Added
+-------------------------------------------------------------- */
+.archive, .blog {
+    section.primary {
+        article.post {
+            border-bottom: 1px solid #eee;
+            padding: 1.25em 0; 
+
+            &.last-child {
+                border-bottom: 0;
+            }
+        }
+    }
 }
