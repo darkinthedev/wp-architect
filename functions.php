@@ -116,7 +116,7 @@ function wp_arch_scripts_and_styles() {
 
         // Use jQuery from Google CDN - Faster load time for users that already have it cached.
         wp_deregister_script('jquery');
-        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2');
+        wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2');
         wp_enqueue_script('jquery');
         
         // modernizr-custom.js | @Dependents: jQuery
