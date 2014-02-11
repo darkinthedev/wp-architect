@@ -5,9 +5,9 @@ $base-font-family:               sans-serif;
 /* =Links
 -------------------------------------------------------------- */
 $base-link-color:                #0093d0;
-$base-visited-link-color:        #0093d0;
-$base-hover-link-color:          #0093d0;
-$base-active-link-color:         #0093d0;
+$base-visited-link-color:        darken($base-link-color, 10%);
+$base-hover-link-color:          lighten($base-link-color, 10%);
+$base-active-link-color:         lighten($base-link-color, 10%);
 
 /* =Susy Grid
 -------------------------------------------------------------- */

@@ -98,17 +98,6 @@ function wp_arch_remove_recent_comments_style() {
   if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
     remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
   }
-
-/*
-	1F Remove Menu Pages from Admin Console (uncomment function and action hook if needed)
-	http://codex.wordpress.org/Function_Reference/remove_menu_page
-*/
-// 1F - Remove Menu items from WP Admin Console
-//add_action( 'admin_menu', 'wp_arch_remove_menu_pages' );
-// function wp_arch_remove_menu_pages() {
-// 	remove_menu_page('link-manager.php');
-// 	remove_menu_page('tools.php');	
-// }
 	
 }
 
@@ -127,9 +116,8 @@ function wp_arch_scripts_and_styles() {
 
         // Use jQuery from Google CDN - Faster load time for users that already have it cached.
         wp_deregister_script('jquery');
-        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2');
+        wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2');
         wp_enqueue_script('jquery');
-
         
         // modernizr-custom.js | @Dependents: jQuery
         wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/build/js/libs/modernizr-custom.js', array('jquery'), "1", false);
@@ -147,6 +135,17 @@ function wp_arch_scripts_and_styles() {
         wp_enqueue_style('wp_arch_styles', get_stylesheet_directory_uri() . '/library/build/css/style.css', array(), '01', 'all');
     }
 }
+
+/*
+1F Remove Menu Pages from Admin Console (uncomment function and action hook if needed)
+http://codex.wordpress.org/Function_Reference/remove_menu_page
+*/
+// 1F - Remove Menu items from WP Admin Console
+//add_action( 'admin_menu', 'wp_arch_remove_menu_pages' );
+// function wp_arch_remove_menu_pages() {
+// 	remove_menu_page('link-manager.php');
+// 	remove_menu_page('tools.php');	
+// }
 
 // 3 Theme Support  /////////////////////////////////////////////////////////////////// 
 function wp_arch_theme_support() {
@@ -388,7 +387,8 @@ endif; // ends check for wp_arch_comment()
 // 5. Short Codes
 
 /*
-Blockquote Short Code
+Exaple Short Code
+http://codex.wordpress.org/Shortcode_API
 In WordPress: [blockquote cite="" quote="" author=""][/blockquote]
 */
 // function wp_arch_blockquote( $atts, $quote = null ) {
@@ -411,6 +411,7 @@ In WordPress: [blockquote cite="" quote="" author=""][/blockquote]
 // add_action('init', 'my_em_disable_gallery');
 
 // 6. Custom Post Type Snippet Example
+// http://codex.wordpress.org/custom_post_types
 
 // Custom Post Types 
 // add_action('init', 'wp_arch_cpts');
