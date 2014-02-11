@@ -1,3 +1,14 @@
+/* =WordPress Core - Reset
+-------------------------------------------------------------- */
+
+// Generated widget class in get_sidebar()
+aside.widget {
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+}
+
 /* =WordPress Core 
 /* http://codex.wordpress.org/CSS#WordPress_Generated_Classes
 -------------------------------------------------------------- */
