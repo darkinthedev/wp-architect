@@ -1,0 +1,41 @@
+/* =Content Area
+// Home, Single, Archive, Blog, Page
+-------------------------------------------------------------- */
+section.primary {
+    article {
+        .archive &, .blog & {
+            &.post {
+                border-bottom: 1px solid #eee;
+                padding: 1.25em 0; 
+
+                &.last-child {
+                    border-bottom: 0;
+                }//.last-child
+            }//.post
+        }//.archive &, .blog &
+
+        header.entry-header {
+            
+            .entry-title {
+                a {
+
+                }
+            }//entry-title
+
+            .entry-meta {
+
+            }//entry-meta
+
+        }//header.entry-header
+
+        .entry-content {
+
+        }//.entry-content
+
+        footer.entry-meta {
+
+        }//footer.entry-meta
+
+    }//article
+
+}//.primary 
