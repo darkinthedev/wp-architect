@@ -28,8 +28,8 @@ module.exports = function(grunt) {
             expand: true,
             cwd: 'library/pack/normalize-css/',
             src: ['*.css', '!*.min.css'],
-            dest: 'library/build/css/',
-            ext: '.min.css'
+            dest: 'library/scss/vendor/',
+            ext: '.scss'
           }
         },
 
@@ -104,6 +104,8 @@ module.exports = function(grunt) {
         // Modernizr Grunt - custom modernizr build. 
         modernizr: {
 
+          dist: {
+
             // [REQUIRED] Path to the build you're using for development.
             "devFile" : "library/pack/modernizr/modernizr.js",
 
@@ -136,15 +138,18 @@ module.exports = function(grunt) {
 
             // By default, this task will crawl your project for references to Modernizr tests.
             // Set to false to disable.
-            "parseFiles" : true,
+            "parseFiles" : false,
 
             // When parseFiles = true, this task will crawl all *.js, *.css, *.scss files, except files that are in node_modules/.
             // You can override this by defining a "files" array below.
-            "files" : ['library/scss/*.scss', 'library/scss/**/*.scss', 'library/js/*.js' ],
+            "files" : {
+              "src" : ['library/*.scss', 'library/scss/**/*.scss', 'library/js/*.js' ]
+            },
 
             // When parseFiles = true, matchCommunityTests = true will attempt to
             // match user-contributed tests.
             "matchCommunityTests" : false,
+          }
         },
         
         // Watch Task

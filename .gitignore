@@ -4,3 +4,4 @@
 /node_modules/*
 /library/build/*
 /library/pack/*
+/library/scss/vendor/normalize.scss

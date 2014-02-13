@@ -1,6 +1,9 @@
 @import "compass";
 @import "susy";
 
+// Normalize Latest
+@import "vendor/normalize";
+
 // Mixins and Variables
 @import "variables";
 @import "mixins";
