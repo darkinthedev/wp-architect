@@ -1,10 +1,14 @@
 module.exports = function(grunt) {
 
+  // measures the time each task takes
+  require('time-grunt')(grunt);
+
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks("grunt-modernizr");
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-newer');
 
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -43,63 +47,20 @@ module.exports = function(grunt) {
         },
 
         // Image Minification 
-        // Ref: http://blog.grayghostvisuals.com/grunt/image-optimization/
         imagemin: {
-            // png
-            png: {
-              options: {
-                optimizationLevel: 7
-              },
-              files: [
-                {
-                  // Set to true to enable the following options…
-                  expand: true,
-                  // cwd is 'current working directory'
-                  cwd: 'library/img/',
-                  src: ['**/*.png'],
-                  // Could also match cwd line above. i.e. project-directory/img/
-                  dest: 'library/img/',
-                  ext: '.png'
-                }
-              ]
-            },
-            // gif
-            gif: {
-              options: {
-                interlaced: true
-              },
-              files: [
-                {
-                  // Set to true to enable the following options…
-                  expand: true,
-                  // cwd is 'current working directory'
-                  cwd: 'library/img/',
-                  src: ['**/*.gif'],
-                  // Could also match cwd line above. i.e. project-directory/img/
-                  dest: 'library/img/',
-                  ext: '.gif'
-                }
-              ]
-            },
-            // jpg
-            jpg: {
-              options: {
-                progressive: true
-              },
-              files: [
-                {
-                  // Set to true to enable the following options…
-                  expand: true,
-                  // cwd is 'current working directory'
-                  cwd: 'library/img/',
-                  src: ['**/*.jpg'],
-                  // Could also match cwd. i.e. project-directory/img/
-                  dest: 'library/img/',
-                  ext: '.jpg'
-                }
-              ]
-            }
+          options: {
+            cache: false
           },
+
+          dist: {
+            files: [{
+              expand: true,
+              cwd: 'library/img/src/',
+              src: ['**/*.{png,jpg,gif}'],
+              dest: 'library/img/dist/'
+            }]
+          }
+        },
 
         // Modernizr Grunt - custom modernizr build. 
         modernizr: {
@@ -173,13 +134,13 @@ module.exports = function(grunt) {
           // watch for js files 
           js: {
             files: ['library/js/**/*.js'],
-            tasks: ['uglify']
+            tasks: ['newer:uglify']
           },
 
           // watch for image files 
           img: {
             files: ['library/img/*.jpg','library/img/*.png'],
-            tasks: ['imagemin']
+            tasks: ['newer:imagemin']
           },
         }
   });

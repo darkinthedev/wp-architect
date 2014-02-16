@@ -1,7 +1,6 @@
 {
   "name": "wp-architect",
   "version": "1.0.0",
-  
   "devDependencies": {
     "bower": "latest",
     "grunt": "latest",
@@ -12,10 +11,14 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-compass": "latest",
     "grunt-contrib-cssmin": "latest",
+    "grunt-newer": "latest",
+    "time-grunt": "latest",
     "matchdep": "latest"
   },
-
   "scripts": {
     "prepublish": "bower install && grunt modernizr && grunt uglify && grunt compass:dev && grunt cssmin"
+  },
+  "dependencies": {
+    "time-grunt": "~0.2.9"
   }
 }

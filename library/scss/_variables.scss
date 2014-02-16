@@ -20,6 +20,4 @@ $grid-padding:                   $gutter-width;
 @include border-box-sizing;
 
 // Brakepoints
-// $small:                          10em;
-// $medium:                         20em;
-// $large:                          40em;
+$bp_480:                         30em oldie; //Default Mobile 480/16
