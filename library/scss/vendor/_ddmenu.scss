@@ -67,9 +67,16 @@ div.dropdown-menu {
             li {
                 position: relative; // Position dropdown relative to menu item
                 display:inline-block;
-                *display: inline;
-                *zoom: 1;
                 line-height: 40px;
+                .ie7 & { 
+                    *display: inline;
+                    *zoom: 1;
+                    // Fixes spacing in IE 7
+                    padding-right: 3%;
+                    &.last-child {
+                        padding-right: 0;
+                    }
+                }
                 &:hover {
                     > ul {
                         visibility: visible; // Display Dropdown
