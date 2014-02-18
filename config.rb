@@ -10,6 +10,6 @@ output_style = :compressed
 ## Image Handeling 
 ## Use the function for output in SASS file: image-url('file_name_here.gif')
 #Sets image directory
-images_dir = '/library/img/dist'
+images_dir = 'library/build/img'
 #Sets output URL to be reletive to image directory
 relative_assets = true

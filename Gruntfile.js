@@ -48,18 +48,14 @@ module.exports = function(grunt) {
 
         // Image Minification 
         imagemin: {
-          options: {
-            cache: false
-          },
-
-          dist: {
-            files: [{
-              expand: true,
-              cwd: 'library/img/src/',
-              src: ['**/*.{png,jpg,gif}'],
-              dest: 'library/img/dist/'
-            }]
-          }
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'library/img/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'library/build/img'
+                }]
+            }
         },
 
         // Modernizr Grunt - custom modernizr build. 
@@ -136,16 +132,11 @@ module.exports = function(grunt) {
             files: ['library/js/**/*.js'],
             tasks: ['newer:uglify']
           },
-
-          // watch for image files 
-          img: {
-            files: ['library/img/*.jpg','library/img/*.png'],
-            tasks: ['newer:imagemin']
-          },
         }
   });
   
   // Running grunt command starts 'watch' task and waits for changes
   grunt.registerTask('default', 'watch');
+  grunt.registerTask('imgmin', ['newer:imagemin']);
 
 };
