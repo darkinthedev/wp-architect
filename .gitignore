@@ -1,7 +1,7 @@
 .DS_Store
 *.log
-/.sass-cache/*
-/node_modules/*
+.sass-cache
+node_modules
 /library/build/*
-/library/pack/*
+/library/bower_components/*
 /library/scss/vendor/normalize.scss

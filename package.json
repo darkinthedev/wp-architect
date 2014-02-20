@@ -1,24 +1,27 @@
 {
-  "name": "wp-architect",
-  "version": "1.0.0",
-  "devDependencies": {
-    "bower": "latest",
-    "grunt": "latest",
-    "grunt-contrib-sass": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-contrib-imagemin": "latest",
-    "grunt-modernizr": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-compass": "latest",
-    "grunt-contrib-cssmin": "latest",
-    "grunt-newer": "latest",
-    "time-grunt": "latest",
-    "matchdep": "latest"
-  },
-  "scripts": {
-    "prepublish": "bower install && grunt modernizr && grunt uglify && grunt compass:dev && grunt cssmin"
-  },
-  "dependencies": {
-    "time-grunt": "~0.2.9"
-  }
-}
+    "name": "wp-architect",
+    "version": "1.0.0",
+    "devDependencies": {
+        "bower": "latest",
+        "grunt": "latest",
+        "grunt-contrib-sass": "latest",
+        "grunt-contrib-watch": "latest",
+        "grunt-contrib-imagemin": "latest",
+        "grunt-modernizr": "latest",
+        "grunt-contrib-uglify": "latest",
+        "grunt-contrib-compass": "latest",
+        "grunt-contrib-cssmin": "latest",
+        "grunt-newer": "latest",
+        "time-grunt": "latest",
+        "grunt-contrib-clean": "~0.5.0",
+        "matchdep": "latest"
+    },
+
+    "scripts": {
+        "prepublish": "bower install && grunt modernizr && grunt uglify && grunt compass:dev && grunt cssmin"
+    },
+    
+    "dependencies": {
+        "time-grunt": "~0.2.9"
+    }
+} 
