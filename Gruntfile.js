@@ -9,18 +9,34 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-modernizr");
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        // Clean Build Folder
+        // Clean Up
         clean: {
             build: {
                 src: ["library/build"]
+            },
+            temp: {
+                src: ["library/build/css/vendor"]
+            }
+        },
+
+        copy: {
+            // Copy normalize from bower and convert to scss file
+            normalize: {
+                cwd: 'bower_components/normalize-css/',
+                src: 'normalize.css',
+                dest: 'library/scss/vendor/',
+                expand: true,
+                rename: function(dest, src) {
+                    return dest + src.replace(/\.css$/, ".scss");
+                }
             }
         },
 
@@ -35,17 +51,6 @@ module.exports = function(grunt) {
             }
         },
 
-        // CSS.min
-        cssmin: {
-            minify: {
-            expand: true,
-            cwd: 'library/bower_components/normalize-css/',
-            src: ['*.css', '!*.min.css'],
-            dest: 'library/scss/vendor/',
-            ext: '.scss'
-            }
-        },
-
         // Compass grunt – see config.rb
         compass: {
             dev: {
@@ -55,28 +60,28 @@ module.exports = function(grunt) {
             }
         },
 
-        // Image Minification 
+        // Image Minification
         imagemin: {
             dynamic: {
                 files: [{
                     expand: true,
                     cwd: 'library/img/',
                     src: ['**/*.{png,jpg,gif}'],
-                    dest: 'library/build/img'
+                    dest: 'library/img/'
                 }]
             }
         },
 
-        // Modernizr Grunt - custom modernizr build. 
+        // Modernizr Grunt - custom modernizr build.
         modernizr: {
 
             dist: {
 
                 // [REQUIRED] Path to the build you're using for development.
-                "devFile" : "library/bower_components/modernizr/modernizr.js",
+                "devFile" : "bower_components/modernizr/modernizr.js",
 
                 // [REQUIRED] Path to save out the built file.
-                "outputFile" : "library/build/js/libs/modernizr-custom.js",
+                "outputFile" : "library/build/js/modernizr-custom.min.js",
 
                 // Based on default settings on http://modernizr.com/download/
                 "extra" : {
@@ -124,16 +129,16 @@ module.exports = function(grunt) {
             options: {
                 livereload: true
             },
-            
+
             html: {
                 files: ['*.html', '*.php']
             },
-            
+
             compass: {
                 files: ['library/scss/*.scss', 'library/scss/vendor/**/*.scss', 'library/scss/vendor/*.scss'],
                 tasks: ['compass:dev'],
             },
-            
+
             js: {
                 files: ['library/js/**/*.js'],
                 tasks: ['newer:uglify']
@@ -143,12 +148,13 @@ module.exports = function(grunt) {
 
     // Register Tasks
     grunt.registerTask('default', [
-        'clean',
+        'clean:build',
         'uglify',
+        'newer:copy:normalize',
         'modernizr',
         'compass',
-        'cssmin',
-        'imagemin'
+        'newer:imagemin',
+        'clean:temp',
     ]);
 
     grunt.registerTask('dev', [

@@ -2,6 +2,6 @@
 *.log
 .sass-cache
 node_modules
+bower_components
 /library/build/*
-/library/bower_components/*
-/library/scss/vendor/normalize.scss
+/library/scss/vendor

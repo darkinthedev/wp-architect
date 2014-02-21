@@ -1,9 +1,9 @@
-<?php 
+<?php
 /*
 Author: Matthew Ell
 URL: htp://matthewell.com
 
-Admiration and lots of help from: 
+Admiration and lots of help from:
 Bones:      http://themble.com/bones/
 _s:         https://github.com/Automattic/_s
 html5bp:    http://html5boilerplate.com/
@@ -13,14 +13,14 @@ html5bp:    http://html5boilerplate.com/
 
 1. Theme Set Up and Resets
 2. Script and Styles Enqueuing
-3. Theme Support and Functions 
+3. Theme Support and Functions
 4. Custom Functions
 5. Shortcodes
 */
 
 // Theme Set Up and Resets ///////////////////////////////////////////////////////////////////
 
- /* Set the content width based on the theme's design and stylesheet. 
+ /* Set the content width based on the theme's design and stylesheet.
 http://wordpress.stackexchange.com/questions/11766/what-is-the-role-and-history-of-the-content-width-global-variable
  */
 if ( ! isset( $content_width ) ) $content_width = 640; /* pixels */
@@ -51,7 +51,7 @@ function wp_arch_start() {
     // launching this stuff after theme setup
     add_action('after_setup_theme','wp_arch_theme_support');
 
-    //Disable autop filter (WordPress will automatically insert <p> and </p> 
+    //Disable autop filter (WordPress will automatically insert <p> and </p>
     //tags for you to separate content breaks within a post or page)
     // WARNING: Breaks WYSIWYG Editor
     //http://wordpress.stackexchange.com/questions/13798/remove-empty-paragraphs-from-the-content
@@ -80,7 +80,7 @@ function wp_arch_head_cleanup() {
     // WP version
     remove_action( 'wp_head', 'wp_generator' );
 
-} 
+}
 
 // 1B – remove WP version from RSS
 function wp_arch_rss_version() { return ''; }
@@ -98,7 +98,7 @@ function wp_arch_remove_recent_comments_style() {
   if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
     remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
   }
-	
+
 }
 
 // 1E remove injected CSS from gallery
@@ -118,17 +118,17 @@ function wp_arch_scripts_and_styles() {
         wp_deregister_script('jquery');
         wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2');
         wp_enqueue_script('jquery');
-        
+
         // modernizr-custom.js | @Dependents: jQuery
-        wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/build/js/libs/modernizr-custom.js', array('jquery'), "1", false);
+        wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/build/js/modernizr-custom.min.js', array('jquery'), "1", false);
 
         // enqueue site.min.js | @Dependents: jQuery
         wp_enqueue_script('wp_arch_scripts', get_stylesheet_directory_uri() . '/library/build/js/site.min.js', array('jquery'), "1", true);
-        
+
         // enqueue style.css // http://codex.wordpress.org/Function_Reference/wp_register_style
         wp_enqueue_style('wp_arch_wpstyles', get_stylesheet_uri(), array(), '01', 'all');
 
-        // enqueue /css/style.css 
+        // enqueue /css/style.css
         wp_enqueue_style('wp_arch_styles', get_stylesheet_directory_uri() . '/library/build/css/main.css', array(), '01', 'all');
     }
 }
@@ -141,23 +141,23 @@ http://codex.wordpress.org/Function_Reference/remove_menu_page
 //add_action( 'admin_menu', 'wp_arch_remove_menu_pages' );
 // function wp_arch_remove_menu_pages() {
 // 	remove_menu_page('link-manager.php');
-// 	remove_menu_page('tools.php');	
+// 	remove_menu_page('tools.php');
 // }
 
-// 3 Theme Support  /////////////////////////////////////////////////////////////////// 
+// 3 Theme Support  ///////////////////////////////////////////////////////////////////
 function wp_arch_theme_support() {
 
     // 3A - Thumbnails & Custom Image Sizes
     // http://codex.wordpress.org/Function_Reference/add_image_size
-    
+
     //optional: add_theme_support('post-thumbnails', array( 'custom-post-type'));
     add_theme_support('post-thumbnails');
     // default thumb size
     set_post_thumbnail_size(125, 125, true);
-    
+
     // Custom thumb size
     add_image_size( 'big-thumb', 300, 300, true );
-    // Make custom sizes selectable from WordPress admin	
+    // Make custom sizes selectable from WordPress admin
     add_filter( 'image_size_names_choose', 'wp_arch_custom_sizes' );
 
     function wp_arch_custom_sizes( $sizes ) {
@@ -197,7 +197,7 @@ function wp_arch_theme_support() {
 
     add_editor_style( 'custom-editor-style.css' );
 
-} /* end wp_arch theme support */  
+} /* end wp_arch theme support */
 
 /*Register widgetized area and update sidebar with default widgets*/
 function wp_arch_widgets_init() {
@@ -212,7 +212,7 @@ function wp_arch_widgets_init() {
 }
 add_action( 'widgets_init', 'wp_arch_widgets_init' );
 
-// 4 Custom Functions  /////////////////////////////////////////////////////////////////// 
+// 4 Custom Functions  ///////////////////////////////////////////////////////////////////
 
 // Display navigation to next/previous pages when applicable
 if ( ! function_exists( 'wp_arch_content_nav' ) ) :
@@ -242,8 +242,8 @@ function wp_arch_content_nav( $nav_id ) {
 
     <?php if ( is_single() ) : // navigation links for single posts ?>
 
-        <?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'wp_arch' ) . '</span> %title' ); ?>
-        <?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'wp_arch' ) . '</span>' ); ?>
+        <?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'wp_arch' ) . '</span> Older posts' ); ?>
+        <?php next_post_link( '<div class="nav-next">%link</div>', 'Newer posts <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'wp_arch' ) . '</span>' ); ?>
 
     <?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
@@ -262,7 +262,7 @@ function wp_arch_content_nav( $nav_id ) {
 }
 endif; // wp_arch_content_nav
 
-// Prints HTML with meta information for the current post-date/time and author.  
+// Prints HTML with meta information for the current post-date/time and author.
 if ( ! function_exists( 'wp_arch_posted_on' ) ) :
 function wp_arch_posted_on() {
     printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'wp_arch' ),
@@ -311,7 +311,7 @@ function wp_arch_continue_reading_link() {
     return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'wp_arch' ) . '</a>';
 }
 
-// Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis 
+// Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis
 function wp_arch_auto_excerpt_more( $more ) {
     return ' &hellip;' . wp_arch_continue_reading_link();
 }
@@ -393,15 +393,15 @@ In WordPress: [blockquote cite="" quote="" author=""][/blockquote]
 //         "cite" => '',
 //         "quote" => '',
 //         "author" => ''
-//         ), $atts));  
-//     return '<blockquote cite="'.$cite.'">'.$quote.'<footer><p>'.$author.'</p></footer>'.'</blockquote>';  
+//         ), $atts));
+//     return '<blockquote cite="'.$cite.'">'.$quote.'<footer><p>'.$author.'</p></footer>'.'</blockquote>';
 // }
-// add_shortcode("blockquote", "wp_arch_blockquote"); 
+// add_shortcode("blockquote", "wp_arch_blockquote");
 
 
 /// Bug Fixes
- 
-// Added 2013_06_25 MRE – Fixes conflict with Events Manager Plugin 
+
+// Added 2013_06_25 MRE – Fixes conflict with Events Manager Plugin
 // function my_em_disable_gallery(){
 //   remove_action('init','em_event_gallery_override_init', 1000);
 // }
@@ -410,12 +410,12 @@ In WordPress: [blockquote cite="" quote="" author=""][/blockquote]
 // 6. Custom Post Type Snippet Example
 // http://codex.wordpress.org/custom_post_types
 
-// Custom Post Types 
+// Custom Post Types
 // add_action('init', 'wp_arch_cpts');
-// function wp_arch_cpts() { 
+// function wp_arch_cpts() {
 //     // Testimonials
-//     register_post_type( 'wp_arch_testimonial', 
-//         array(  
+//     register_post_type( 'wp_arch_testimonial',
+//         array(
 //             'labels' => array(
 //                 'name' => _x('Testimonials', 'post type general name'),
 //                 'singular_name' => _x('Testimonial', 'post type singular name'),
@@ -426,21 +426,21 @@ In WordPress: [blockquote cite="" quote="" author=""][/blockquote]
 //                 'view_item' => __('View Testimonial'),
 //                 'search_items' => __('Search Testimonial'),
 //                 'not_found' =>  __('No testimonials found'),
-//                 'not_found_in_trash' => __('No testimonials found in Trash'), 
+//                 'not_found_in_trash' => __('No testimonials found in Trash'),
 //                 'parent_item_colon' => ''
 //             ),
-//             'public' => true,  
+//             'public' => true,
 //             'description'  => 'Our Testimonials',
 //             'exclude_from_search' => true/,
 //                'has_archive' => true,
 //                'rewrite' => array('slug' => 'testimonials'),
 //             'hierarchical' => true,
-//             'supports' => array(  
-//                 'title',  
+//             'supports' => array(
+//                 'title',
 //                 'editor'
 //             ),
 //         )
 //     );
-// } 
+// }
 
  ?>
