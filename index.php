@@ -19,7 +19,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<?php if (is_category()) { ?>
-					
+
 				<header class="page-header">
 					<h1 class="page-title"><?php
 						printf( __( 'Category Archives: %s', 'wp_arch' ), '<span>' . single_cat_title( '', false ) . '</span>' );
@@ -44,6 +44,8 @@ get_header(); ?>
 								printf( __( 'Yearly Archives: %s', 'wp_arch' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 							elseif ( is_post_type_archive() ) :
 								echo ucwords( get_post_type() );
+                            elseif ( is_tag() ) :
+                                echo 'Tag Archives: '; echo('<span>' . single_tag_title() . '</span>' );
 							else :
 								_e( 'Archives', 'wp_arch' );
 							endif;
