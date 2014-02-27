@@ -3,21 +3,25 @@
 
 div.dropdown-menu {
     max-height: 40px;
-    
+
+    @include at-breakpoint($bp_touch) {
+        max-height: none;
+    }
+
     a.menu-link {
         display: block;
-        color: #fff;
+        color: #999;
         background-color: #EEE;
         text-decoration: none;
         padding: .5em;
         text-transform: uppercase;
         font-weight: bold;
         @include at-breakpoint($bp_touch) {
-           display: none; 
+           display: none;
         }
-    } 
+    }
 
-    span.touch-button { 
+    span.touch-button {
         position: absolute;
         top: 0;
         right: 0;
@@ -30,10 +34,10 @@ div.dropdown-menu {
             cursor: pointer;
         }
         @include at-breakpoint($bp_touch) {
-            display: none;    
+            display: none;
         }
     }
-    
+
     nav[role="navigation"] {
             background-color: #EEE;
             overflow: hidden;
@@ -44,7 +48,7 @@ div.dropdown-menu {
                 max-height: none;
             }
 
-            &.active, 
+            &.active,
             & > ul ul.active {
                 position: relative;
                 max-height: 55em;
@@ -62,7 +66,7 @@ div.dropdown-menu {
                 @include at-breakpoint($bp_touch) {
                     text-align: justify;
                 }
-                
+
                 ul { // Second Tier Navigation (dropdown)
                     display: none;
                     visibility: visible;
@@ -110,7 +114,7 @@ div.dropdown-menu {
                             background-color: #666;
                             @include at-breakpoint($bp_touch) {
                                 position: relative;
-                                display: block; 
+                                display: block;
                                 margin: 0;
                                 padding: 0 0 0 1em;
                                 line-height: 2;
@@ -119,7 +123,7 @@ div.dropdown-menu {
                                 display: block;
                                 text-transform: capitalize;
                                 &:hover {
-                                    
+
                                 }
                             }
                         }
@@ -135,18 +139,18 @@ div.dropdown-menu {
                             }
                         }
                     }
-                    
+
                     &:after {
                         display: none;
                     }
                 }
 
             li {
+                position: relative; // Position dropdown relative to menu item
                 border-bottom: 1px solid #FFF;
                 display: block;
                 *display: block;
                  @include at-breakpoint($bp_touch) {
-                    position: relative; // Position dropdown relative to menu item
                     display:inline-block;
                     *display: inline;
                     *zoom: 1;
@@ -171,9 +175,6 @@ div.dropdown-menu {
                         @include font-size(14);
                         padding: 0;
                         display: inline;
-                        color: #fff;
-                        font-weight: bold;
-                        text-transform: uppercase;
                     }
                 }
             }
