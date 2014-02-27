@@ -409,6 +409,11 @@ In WordPress: [blockquote cite="" quote="" author=""][/blockquote]
 
 // 6. Custom Post Type Snippet Example
 // http://codex.wordpress.org/custom_post_types
+// Function to get Current Post Type Name
+//function wp_arch_get_post_type_name() {
+//    $obj = get_post_type_object( get_post_type() );
+//    echo $obj->labels->name;
+//};
 
 // Custom Post Types
 // add_action('init', 'wp_arch_cpts');
