@@ -43,7 +43,7 @@ get_header(); ?>
 							elseif ( is_year() ) :
 								printf( __( 'Yearly Archives: %s', 'wp_arch' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 							elseif ( is_post_type_archive() ) :
-								echo ucwords( get_post_type() );
+								wp_arch_get_post_type_name();
                             elseif ( is_tag() ) :
                                 echo 'Tag Archives: '; echo('<span>' . single_tag_title() . '</span>' );
 							else :
