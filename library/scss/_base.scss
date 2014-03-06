@@ -1,12 +1,18 @@
-/* =Typography 
+/* =Typography
 -------------------------------------------------------------- */
 body {
-    font-family: $base-font-family;
+    @include font-size(13);
     -webkit-font-smoothing: antialiased; // http://maxvoltar.com/archive/-webkit-font-smoothing
+    font-family: $base-font-family;
+    line-height: 1.4;
+
+    @include at-breakpoint($bp_touch) {
+        @include font-size(16);
+    }
 }
 
 #{headings()} {
-    @include font-size(16);
+    font-weight: normal;
 }
 a {
     @include link-set($base-link-color, $base-link-color, $base-link-color, $base-link-color);
@@ -51,14 +57,14 @@ textarea {
     padding: .25em; // line height does not compute in FF
 }
 select,
-input[type="checkbox"], 
+input[type="checkbox"],
 input[type="radio"] {
     display: inline-block;
 }
 
-button, 
-input[type="button"], 
-input[type="reset"], 
+button,
+input[type="button"],
+input[type="reset"],
 input[type="submit"] {
     clear: both;
     margin: 1em 0;

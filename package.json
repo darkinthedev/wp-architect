@@ -14,7 +14,8 @@
     "time-grunt": "latest",
     "grunt-contrib-clean": "latest",
     "matchdep": "latest",
-    "grunt-contrib-copy": "latest"
+    "grunt-contrib-copy": "latest",
+    "grunt-grunticon": "~1.0.0"
   },
   "scripts": {
     "prepublish": "bower install"

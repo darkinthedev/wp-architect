@@ -15,7 +15,7 @@
     zoom: 1;
     &:after { clear: both; }
     &:after, &:before {
-        content: ""; 
+        content: "";
         display: table;
     }
 }
@@ -23,7 +23,7 @@
 // Prevents long block level text from breaking outside layout
 @mixin word-wrap {
     -ms-word-wrap: break-word;
-    word-wrap: break-word; 
+    word-wrap: break-word;
 }
 
 // New Button
@@ -40,13 +40,13 @@
     color: rgba(0, 0, 0, 0.8);
     padding: .5em 1em;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-    
+
     &:hover{
         border-color: #cccccc #bbbbbb #aaaaaa #bbbbbb;
         .boxshadow & {
         -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
         -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); 
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
         }
     }
 
@@ -55,7 +55,7 @@
         .boxshadow & {
             -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
             -moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-            box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); 
+            box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
         }
     }
 }
@@ -70,7 +70,7 @@
     &:active {color: $colorFocus;}
 }
 
-/* 
+/*
     extend-only selectors
     – http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholders
 */
@@ -87,7 +87,7 @@
     zoom: 1;
     &:after { clear: both; }
     &:after, &:before {
-        content: ""; 
+        content: "";
         display: table;
     }
 }

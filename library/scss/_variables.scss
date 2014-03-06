@@ -1,3 +1,19 @@
+/* =Susy Grid
+-------------------------------------------------------------- */
+$total-columns:                  16;
+$column-width:                   3.75em; //60px
+$gutter-width:                   1.25em; //20px
+$grid-padding:                   $gutter-width;
+
+/* =Use Border Box Boxsizing
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+-------------------------------------------------------------- */
+@include border-box-sizing;
+
+/* =Brakepoints
+-------------------------------------------------------------- */
+$bp_touch:                         30em oldie; //Default Mobile 480/16
+
 /* =Typography
 -------------------------------------------------------------- */
 $base-font-family:               sans-serif;
@@ -8,16 +24,3 @@ $base-link-color:                #0093d0;
 $base-visited-link-color:        darken($base-link-color, 10%);
 $base-hover-link-color:          lighten($base-link-color, 10%);
 $base-active-link-color:         lighten($base-link-color, 10%);
-
-/* =Susy Grid
--------------------------------------------------------------- */
-$total-columns:                  16;
-$column-width:                   3.75em; //60px 
-$gutter-width:                   1.25em; //20px
-$grid-padding:                   $gutter-width;
-
-// Correct box model 
-@include border-box-sizing;
-
-// Brakepoints
-$bp_touch:                         30em oldie; //Default Mobile 480/16
