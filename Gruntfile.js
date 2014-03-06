@@ -13,7 +13,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-grunticon');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -51,20 +50,6 @@ module.exports = function(grunt) {
                 dest: 'library/build/js/site.min.js'
             }
         },
-
-        //Grunticon
-        // grunticon: {
-        //     myIcons: {
-        //         files: [{
-        //             expand: true,
-        //             cwd: 'library/source',
-        //             src: ['*.svg', '*.png'],
-        //             dest: "example/output"
-        //         }],
-        //         options: {
-        //         }
-        //     }
-        // }
 
         // Compass grunt – see config.rb
         compass: {
