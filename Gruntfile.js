@@ -135,7 +135,7 @@ module.exports = function(grunt) {
             },
 
             compass: {
-                files: ['library/scss/*.scss', 'library/scss/vendor/**/*.scss', 'library/scss/vendor/*.scss'],
+                files: ['library/scss/*.scss', 'library/scss/**/*.scss'],
                 tasks: ['compass:dev'],
             },
 
