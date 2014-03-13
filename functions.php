@@ -140,8 +140,8 @@ http://codex.wordpress.org/Function_Reference/remove_menu_page
 // 1F - Remove Menu items from WP Admin Console
 //add_action( 'admin_menu', 'wp_arch_remove_menu_pages' );
 // function wp_arch_remove_menu_pages() {
-// 	remove_menu_page('link-manager.php');
-// 	remove_menu_page('tools.php');
+//  remove_menu_page('link-manager.php');
+//  remove_menu_page('tools.php');
 // }
 
 // 3 Theme Support  ///////////////////////////////////////////////////////////////////
@@ -165,6 +165,14 @@ function wp_arch_theme_support() {
             'big-thumb' => __('Big Thumb'),
         ) );
     }
+
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support( 'html5', array(
+        'search-form', 'comment-form', 'comment-list',
+    ) );
 
     // rss thingy
     add_theme_support('automatic-feed-links');
