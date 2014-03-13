@@ -1,16 +1,24 @@
+/* ==Import All Modules
+-------------------------------------------------------------- */
 /* =WordPress Modules
 -------------------------------------------------------------- */
 // Generated
-@import "wordpress/generated";
+@import "modules/wordpress/generated";
 
-// Template Selectors - Diable to add base styles
-// @import "wordpress/content";
-// @import "wordpress/sidebar";
+// WordPress Template
+@import "modules/wordpress/header";
+@import "modules/wordpress/content";
+@import "modules/wordpress/sidebar";
+@import "modules/wordpress/footer";
 
 // All
-@import "wordpress/images";
-@import "wordpress/comments";
+@import "modules/wordpress/images";
+@import "modules/wordpress/comments";
 
 /* =Dropdown Menu
 -------------------------------------------------------------- */
-@import "ddmenu";
+@import "modules/ddmenu";
+
+/* =Print Stylesheet
+-------------------------------------------------------------- */
+@import "modules/bpprint";

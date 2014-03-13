@@ -1,3 +1,5 @@
+/* =Frame Styles - Add Basic Structural Styles Here
+-------------------------------------------------------------- */
 .layout {
     @include container;
     @include susy-grid-background;
@@ -14,7 +16,7 @@ div.main-wrapper {
     }
     section.secondary {
         @include word-wrap;
-        
+
     }
 }
 

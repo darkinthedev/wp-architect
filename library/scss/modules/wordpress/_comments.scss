@@ -1,4 +1,4 @@
-/* =Comments
+/* =comments.php
 -------------------------------------------------------------- */
 
 #comments {
@@ -15,23 +15,23 @@
 
     .commentlist {
         //Removes list bullet styles from comment list and children
-        list-style-type: none;  
+        list-style-type: none;
         border-left: 1px solid #ddd;
     }
-    
+
     .form-allowed-tags {
         //Removes "Allowed html tags..." code below comment box
         display: none;
     }
 
     #respond {
-        
+
         border-top:1px solid #EEE;
 
         h3#reply-title {
             font-size: 1.5em;
         }
-      
+
         input[type=text] {
             display: block;
             width: 60%;
@@ -42,16 +42,16 @@
             margin: 0 0 1em;
             width: 80%;
         }
-        
+
         .form-allowed-tags {
             clear: both;
             width: 80%;
         }
-        
+
         .form-allowed-tags code {
             display: block;
         }
 
-    }
+    }//#respond
 
-}
+}//#comments
