@@ -5,8 +5,8 @@ section.primary {
     article {
         .archive &, .blog & {
             &.post {
-                border-bottom: 1px solid #eee;
-                padding: 1.25em 0; 
+                border-bottom: 1px solid $base-border-color;
+                padding: $gutter-width 0;
 
                 &.last-child {
                     border-bottom: 0;
@@ -15,7 +15,7 @@ section.primary {
         }//.archive &, .blog &
 
         header.entry-header {
-            
+
             .entry-title {
                 a {
 
@@ -38,4 +38,4 @@ section.primary {
 
     }//article
 
-}//.primary 
+}//.primary

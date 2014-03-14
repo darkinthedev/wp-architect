@@ -9,11 +9,12 @@ div.dropdown-menu {
     }
 
     a.menu-link {
+        @include font-size(16);
         display: block;
-        color: #999;
-        background-color: #EEE;
+        color: $ddmenu-link-color;
+        background-color: $ddmenu-bg-color;
         text-decoration: none;
-        padding: .5em;
+        padding: $gutter-width/2;
         text-transform: uppercase;
         font-weight: bold;
         @include at-breakpoint($bp_touch) {
@@ -23,11 +24,12 @@ div.dropdown-menu {
 
     span.touch-button {
         position: absolute;
+        @include font-size(16);
         top: 0;
         right: 0;
         display: block;
-        font-size: 1.5em;
-        padding: 0 1em;
+        padding: 0 $gutter-width;
+        line-height: 2;
         color: #000;
         background: rgba(0,0,0,0.1);
         &:hover {
@@ -39,7 +41,7 @@ div.dropdown-menu {
     }
 
     nav[role="navigation"] {
-            background-color: #EEE;
+            background-color: $ddmenu-bg-color;
             overflow: hidden;
             max-height: 0;
             @include at-breakpoint($bp_touch) {
@@ -68,20 +70,19 @@ div.dropdown-menu {
                 }
 
                 ul { // Second Tier Navigation (dropdown)
+                    @include box-shadow(none);
                     display: none;
                     visibility: visible;
                     position: relative;
                     top: 0;
                     width: 100%;
-                    -webkit-box-shadow: none;
-                    -moz-box-shadow: none;
-                    box-shadow: none;
-                    padding: 0;
-                    border-top: 1px solid #FFF;
+                    border-top: 1px solid $ddmenu-border;
 
                     .cssanimations & {
                         margin: 0;
-                        transition: none;
+                        @include transition-property(none);
+                        @include transition-duration(none);
+                        @include transition-timing-function(none);
                         opacity: 1;
                     }
 
@@ -90,33 +91,32 @@ div.dropdown-menu {
                     }
 
                     @include at-breakpoint($bp_touch) {
+                        @include box-shadow(rgba(0,0,0,0.2) 0 3px 3px);
                         display: block;
                         visibility: hidden;
-                        background-color: #666;
-                        -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-                        -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-                        box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+                        background-color: $ddmenu-bg-color;
                         position: absolute;
                         top: 40px;
                         left: 0;
                         z-index: 99999;
                         width: 19em;
-                        padding: 1em 0;
+                        padding: 0;
                         .cssanimations & {
                             margin: -20px 0 0 0;
                             _margin: 0; /*IE6 only*/
-                            transition: all .2s ease-in-out;
+                            @include transition-property(all);
+                            @include transition-duration(.2s);
+                            @include transition-timing-function(ease-in-out);
                             opacity: 0;
                         }
                     }
                         li {
                             padding-left: 0;
-                            background-color: #666;
                             @include at-breakpoint($bp_touch) {
                                 position: relative;
                                 display: block;
                                 margin: 0;
-                                padding: 0 0 0 1em;
+                                padding: 0 0 0 $gutter-width;
                                 line-height: 2;
                             }
                             a {
@@ -129,7 +129,7 @@ div.dropdown-menu {
                         }
 
                     ul { // Third Tier Navigation (flyout)
-                        background-color: #eee;
+                        background-color: $ddmenu-bg-color-expanded-tier3;
                         left: 100%;
                         top: 0;
 
@@ -147,7 +147,7 @@ div.dropdown-menu {
 
             li {
                 position: relative; // Position dropdown relative to menu item
-                border-bottom: 1px solid #FFF;
+                border-bottom: 1px solid $ddmenu-border;
                 display: block;
                 *display: block;
                  @include at-breakpoint($bp_touch) {
@@ -186,6 +186,7 @@ div.dropdown-menu {
               content: " ▼";
               font-size: .75em;
               padding-left: .25em;
+              color: $ddmenu-link-color;
           }
         }
 

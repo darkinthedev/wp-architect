@@ -8,28 +8,35 @@
         text-transform: uppercase;
     }
 
-    ul.children {
-        list-style: none;
-        border-left: 1px solid #ccc;
-    }
-
-    .commentlist {
-        //Removes list bullet styles from comment list and children
-        list-style-type: none;
-        border-left: 1px solid #ddd;
-    }
-
     .form-allowed-tags {
         //Removes "Allowed html tags..." code below comment box
         display: none;
     }
 
+    ol.commentlist {
+        //Removes list numeral styles from comment list
+        list-style-type: none;
+
+        ul.children {
+            //Removes list bullet styles from comment list children
+            list-style: none;
+            border-left: 1px solid $base-border-color;
+        }
+
+        li.comment {
+
+            article.comment {
+                margin-bottom: $gutter-width;
+            }
+        }
+    }
+
     #respond {
 
-        border-top:1px solid #EEE;
+        border-top:1px solid $base-border-color;
 
         h3#reply-title {
-            font-size: 1.5em;
+            @include font-size(20);
         }
 
         input[type=text],
@@ -41,7 +48,7 @@
 
         textarea {
             display: block;
-            margin: 0 0 1em;
+            margin: 0 0 $gutter-width;
             width: 80%;
         }
 

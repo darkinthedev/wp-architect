@@ -1,9 +1,9 @@
 /* =Susy Grid
 -------------------------------------------------------------- */
-$total-columns:                  16;
-$column-width:                   3.75em; //60px
-$gutter-width:                   1.25em; //20px
-$grid-padding:                   $gutter-width;
+$total-columns:                         16;
+$column-width:                          3.75em; //60px
+$gutter-width:                          1.25em; //20px
+$grid-padding:                          $gutter-width;
 
 /* =Use Border Box Boxsizing
 // http://www.paulirish.com/2012/box-sizing-border-box-ftw/
@@ -12,15 +12,28 @@ $grid-padding:                   $gutter-width;
 
 /* =Brakepoints
 -------------------------------------------------------------- */
-$bp_touch:                         30em oldie; //Default Mobile 480/16
+$bp_touch:                              30em oldie; //Default Mobile 480/16
 
 /* =Typography
 -------------------------------------------------------------- */
-$base-font-family:               sans-serif;
+$base-font-family:                      sans-serif;
 
 /* =Links
 -------------------------------------------------------------- */
-$base-link-color:                #0093d0;
-$base-visited-link-color:        darken($base-link-color, 10%);
-$base-hover-link-color:          lighten($base-link-color, 10%);
-$base-active-link-color:         lighten($base-link-color, 10%);
+$base-link-color:                       #0093d0;
+$base-visited-link-color:               darken($base-link-color, 10%);
+$base-hover-link-color:                 lighten($base-link-color, 10%);
+$base-active-link-color:                lighten($base-link-color, 10%);
+
+/* =Various Elements
+-------------------------------------------------------------- */
+$base-sticky-color:                     #ffffcc;
+$base-border-color:                     #ccc;
+$base-button-color:                     #ccc;
+
+/* =Dropdown Menu
+-------------------------------------------------------------- */
+$ddmenu-link-color:                     $base-link-color;
+$ddmenu-border:                         #fff;
+$ddmenu-bg-color:                       #333;
+$ddmenu-bg-color-expanded-tier3:        $ddmenu-bg-color;

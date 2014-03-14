@@ -3,41 +3,35 @@
 /* =Typography
 -------------------------------------------------------------- */
 body {
-    @include font-size(13);
+    @include font-size(13); // Smaller fonts on small screens look better
     -webkit-font-smoothing: antialiased; // http://maxvoltar.com/archive/-webkit-font-smoothing
     font-family: $base-font-family;
     line-height: 1.4;
 
     @include at-breakpoint($bp_touch) {
-        @include font-size(16);
+        @include font-size(16); // Fonts enlarge proportionally
     }
 }
 
 #{headings()} {
     font-weight: normal;
 }
+
 a {
     @include link-set($base-link-color, $base-link-color, $base-link-color, $base-link-color);
         &:hover {text-decoration: underline;}
 }
 
 blockquote {
-    margin:1em .5em;
+    margin:$gutter-width $gutter-width/2;
     font-style:oblique;
-    & p:before {
-        content:'“ ';
-    }
-    & p:after {
-        content:' ”';
-    }
-    footer {
-        > p {
-            text-align: right;
+    cite {
+        display: block;
+        text-align: right;
+        font-weight: bold;
+        &:before {
+            content: "– "
         }
-        > p:before {
-            content: "– ";
-        }
-
     }
 }
 
@@ -45,9 +39,10 @@ blockquote {
 -------------------------------------------------------------- */
 
 label {
-    margin-top: 1em;
+    margin-top: $gutter-width;
     display: inline-block;
 }
+
 input[type="text"],
 input[type="password"],
 input[type="search"],
@@ -56,7 +51,7 @@ input[type="email"],
 input[type="url"],
 textarea {
     width: 98%;
-    padding: .25em; // line height does not compute in FF
+    padding: $gutter-width/4; // line height does not compute in FF
 }
 select,
 input[type="checkbox"],
@@ -69,11 +64,11 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     clear: both;
-    margin: 1em 0;
+    margin: $gutter-width/2 0;
 }
 
 .button, button, input[type="button"], input[type="reset"], input[type="submit"] {
-    @include button(#ccc);
+    @include button($base-button-color);
 }
 
 /* =Media
@@ -84,4 +79,37 @@ iframe,
 object,
 video {
     max-width: 100%;
+}
+
+/* =Globals
+-------------------------------------------------------------- */
+nav.site-navigation {
+    margin: $gutter-width 0;
+
+    h1 {
+        // @include font-size(18);
+    }
+}
+
+nav.paging-navigation,
+nav.post-navigation {
+    margin: $gutter-width 0;
+    border-top: 1px solid $base-border-color;
+    zoom: 1;
+    &:after { clear: both; }
+    &:after, &:before {
+        content: "";
+        display: table;
+    }
+
+    div.nav-previous {
+        float: left;
+    }
+    div.nav-next {
+        float: right;
+    }
+}
+
+.entry-meta {
+    clear:both;
 }

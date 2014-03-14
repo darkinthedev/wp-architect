@@ -1,17 +1,5 @@
 /* =Images and Image Galleries & Responsive Images
 -------------------------------------------------------------- */
-.wp-caption {
-    max-width: 100%; /* Keep wide captions from overflowing their container. */
-    padding: 4px;
-}
-.wp-caption .wp-caption-text,
-.gallery-caption,
-.entry-caption {
-    font-style: italic;
-    font-size: .75em;
-    line-height: 2;
-    color: #777;
-}
 // Image Galleries (Worpress also automatically injects other CSS - see functions.php)
 .entry-content dl.gallery-item {
     margin: 0;
@@ -24,18 +12,18 @@
     .gallery-item a {
         max-width: 100%;
         width: auto;
-    } 
+    }
 }
 .gallery .gallery-icon img {
     height: auto;
-    max-width: 90%;
+    width: 90%;
     padding: 5%;
 }
 .gallery-columns-1 .gallery-icon img {
     padding: 3%;
 }
 // Image attachments
-.image-attachment { 
+.image-attachment {
     div.entry-meta {
         float: left;
     }
