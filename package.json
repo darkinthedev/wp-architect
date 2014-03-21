@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "author": "Matthew Ell <me@matthewell.com>",
   "description": "Grunt Package for WP Architect WordPress Theme",
-
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-sass": "~0.7.2",
@@ -11,6 +10,7 @@
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-imagemin": "~0.5.0",
     "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-cssmin": "~0.7.0",
     "grunt-contrib-uglify": "~0.3.3",
     "grunt-contrib-compass": "~0.7.2",
     "grunt-modernizr": "~0.5.1",
@@ -19,7 +19,6 @@
     "time-grunt": "~0.2.10",
     "matchdep": "~0.3.0"
   },
-
   "scripts": {
     "prepublish": "bower install"
   }

@@ -10,6 +10,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
@@ -21,9 +22,6 @@ module.exports = function(grunt) {
         clean: {
             build: {
                 src: ["library/build"]
-            },
-            temp: {
-                src: ["library/build/css/vendor"]
             }
         },
 
@@ -32,11 +30,9 @@ module.exports = function(grunt) {
             normalize: {
                 cwd: 'bower_components/normalize-css/',
                 src: 'normalize.css',
-                dest: 'library/scss/vendor/',
-                expand: true,
-                rename: function(dest, src) {
-                    return dest + src.replace(/\.css$/, ".scss");
-                }
+                dest: 'library/build/css/src/',
+                filter: 'isFile',
+                expand: true
             }
         },
 
@@ -123,6 +119,18 @@ module.exports = function(grunt) {
             }
         },
 
+        // Minify CSS
+        cssmin: {
+            options: {
+                banner: '/*! Processed <%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %> */\n'
+            },
+            combine: {
+                files: {
+                  'library/build/css/dist/dist.min.css': ['library/build/css/src/normalize.css','library/build/css/src/main.css'],
+                },
+            },
+        },
+
         // Watch Task
         watch: {
 
@@ -150,11 +158,11 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
         'clean:build',
         'uglify',
-        'newer:copy:normalize',
+        'copy:normalize',
         'modernizr',
         'compass',
         'newer:imagemin',
-        'clean:temp',
+        'newer:cssmin'
     ]);
 
     grunt.registerTask('dev', [

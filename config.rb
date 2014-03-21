@@ -2,12 +2,12 @@
 require 'susy'
 
 # Basic Configurations
-css_dir = 'library/build/css'
+css_dir = 'library/build/css/src'
 sass_dir = 'library/scss'
 javascripts_dir = 'library/js'
 output_style = :compressed
 
-## Image Handeling 
+## Image Handeling
 ## Use the function for output in SASS file: image-url('file_name_here.gif')
 #Sets image directory
 images_dir = 'library/img'
