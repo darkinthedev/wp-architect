@@ -7,13 +7,13 @@ documentation, tips and references for theme developers. This theme can
 also be used as a boilerplate for building custom WordPress themes. 
 
 ##Contains:
-* Grunt.JS. Packaged with (Modernizr, ImageMin and other grunts)
-* Normalize
-* Compass
+* Grunt.JS. Packaged with (Modernizr, ImageMin and helpful workflow enhancers)
+* Normalize.css for resetting CSS
+* Compass and SASS
 * Collected Mixins
-* [Susy Grid Framework](http://susy.oddbird.net/) Mobile-First
-* Shortcodes
+* [Susy Grid Framework](http://susy.oddbird.net/) Mobile-First Develpoment
 * Functions.php filled with comments, helpful tools and best practices
+* Font Awesome, the iconic font designed for Bootstrap - loaded via CDN for fast load time.
 
 ##References:
 Lots of help from:
