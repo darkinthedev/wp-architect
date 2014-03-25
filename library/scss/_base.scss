@@ -93,14 +93,9 @@ nav.site-navigation {
 
 nav.paging-navigation,
 nav.post-navigation {
+    @extend %cf;
     margin: $gutter-width 0;
     border-top: 1px solid $base-border-color;
-    zoom: 1;
-    &:after { clear: both; }
-    &:after, &:before {
-        content: "";
-        display: table;
-    }
 
     div.nav-previous {
         float: left;

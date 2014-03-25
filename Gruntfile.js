@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         },
 
         copy: {
-            // Copy normalize from bower and convert to scss file
+            // Copy normalize from bower into src folder
             normalize: {
                 cwd: 'bower_components/normalize-css/',
                 src: 'normalize.css',
@@ -144,7 +144,7 @@ module.exports = function(grunt) {
 
             compass: {
                 files: ['library/scss/*.scss', 'library/scss/**/*.scss'],
-                tasks: ['compass:dev'],
+                tasks: ['compass:dev', 'newer:cssmin'],
             },
 
             js: {

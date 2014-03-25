@@ -125,6 +125,9 @@ function wp_arch_scripts_and_styles() {
         // enqueue site.min.js | @Dependents: jQuery
         wp_enqueue_script('wp_arch_scripts', get_stylesheet_directory_uri() . '/library/build/js/site.min.js', array('jquery'), "1", true);
 
+        // enqueue font-awesome.css
+        wp_enqueue_style('wp_arch_fontAwe', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array(), '', 'all' );
+
         // enqueue style.css // http://codex.wordpress.org/Function_Reference/wp_register_style
         wp_enqueue_style('wp_arch_wpstyles', get_stylesheet_uri(), array(), '01', 'all');
 
@@ -240,9 +243,9 @@ function wp_arch_content_nav( $nav_id ) {
     if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
         return;
 
-    $nav_class = 'site-navigation paging-navigation group';
+    $nav_class = 'site-navigation paging-navigation';
     if ( is_single() )
-        $nav_class = 'site-navigation post-navigation group';
+        $nav_class = 'site-navigation post-navigation';
 
     ?>
     <nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
