@@ -56,24 +56,3 @@
     &:focus {color: $colorFocus;}
     &:active {color: $colorFocus;}
 }
-
-/* =Extend-Only Selectors
-– http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholders
--------------------------------------------------------------- */
-// Image replacement
-%ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
-%ir br { display: none; }
-// ARIA Friendly Element hiding
-// http://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/
-.visuallyhidden, %screen-reader-text { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus,
-%screen-reader-text.focusable:active, %screen-reader-text.focusable:focus  { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
-// Clear Fix
-%cf {
-    zoom: 1;
-    &:after { clear: both; }
-    &:after, &:before {
-        content: "";
-        display: table;
-    }
-}

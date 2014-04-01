@@ -4,7 +4,7 @@
 div.dropdown-menu {
     max-height: 40px;
 
-    @include at-breakpoint($bp_touch) {
+    @include at-breakpoint($bp_480) {
         max-height: none;
     }
 
@@ -17,7 +17,7 @@ div.dropdown-menu {
         padding: $gutter-width/2;
         text-transform: uppercase;
         font-weight: bold;
-        @include at-breakpoint($bp_touch) {
+        @include at-breakpoint($bp_480) {
            display: none;
         }
     }
@@ -35,7 +35,7 @@ div.dropdown-menu {
         &:hover {
             cursor: pointer;
         }
-        @include at-breakpoint($bp_touch) {
+        @include at-breakpoint($bp_480) {
             display: none;
         }
     }
@@ -44,7 +44,7 @@ div.dropdown-menu {
             background-color: $ddmenu-bg-color;
             overflow: hidden;
             max-height: 0;
-            @include at-breakpoint($bp_touch) {
+            @include at-breakpoint($bp_480) {
                 background-color: transparent;
                 overflow: visible;
                 max-height: none;
@@ -55,7 +55,7 @@ div.dropdown-menu {
                 position: relative;
                 max-height: 55em;
                 z-index: 99999;
-                @include at-breakpoint($bp_touch) {
+                @include at-breakpoint($bp_480) {
                     max-height: none;
                     z-index: auto;
                 }
@@ -65,7 +65,7 @@ div.dropdown-menu {
                 text-align: left;
                 padding-left: 0;
                 margin: 0;
-                @include at-breakpoint($bp_touch) {
+                @include at-breakpoint($bp_480) {
                     text-align: justify;
                 }
 
@@ -90,7 +90,7 @@ div.dropdown-menu {
                         display: block;
                     }
 
-                    @include at-breakpoint($bp_touch) {
+                    @include at-breakpoint($bp_480) {
                         @include box-shadow(rgba(0,0,0,0.2) 0 3px 3px);
                         display: block;
                         visibility: hidden;
@@ -112,7 +112,7 @@ div.dropdown-menu {
                     }
                         li {
                             padding-left: 0;
-                            @include at-breakpoint($bp_touch) {
+                            @include at-breakpoint($bp_480) {
                                 position: relative;
                                 display: block;
                                 margin: 0;
@@ -150,7 +150,7 @@ div.dropdown-menu {
                 border-bottom: 1px solid $ddmenu-border;
                 display: block;
                 *display: block;
-                 @include at-breakpoint($bp_touch) {
+                 @include at-breakpoint($bp_480) {
                     display:inline-block;
                     *display: inline;
                     *zoom: 1;
@@ -171,7 +171,7 @@ div.dropdown-menu {
                 a {
                     display: block;
                     padding: .5em;
-                    @include at-breakpoint($bp_touch) {
+                    @include at-breakpoint($bp_480) {
                         @include font-size(14);
                         padding: 0;
                         display: inline;
@@ -181,7 +181,7 @@ div.dropdown-menu {
         }
         li.menuParent:after {
           display: none;
-          @include at-breakpoint($bp_touch) {
+          @include at-breakpoint($bp_480) {
               display: inline-block;
               content: " ▼";
               font-size: .75em;
@@ -192,7 +192,7 @@ div.dropdown-menu {
 
         ul:after {
           display: none;
-          @include at-breakpoint($bp_touch) {
+          @include at-breakpoint($bp_480) {
               display: inline-block;
               content: '';
               width: 100%;
