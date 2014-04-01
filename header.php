@@ -31,6 +31,9 @@
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
+<!--[if (gte IE 6)&(lte IE 8)]>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+<![endif]-->
 </head>
 <body <?php body_class(); ?>>
    <!--[if lt IE 8]>
@@ -45,7 +48,7 @@
                 <nav role="navigation">
                     <h1 class="assistive-text section-heading visuallyhidden"><?php _e( 'Main menu', 'wp_arch' ); ?></h1>
                     <div class="skip-link screen-reader-text visuallyhidden"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'wp_arch' ); ?>"><?php _e( 'Skip to content', 'wp_archstarter' ); ?></a></div>
-                    <?php wp_nav_menu( array( 
+                    <?php wp_nav_menu( array(
                     'theme_location' => 'main-nav',
                     'depth' => 2,
                     'items_wrap' => '<ul class="%1$s">%3$s</ul>') ); ?>
