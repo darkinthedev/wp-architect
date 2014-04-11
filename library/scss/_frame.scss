@@ -13,7 +13,7 @@ div.main-wrapper {
     section.primary {
         @include word-wrap;
 
-        .page-template-full-width-tpl-php & {
+        .page-template-page-full-width-php & {
             @include span-columns($total-columns, $total-columns);
         }
 
