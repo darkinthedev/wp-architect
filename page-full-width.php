@@ -1,13 +1,12 @@
 <?php
-
 /**
- *Template Name: Full Width 
- *Description: A Page Template for Full Width and No Sidebar
- *Codex: http://codex.wordpress.org/Page_Templates#Custom_Page_Template
+ * Template Name: Full Width
+ * Description: A Page Template for Full Width and No Sidebar
+ * Codex: http://codex.wordpress.org/Page_Templates#Custom_Page_Template
  *
- *@package wp_arch
- *@since wp_arch 1.0
+ * @since 1.0.0
  *
+ * @package wp_arch
  */
 
 get_header(); ?>

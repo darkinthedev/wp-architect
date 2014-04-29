@@ -1,3 +1,14 @@
+<?php
+/**
+ * Header
+ *
+ * The header containing the head of the document.
+ *
+ * @since 1.0.0
+ *
+ * @package wp_arch
+ */
+ ?>
 <!doctype html>
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->

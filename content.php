@@ -1,7 +1,12 @@
 <?php
 /**
+ * Content
+ *
+ * Main content template for posts and pages
+ *
+ * @since 1.0.0
+ *
  * @package wp_arch
- * @since wp_arch 1.0
  */
 ?>
 

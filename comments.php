@@ -1,5 +1,7 @@
 <?php
 /**
+ * Comments
+ *
  * The template for displaying Comments.
  *
  * The area of the page that contains both current comments
@@ -7,8 +9,9 @@
  * handled by a callback to wp_arch_comment() which is
  * located in the functions.php file.
  *
+ * @since 1.0.0
+ *
  * @package wp_arch
- * @since wp_arch 1.0
  */
 ?>
 

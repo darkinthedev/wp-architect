@@ -1,5 +1,7 @@
 <?php
 /**
+ * Index
+ *
  * The main template file.
  *
  * This is the most generic template file in a WordPress theme
@@ -8,8 +10,9 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
+ * @since 1.0.0
+ *
  * @package wp_arch
- * @since wp_arch 1.0
  */
 
 get_header(); ?>

@@ -1,10 +1,12 @@
 <?php
 /**
+ * Footer
+ *
  * The template for displaying the footer.
  *
+ * @since 1.0.0
  *
  * @package wp_arch
- * @since wp_arch 1.0
  */
 ?>
 

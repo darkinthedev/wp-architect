@@ -1,9 +1,12 @@
 <?php
 /**
+ * 404
+ *
  * The template for displaying 404 pages (Not Found).
  *
+ * @since 1.0.0
+ *
  * @package wp_arch
- * @since wp_arch 1.0
  */
 
 get_header(); ?>
