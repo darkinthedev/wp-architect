@@ -14,6 +14,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-svg2png');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -22,6 +23,18 @@ module.exports = function(grunt) {
         clean: {
             build: {
                 src: ["library/build"]
+            }
+        },
+
+        svg2png: {
+            all: {
+                // specify files in array format with multiple src-dest mapping
+                files: [
+                    // rasterize all SVG files in "img" and its subdirectories to "img/png"
+                    // { src: ['library/img/**/*.svg'], dest: 'img/png/' },
+                    // rasterize SVG file to same directory
+                    { src: ['library/img/*.svg'] }
+                ]
             }
         },
 
@@ -142,6 +155,11 @@ module.exports = function(grunt) {
                 files: ['*.html', '*.php']
             },
 
+            img: {
+                files: ['library/img/*.svg'],
+                tasks: ['svg2png'],
+            },
+
             compass: {
                 files: ['library/scss/*.scss', 'library/scss/**/*.scss'],
                 tasks: ['compass:dev', 'newer:cssmin'],
@@ -162,7 +180,8 @@ module.exports = function(grunt) {
         'modernizr',
         'compass',
         'newer:imagemin',
-        'newer:cssmin'
+        'newer:cssmin',
+        'newer:svg2png'
     ]);
 
     grunt.registerTask('dev', [
