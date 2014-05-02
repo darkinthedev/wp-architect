@@ -82,11 +82,3 @@ a img.aligncenter {
     padding: 0;
     width: auto;
 }
-
-.wp-caption p.wp-caption-text {
-    @include font-size(11);
-    color: #777;
-    line-height: 17px;
-    margin: 0;
-    padding: 0 4px 5px;
-}

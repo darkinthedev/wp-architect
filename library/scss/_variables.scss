@@ -24,6 +24,10 @@ $google-orange:                         #dd4b39;
 $rss-organge:                           #ee802f;
 $youtube-red:                           #c4302b;
 
+/* =Color
+-------------------------------------------------------------- */
+$alert-red:                             #FFC0C0;
+
 /* =Typography
 -------------------------------------------------------------- */
 $base-font-family:                      sans-serif;
@@ -40,6 +44,7 @@ $base-active-link-color:                lighten($base-link-color, 10%);
 $base-sticky-color:                     #ffffcc;
 $base-border-color:                     #ccc;
 $base-button-color:                     #ccc;
+$base-button-text-color:                #333;
 
 /* =Dropdown Menu
 -------------------------------------------------------------- */

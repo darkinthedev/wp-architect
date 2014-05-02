@@ -1,4 +1,4 @@
-/* =Import All
+/* =Import Main Styles
 -------------------------------------------------------------- */
 @import "compass";
 @import "susy";
@@ -8,8 +8,11 @@
 @import "mixins";
 @import "extends";
 
-// Main Styles
+// Site Styles
 @import "base";
-@import "frame";
+@import "structure";
 @import "modules";
+
+// Print Styles
+@import "print";
 

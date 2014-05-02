@@ -14,36 +14,25 @@
     word-wrap: break-word;
 }
 
-@mixin button ($color) {
+@mixin button ($color , $textcolor) {
     background: $color;
     border-radius: 3px;
-    border-color: lighten($color, 10%) lighten($color, 10%) lighten($color, 20%) lighten($color, 10%);
-    border: 1px solid lighten($color, 10%);
-    .boxshadow & {
-        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-    }
-    color: rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    margin: $gutter-width 0;
+    color: $textcolor;
     padding: .5em 1em;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 
     &:hover{
-        border-color: lighten($color, 10%) lighten($color, 20%) lighten($color, 30%) lighten($color, 20%);
-        .boxshadow & {
-        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-        }
+        background: lighten($color, 3%);
+        color: lighten($textcolor,6%);
+        cursor: pointer;
+        text-decoration: none;
     }
 
     &:focus, &:active {
-        border-color: lighten($color, 10%) lighten($color, 20%) lighten($color, 20%) lighten($color, 20%);
-        .boxshadow & {
-            -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-            -moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-            box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-        }
+        color: lighten($textcolor,6%);
+        background: darken($color, 3%);
     }
 }
 

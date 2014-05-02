@@ -1,27 +1,47 @@
-/* ==Base Styles
--------------------------------------------------------------- */
-/* =Typography
+/* =Body
 -------------------------------------------------------------- */
 body {
     @include font-size(13); // Smaller fonts on small screens look better
-    -webkit-font-smoothing: antialiased; // http://maxvoltar.com/archive/-webkit-font-smoothing
     font-family: $base-font-family;
     line-height: 1.4;
+    -webkit-font-smoothing: antialiased; // http://maxvoltar.com/archive/-webkit-font-smoothing
 
     @include at-breakpoint($bp_480) {
         @include font-size(16); // Fonts enlarge proportionally
     }
 }
 
-#{headings()} {
+/* =Headings
+-------------------------------------------------------------- */
+#{headings()} { // Select all headings
     font-weight: normal;
 }
 
-a {
-    @include link-set($base-link-color, $base-link-color, $base-link-color, $base-link-color);
-        &:hover {text-decoration: underline;}
+/* =Paragraph
+-------------------------------------------------------------- */
+p {
+    @include font-size(16);
 }
 
+p.alert {
+    background-color: $alert-red;
+    padding: $gutter-width/2;
+}
+
+p.lead {
+    @include font-size(24);
+}
+
+p.wp-caption-text {
+    @include font-size(11);
+    color: #777;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* =Blockquote
+-------------------------------------------------------------- */
 blockquote {
     margin:$gutter-width $gutter-width/2;
     font-style:oblique;
@@ -35,23 +55,114 @@ blockquote {
     }
 }
 
-/* =Form Elements
+/* =Inline
 -------------------------------------------------------------- */
-
-label {
-    margin-top: $gutter-width;
-    display: inline-block;
+a {
+    @include link-set($base-link-color, $base-link-color, $base-link-color, $base-link-color);
+        &:hover {text-decoration: underline;}
 }
 
+code,samp {
+    background-color: #eee;
+    color: red;
+    padding: .5em;
+}
+
+code.block {
+    @include word-wrap; // prevent code from overflowing
+    display: block;
+}
+
+abbr {
+    &:hover {
+        cursor: help;
+    }
+}
+
+/* =Hr
+-------------------------------------------------------------- */
+hr {
+    clear: both;
+    border: 1px solid #999;
+    margin: $gutter-width 0;
+}
+
+/* =Unordered List
+-------------------------------------------------------------- */
+ul {
+    &.unstyled {
+        list-style: none;
+        padding-left: 0;
+    }
+}
+
+/* =Ordered List
+-------------------------------------------------------------- */
+ol {
+
+    &.unstyled {
+        list-style: none;
+        padding-left: 0;
+    }
+
+}
+
+/* =Ordered List
+-------------------------------------------------------------- */
+dl {
+
+    &.unstyled {
+        list-style: none;
+        padding-left: 0;
+    }
+
+}
+
+/* =Form Elements
+-------------------------------------------------------------- */
+label {
+    font-weight: bold;
+    display:block;
+    margin-top: $gutter-width;
+    &.error {
+        color: red;
+    }
+    &.valid {
+        color: green;
+    }
+}
+
+legend {
+    @extend label;
+}
+
+input {
+    &.is-error {
+        border: 1px solid red;
+    }
+    &.is-valid {
+        border: 1px solid green;
+    }
+}
+input[type="datetime-local"], //html5
+input[type="datetime"], //html5
+input[type="month"], //html5
+input[type="week"], //html5
+input[type="date"], //html5
+input[type="range"],//html5
+input[type="color"],//html5
 input[type="text"],
 input[type="password"],
-input[type="search"],
+input[type="search"],//html5
 input[type="tel"],
 input[type="email"],
 input[type="url"],
+input[type="number"],
 textarea {
+    @include font-size(14);
     width: 98%;
-    padding: $gutter-width/4; // line height does not compute in FF
+    padding: $gutter-width/4; // line height will not compute in FF
+    margin-bottom: $gutter-width;
 }
 select,
 input[type="checkbox"],
@@ -68,10 +179,31 @@ input[type="submit"] {
 }
 
 .button, button, input[type="button"], input[type="reset"], input[type="submit"] {
-    @include button($base-button-color);
-    &:hover {
-        cursor: pointer;
-    }
+    @include button($base-button-color, $base-button-text-color);
+}
+
+.button-dark {
+    @include button($base-button-text-color, $base-button-color);
+}
+
+/* =Table
+-------------------------------------------------------------- */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #808080;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    border: 1px solid #808080;
+    padding: 0.2em;
+}
+
+td {
+    border: 1px solid #808080;
+    padding: 0.2em;
 }
 
 /* =Media
