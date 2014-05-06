@@ -7,23 +7,25 @@
 
 header[role="banner"] {
     clear: both;
+    @import "structure/header";
 }
 
 div.main-wrapper {
     section.primary {
         @include word-wrap;
+        @import "structure/primary";
 
         .page-template-page-full-width-php & {
             @include span-columns($total-columns, $total-columns);
         }
-
     }
     section.secondary {
         @include word-wrap;
-
+        @import "structure/secondary";
     }
 }
 
 footer.page-footer {
     clear: both;
+    @import "structure/footer";
 }

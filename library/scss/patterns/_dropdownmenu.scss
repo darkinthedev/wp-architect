@@ -8,6 +8,10 @@ div.dropdown-menu {
         max-height: none;
     }
 
+    div.skip-link {
+        @extend %screen-reader-text;
+    }
+
     a.menu-link {
         @include font-size(16);
         display: block;

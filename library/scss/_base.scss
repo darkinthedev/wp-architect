@@ -17,6 +17,11 @@ body {
     font-weight: normal;
 }
 
+h1.assistive-text { @extend %screen-reader-text; }
+// h1.entry-title {}
+// h1.widget-title {}
+//
+
 /* =Paragraph
 -------------------------------------------------------------- */
 p {
@@ -91,8 +96,7 @@ hr {
 -------------------------------------------------------------- */
 ul {
     &.unstyled {
-        list-style: none;
-        padding-left: 0;
+        @extend %listreset;
     }
 }
 
@@ -101,8 +105,7 @@ ul {
 ol {
 
     &.unstyled {
-        list-style: none;
-        padding-left: 0;
+        @extend %listreset;
     }
 
 }
@@ -112,8 +115,7 @@ ol {
 dl {
 
     &.unstyled {
-        list-style: none;
-        padding-left: 0;
+        @extend %listreset;
     }
 
 }
@@ -216,30 +218,4 @@ video {
     max-width: 100%;
 }
 
-/* =Globals
--------------------------------------------------------------- */
-nav.site-navigation {
-    margin: $gutter-width 0;
 
-    h1 {
-        // @include font-size(18);
-    }
-}
-
-nav.paging-navigation,
-nav.post-navigation {
-    @extend %cf;
-    margin: $gutter-width 0;
-    border-top: 1px solid $base-border-color;
-
-    div.nav-previous {
-        float: left;
-    }
-    div.nav-next {
-        float: right;
-    }
-}
-
-.entry-meta {
-    clear:both;
-}
