@@ -1,0 +1,17 @@
+/* ////////////////////////////////////////////////////////////// */
+/* = Layout
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+.layout {
+    @include container;
+    @include susy-grid-background;
+}
+
+@import "layout/header";
+
+div.main-wrapper {
+    @import "layout/primary";
+    @import "layout/secondary";
+}
+
+@import "layout/footer";
+

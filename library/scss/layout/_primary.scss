@@ -1,0 +1,11 @@
+/* ////////////////////////////////////////////////////////////// */
+/* = Primary
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+section.primary {
+    @include word-wrap;
+
+    .page-template-page-full-width-php & {
+        @include span-columns($total-columns, $total-columns);
+    }
+}
