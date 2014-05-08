@@ -139,7 +139,7 @@ module.exports = function(grunt) {
             },
             combine: {
                 files: {
-                  'library/build/css/dist/dist.min.css': ['library/build/css/src/normalize.css','library/build/css/src/main.css'],
+                  'library/build/css/dist/dist.min.css': ['library/build/css/src/normalize.css','library/build/css/src/site.css'],
                 },
             },
         },
