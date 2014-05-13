@@ -22,27 +22,25 @@
 .gallery-columns-1 .gallery-icon img {
     padding: 3%;
 }
-// Image attachments
+/* =Image attachments
+-------------------------------------------------------------- */
 .image-attachment {
     div.entry-meta {
         float: left;
     }
-
     nav {
         float: right;
         margin: 0 0 1em 0;
     }
-
     .entry-content {
         clear: both;
 
-    .entry-attachment {
-        background: #eee;
-        margin: 0 0 1em;
-        padding: 1em;
-        text-align: center;
-    }
-
+        .entry-attachment {
+            background: #eee;
+            margin: 0 0 1em;
+            padding: 1em;
+            text-align: center;
+        }
     .attachment {
         display: block;
         margin: 0 auto;
@@ -57,13 +55,11 @@
 .widget img {
     max-width: 100%; /* Fluid images for posts, comments, and widgets */
 }
-
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"] {
     height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
 }
-
 img.size-full,
 img.size-large,
 img.header-image,

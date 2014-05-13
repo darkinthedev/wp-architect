@@ -5,26 +5,13 @@
 /* =Body
 -------------------------------------------------------------- */
 body {
-    @include font-size(13); // Smaller fonts on small screens look better
     font-family: $base-font-family;
-    line-height: 1.4;
-    -webkit-font-smoothing: antialiased; // http://maxvoltar.com/archive/-webkit-font-smoothing
-
-    @include at-breakpoint($bp_480) {
-        @include font-size(16); // Fonts enlarge proportionally
-    }
 }
 
 /* =Headings
 -------------------------------------------------------------- */
-#{headings()} { // Select all headings
-    font-weight: normal;
-}
-
+#{headings()} { font-weight: normal; }
 h1.assistive-text { @extend %screen-reader-text; }
-// h1.entry-title {}
-// h1.widget-title {}
-//
 
 /* =Paragraph
 -------------------------------------------------------------- */

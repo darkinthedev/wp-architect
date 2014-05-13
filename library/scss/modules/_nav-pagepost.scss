@@ -1,17 +1,20 @@
 nav.site-navigation {
     margin: $gutter-width 0;
+    a {
+        text-decoration: none;
+    }
 }
-
 nav.paging-navigation,
 nav.post-navigation {
     @extend %cf;
     margin: $gutter-width 0;
-    border-top: 1px solid $base-border-color;
 
     div.nav-previous {
+        @extend .button;
         float: left;
     }
     div.nav-next {
+        @extend .button;
         float: right;
     }
 }
