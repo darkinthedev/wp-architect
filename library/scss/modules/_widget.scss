@@ -1,3 +1,9 @@
+/* ////////////////////////////////////////////////////////////// */
+/*
+/* Widgets
+/*
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 aside.widget {
 
     h1.widget-title {
@@ -5,9 +11,8 @@ aside.widget {
     }//h1
 
     ul {
-        // Reset Widget Lists
-        list-style-type: none;
-        padding-left: 0;
+        // Reset Widget List
+        @extend %listreset;
     }//ul
 
 }//.widget

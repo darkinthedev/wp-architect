@@ -1,9 +1,12 @@
 /* ////////////////////////////////////////////////////////////// */
-/* = Extend-Only Selectors
-/* - http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholders
+/*
+/* Extend-Only Selectors
+/* @ref: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#placeholders
+/*
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-// Clear Fix
+/* Clear Fix
+-------------------------------------------------------------- */
 %cf {
     zoom: 1;
     &:after { clear: both; }
@@ -12,7 +15,9 @@
         display: table;
     }
 }
-// Image replacement
+
+/* Image replacement
+-------------------------------------------------------------- */
 %ir {
     display: block;
     border: 0;
@@ -26,8 +31,10 @@
 %ir br {
     display: none;
 }
-// Visually Hidden / ARIA Friendly Element hiding
-// http://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/
+
+/* Visually Hidden / ARIA Friendly Element hiding
+/* @ref: http://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/
+-------------------------------------------------------------- */
 %vh, %screen-reader-text {
     border: 0;
     clip: rect(0 0 0 0);
@@ -50,7 +57,8 @@
     width: auto;
 }
 
-//List Reset
+/* List Reset
+-------------------------------------------------------------- */
 %listreset {
     list-style: none;
     padding-left: 0;

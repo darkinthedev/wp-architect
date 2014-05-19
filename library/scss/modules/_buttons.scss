@@ -1,0 +1,13 @@
+/* ////////////////////////////////////////////////////////////// */
+/*
+/* Buttons
+/*
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+.button {
+    @include button($base-button-color, $base-button-text-color);
+}
+
+.button-dark {
+    @include button($base-button-text-color, $base-button-color);
+}

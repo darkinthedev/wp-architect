@@ -1,40 +1,64 @@
+/* ////////////////////////////////////////////////////////////// */
+/*
+/* Article Element
+/*
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
 article {
-    .archive &, .blog & {
-        &.post {
+
+    /* Archive, Blog and Search listings default styles.
+    -------------------------------------------------------------- */
+    .archive &, .blog &, .search & {
+        & {
             border-bottom: 1px solid $base-border-color;
             padding: $gutter-width 0;
 
             &.last-child {
                 border-bottom: 0;
-            }//.last-child
-        }//.post
-    }//.archive &, .blog &
+            }
+        }
+        // Sticky posts
+        &.sticky {
+            background-color:$base-sticky-color;
+            padding: $gutter-width;
+        }
+    }
 
+    /* Entry Meta - found in header and footer of article.
+    -------------------------------------------------------------- */
     .entry-meta {
         clear:both;
     }
 
+    /* Article Header
+    -------------------------------------------------------------- */
     header.entry-header {
-
         .entry-title {
+            // Decrease space between title and entry-meta.
             margin-bottom: $gutter-width/5;
             a {
-
+                &:hover {
+                    // Underline looks bad on title text.
+                    text-decoration: none;
+                }
             }
-        }//entry-title
+        }
 
         .entry-meta {
 
-        }//entry-meta
+        }
+    }
 
-    }//header.entry-header
-
+    /* Article Content
+    -------------------------------------------------------------- */
     .entry-content {
         @extend %cf;
-    }//.entry-content
+    }
 
+    /* Article Footer
+    -------------------------------------------------------------- */
     footer.entry-meta {
 
-    }//footer.entry-meta
+    }
 
 }//article

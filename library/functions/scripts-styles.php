@@ -1,29 +1,129 @@
 <?php
+/**
+ * Register and Enqueue Scripts.
+ *
+ * http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+ *
+ * @since 1.0.0
+ *
+ * @package WordPress
+ * @subpackage Functions (functions.php)
+ */
 
-// Register and Enqueue Scripts ///////////////////////////////////////////////////////////////////
-//http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+/**
+ * Registers and Enqueues scripts and styles.
+ * @return various
+ * @author ellm
+ * @since  1.0.0
+ */
 function wp_arch_scripts_and_styles() {
+    // If is NOT admin area...
     if (!is_admin()) {
 
-        // Use jQuery from Google CDN - Faster load time for users that already have it cached.
-        wp_deregister_script('jquery');
-        wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false, '1.10.2');
-        wp_enqueue_script('jquery');
+        /*
+         * Use jQuery from Google CDN - Faster load time for users that already have it cached.
+         * */
 
-        // modernizr-custom.js | @Dependents: jQuery
-        wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/build/js/modernizr-custom.min.js', array('jquery'), "1", false);
+            /**
+             * Remove jQuery registered script.
+             *
+             * @return   VOID
+             *
+             * @param string $handle Name of the script handle to be removed
+             */
+            wp_deregister_script('jquery');
 
-        // enqueue site.min.js | @Dependents: jQuery
-        wp_enqueue_script('wp_arch_scripts', get_stylesheet_directory_uri() . '/library/build/js/site.min.js', array('jquery'), "1", true);
+            /**
+             * Register jQuery script with CDN
+             *
+             * @return   VOID
+             *
+             * @param string   [$handle]     Name of the script
+             * @param string   [$src]        URL to the script
+             * @param array    [$deps]       Array of the handles of all the registered scripts that this script depends on.
+             * @param string   [$ver]        String specifying the script version number
+             * @param boolean  [$in_footer]  Normally scripts are placed in the <head> section
+             */
+            wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', false);
 
-        // enqueue font-awesome.css
+            /**
+             * Enqueue jQuery script from CDN
+             *
+             * @return  VOID
+             *
+             * @param string   [$handle]     Name of the script
+             * @param string   [$src]        URL to the script
+             * @param array    [$deps]       Array of the handles of all the registered scripts that this script depends on.
+             * @param string   [$ver]        String specifying the script version number
+             * @param boolean  [$in_footer]  Normally scripts are placed in the <head> section
+             */
+            wp_enqueue_script('jquery');
+
+        /**
+         * Enqueue Modernizr Script
+         *
+         * @return  VOID
+         *
+         * @param string   [$handle]     Name of the script
+         * @param string   [$src]        URL to the script
+         * @param array    [$deps]       Array of the handles of all the registered scripts that this script depends on.
+         * @param string   [$ver]        String specifying the script version number
+         * @param boolean  [$in_footer]  Normally scripts are placed in the <head> section
+         */
+        wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/build/js/modernizr-custom.min.js', array('jquery'), false);
+
+        /**
+         * Enqueue Site Scripts
+         *
+         * @return  VOID
+         *
+         * @param string   [$handle]     Name of the script
+         * @param string   [$src]        URL to the script
+         * @param array    [$deps]       Array of the handles of all the registered scripts that this script depends on.
+         * @param string   [$ver]        String specifying the script version number
+         * @param boolean  [$in_footer]  Normally scripts are placed in the <head> section
+         */
+        wp_enqueue_script('wp_arch_scripts', get_stylesheet_directory_uri() . '/library/build/js/site.min.js', array('jquery'), true);
+
+        /**
+         * Enqueue Font Awesome Styles from CDN
+         *
+         * @return  VOID
+         *
+         * @param string          [$handle]     Name of the script
+         * @param string          [$src]        URL to the script
+         * @param array           [$deps]       Array of the handles of all the registered scripts that this script depends on.
+         * @param string          [$ver]        String specifying the script version number
+         * @param string|boolean  [$media]      String specifying the media for which this stylesheet has been defined.
+         */
         wp_enqueue_style('wp_arch_fontAwe', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array(), '', 'all' );
 
-        // enqueue style.css // http://codex.wordpress.org/Function_Reference/wp_register_style
+        /**
+         * Enqueue Style
+         *
+         * @return  VOID
+         *
+         * @param string          [$handle]     Name of the script
+         * @param string          [$src]        URL to the script
+         * @param array           [$deps]       Array of the handles of all the registered scripts that this script depends on.
+         * @param string          [$ver]        String specifying the script version number
+         * @param string|boolean  [$media]      String specifying the media for which this stylesheet has been defined.
+         */
         wp_enqueue_style('wp_arch_wpstyles', get_stylesheet_uri(), array(), '01', 'all');
 
-        // enqueue /css/style.css
+         /**
+         * Enqueue Site Styles
+         *
+         * @return  VOID
+         *
+         * @param string          [$handle]     Name of the script
+         * @param string          [$src]        URL to the script
+         * @param array           [$deps]       Array of the handles of all the registered scripts that this script depends on.
+         * @param string          [$ver]        String specifying the script version number
+         * @param string|boolean  [$media]      String specifying the media for which this stylesheet has been defined.
+         */
         wp_enqueue_style('wp_arch_styles', get_stylesheet_directory_uri() . '/library/build/css/dist/dist.min.css', array(), '01', 'all');
+
     }
 }
 

@@ -28,7 +28,6 @@ include_once TEMPLATEPATH . '/library/functions/theme-support.php';
 include_once TEMPLATEPATH . '/library/functions/snippets.php';
 
 /* Optional Includes */
-//include_once TEMPLATEPATH . '/library/functions/shortcodes.php';
 //include_once TEMPLATEPATH . '/library/functions/custom-post-types.php';
 
  ?>

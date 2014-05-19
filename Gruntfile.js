@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                 banner: '/*! Processed <%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %> */\n'
             },
             build: {
-                src: ['library/js/plugins.js', 'library/js/script.js', 'library/js/mylibs/*.js'],
+                src: ['library/js/script.js', 'library/js/plugins/*.js'],
                 dest: 'library/build/js/site.min.js'
             }
         },

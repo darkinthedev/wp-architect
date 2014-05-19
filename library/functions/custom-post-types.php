@@ -1,13 +1,46 @@
 <?php
-// Custom Post Type Snippet Example
-//http://codex.wordpress.org/custom_post_types
+/**
+ * Custom Post Types.
+ *
+ * http://codex.wordpress.org/custom_post_types
+ *
+ * @since 1.0.0
+ *
+ * @package WordPress
+ * @subpackage Functions (functions.php)
+ */
 
-// Initialize Custom Post Types
+/**
+ * Returns the name of Post type from the Object.
+ * @return string    Name of Post Type
+ * @author ellm
+ * @since  1.0.0
+ */
+function wp_arch_get_post_type_name() {
+   $obj = get_post_type_object( get_post_type() );
+   echo $obj->labels->name;
+};
+
+/* Initialize Custom Post Types */
+/* DISABLED
 add_action('init', 'wp_arch_cpts');
+*/
 
+/**
+ * Registers Custom Post Types
+ * @return various
+ * @author ellm
+ * @since  1.0.0
+ */
 function wp_arch_cpts() {
-    // Put All Custom Post Types in Here
-    // Testimonials
+    /**
+    * Registers a new post type
+    * @uses $wp_post_types Inserts new post type object into the list
+    *
+    * @param string  Post type key, must not exceed 20 characters
+    * @param array|string  See optional args description above.
+    * @return object|WP_Error the registered post type object, or an error object
+    */
     register_post_type( 'wp_arch_testimonial',
         array(
             'labels' => array(
@@ -36,11 +69,5 @@ function wp_arch_cpts() {
         )
     );
 }
-
-//Function to get Current Post Type Name
-function wp_arch_get_post_type_name() {
-   $obj = get_post_type_object( get_post_type() );
-   echo $obj->labels->name;
-};
 
 ?>

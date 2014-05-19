@@ -1,9 +1,13 @@
 <?php
+/**
+ * Various Customizations.
+ *
+ * @since 1.0.0
+ *
+ * @package WordPress
+ * @subpackage Functions (functions.php)
+ */
 
-/*
-Remove Menu Pages from Admin Console (uncomment function and action hook if needed)
-http://codex.wordpress.org/Function_Reference/remove_menu_page
-*/
 //Remove Menu items from WP Admin Console
 //add_action( 'admin_menu', 'wp_arch_remove_menu_pages' );
 // function wp_arch_remove_menu_pages() {

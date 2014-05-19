@@ -1,53 +1,18 @@
-/* =Images and Image Galleries & Responsive Images
+/* ////////////////////////////////////////////////////////////// */
+/*
+/* Images and Image Galleries & Responsive Images
+/*
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+/* Image Galleries (Worpress also automatically injects other CSS - see functions.php)
 -------------------------------------------------------------- */
-// Image Galleries (Worpress also automatically injects other CSS - see functions.php)
-.entry-content dl.gallery-item {
-    margin: 0;
-}
-.gallery-item a {
-    display: block;
-    width: 90%;
-}
-.gallery-columns-1 {
-    .gallery-item a {
-        max-width: 100%;
-        width: auto;
-    }
-}
 .gallery .gallery-icon img {
+    // Make gallery images fit wrapper
     height: auto;
     width: 90%;
     padding: 5%;
 }
-.gallery-columns-1 .gallery-icon img {
-    padding: 3%;
-}
-/* =Image attachments
--------------------------------------------------------------- */
-.image-attachment {
-    div.entry-meta {
-        float: left;
-    }
-    nav {
-        float: right;
-        margin: 0 0 1em 0;
-    }
-    .entry-content {
-        clear: both;
 
-        .entry-attachment {
-            background: #eee;
-            margin: 0 0 1em;
-            padding: 1em;
-            text-align: center;
-        }
-    .attachment {
-        display: block;
-        margin: 0 auto;
-        text-align: center;
-    }
-  }
-}
 /* =Responsive Images
 -------------------------------------------------------------- */
 .entry-content img,

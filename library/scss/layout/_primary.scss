@@ -1,10 +1,13 @@
 /* ////////////////////////////////////////////////////////////// */
-/* = Primary
+/*
+/* Primary
+/*
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
 section.primary {
     @include word-wrap;
 
+    // Full Width template get full-width layout.
     .page-template-page-full-width-php & {
         @include span-columns($total-columns, $total-columns);
     }
