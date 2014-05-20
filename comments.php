@@ -53,7 +53,7 @@
                  * define wp_arch_comment() and that will be used instead.
                  * See wp_arch_comment() in inc/template-tags.php for more.
                  */
-                wp_list_comments( array( 'callback' => 'wp_arch_comment' ) );
+                wp_list_comments();
             ?>
         </ol><!-- .commentlist -->
 
