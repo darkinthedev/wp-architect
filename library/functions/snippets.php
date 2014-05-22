@@ -2,10 +2,10 @@
 /**
  * Various Customizations and Options.
  *
- * @since 1.0.0
+ * @since       1.0.0
  *
- * @package WordPress
- * @subpackage Functions (functions.php)
+ * @package     WordPress
+ * @subpackage  Functions (functions.php)
  */
 
 /*************************************************************************************************

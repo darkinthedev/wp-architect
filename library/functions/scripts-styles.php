@@ -4,10 +4,10 @@
  *
  * http://codex.wordpress.org/Function_Reference/wp_enqueue_script
  *
- * @since 1.0.0
+ * @since       1.0.0
  *
- * @package WordPress
- * @subpackage Functions (functions.php)
+ * @package     WordPress
+ * @subpackage  Functions (functions.php)
  */
 
 /**

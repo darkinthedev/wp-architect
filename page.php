@@ -4,24 +4,20 @@
  *
  * The template for displaying all pages.
  *
- * @since 1.0.0
+ * @since           1.0.0
  *
- * @package wp_arch
+ * @package         WordPress
+ * @subpackage      wp_arch
  */
 
 get_header(); ?>
-
 		<section class="primary" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
-
 					<?php get_template_part( 'content', 'page' ); ?>
-
 					<?php comments_template( '', true ); ?>
-
 				<?php endwhile; // end of the loop. ?>
 
-		</section><?php //.primary ?>
-
+		</section> <!-- .primary -->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

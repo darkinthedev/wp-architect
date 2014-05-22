@@ -4,10 +4,10 @@
  *
  * http://codex.wordpress.org/custom_post_types
  *
- * @since 1.0.0
+ * @since       1.0.0
  *
- * @package WordPress
- * @subpackage Functions (functions.php)
+ * @package     WordPress
+ * @subpackage  Functions (functions.php)
  */
 
 /**
@@ -22,9 +22,8 @@ function wp_arch_get_post_type_name() {
 };
 
 /* Initialize Custom Post Types */
-/* DISABLED
 add_action('init', 'wp_arch_cpts');
-*/
+
 
 /**
  * Registers Custom Post Types

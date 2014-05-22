@@ -4,9 +4,10 @@
  *
  * The header containing the head of the document.
  *
- * @since 1.0.0
+ * @since           1.0.0
  *
- * @package wp_arch
+ * @package         WordPress
+ * @subpackage      wp_arch
  */
  ?>
 <!doctype html>
@@ -16,26 +17,17 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' /><![endif]-->
-<title><?php //Adopted from toolbox Theme
-    /*
-     * Print the <title> tag based on what is being viewed.
-     */
+<title><?php
     global $page, $paged;
-
     wp_title( '|', true, 'right' );
-
-    // Add the blog name.
-    bloginfo( 'name' );
-
+    bloginfo( 'name' ); // Add the blog name.
     // Add the blog description for the home/front page.
     $site_description = get_bloginfo( 'description', 'display' );
     if ( $site_description && ( is_home() || is_front_page() ) )
         echo " | $site_description";
-
     // Add a page number if necessary:
     if ( $paged >= 2 || $page >= 2 )
         echo ' | ' . sprintf( __( 'Page %s', 'wp_arch' ), max( $paged, $page ) );
-
     ?></title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -63,8 +55,8 @@
                     'theme_location' => 'main-nav',
                     'depth' => 2,
                     'items_wrap' => '<ul class="%1$s">%3$s</ul>') ); ?>
-                </nav>
-            </div>
-        </header>
+                </nav> <!-- role="navigation"-->
+            </div><!-- .dropdown-menu -->
+        </header><!-- role="banner" -->
 
         <div id="content" class="main-wrapper">

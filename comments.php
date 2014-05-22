@@ -9,9 +9,10 @@
  * handled by a callback to wp_arch_comment() which is
  * located in the functions.php file.
  *
- * @since 1.0.0
+ * @since           1.0.0
  *
- * @package wp_arch
+ * @package         WordPress
+ * @subpackage      wp_arch
  */
 ?>
 
@@ -26,8 +27,6 @@
 ?>
 
     <div id="comments" class="comments-area">
-
-    <?php // You can start editing here -- including this comment! ?>
 
     <?php if ( have_comments() ) : ?>
         <h2 class="comments-title">

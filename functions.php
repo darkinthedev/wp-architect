@@ -4,9 +4,10 @@
  *
  * Functions are included here from /library/ directory.
  *
- * @since 1.0.0
+ * @since           1.0.0
  *
- * @package wp_arch
+ * @package         WordPress
+ * @subpackage      wp_arch
  */
 
 /* Core Includes */
