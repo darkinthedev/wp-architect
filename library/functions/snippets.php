@@ -159,4 +159,45 @@ function wp_arch_custom_excerpt_more( $output ) {
     return $output;
 }
 
+/*************************************************************************************************
+* Hook into body_class() and add custom class on pages w/ a sidebar
+*/
+// Do in wp_head - create anon function and store values in a buffer
+add_action('wp_head', create_function("",'ob_start();') );
+// Do function in get_sidebar
+add_action('get_sidebar', 'my_sidebar_class');
+// Do function in wp_footer
+add_action('wp_footer', 'my_sidebar_class_replace');
+
+/**
+ * Sets sidebar class variables
+ * @param   string    $name
+ * @return  string
+ * @author  ellm
+ * @since   1.0.0
+ */
+function my_sidebar_class($name=''){
+  static $class="has-sidebar";
+  // if $name is not empty, concatenate string to variable
+  if(!empty($name))$class.=" sidebar-{$name}";
+  // if is empty, run function
+  my_sidebar_class_replace($class);
+}
+
+/**
+ * Sets body class with sidebar class
+ * @param  string    $c     Sets class variable
+ * @return string
+ * @author ellm
+ * @since  1.0.0
+ */
+function my_sidebar_class_replace($c=''){
+  static $class='';
+  if(!empty($c))$class.=$c;
+  else {
+    echo str_replace('<body class="','<body class="'.$class.' ',ob_get_clean());
+    ob_start();
+  }
+}
+
  ?>
