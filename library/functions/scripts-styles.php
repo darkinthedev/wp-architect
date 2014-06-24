@@ -123,6 +123,22 @@ function wp_arch_scripts_and_styles() {
          * @param string|boolean  [$media]      String specifying the media for which this stylesheet has been defined.
          */
         wp_enqueue_style('wp_arch_styles', get_stylesheet_directory_uri() . '/library/build/css/dist/dist.min.css', array(), '01', 'all');
+        
+        // If viewing local/development
+        if ( $_SERVER["SERVER_ADDR"] == '192.168.50.4' ) {
+            /**
+             * Add LiveReload script
+             *
+             * @return  VOID
+             *
+             * @param string   [$handle]     Name of the script
+             * @param string   [$src]        URL to the script
+             * @param array    [$deps]       Array of the handles of all the registered scripts that this script depends on.
+             * @param string   [$ver]        String specifying the script version number
+             * @param boolean  [$in_footer]  Normally scripts are placed in the <head> section
+             */
+            wp_enqueue_script('wp_arch_livereload', '//192.168.50.4:35729/livereload.js?snipver=1', array(), true);
+        }
 
     }
 }
