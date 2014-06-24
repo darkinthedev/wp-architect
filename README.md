@@ -17,9 +17,9 @@ also be used as a boilerplate for building custom WordPress themes.
 * Font Awesome, the iconic font designed for Bootstrap - loaded via CDN for fast load time.
  
 ##Install:
-* 'bundle install' - Use proper gem dependencies
-* 'npm install' - Install development package via NPM
-* 'grunt dev' - Get Developing!
+* `bundle install` - Use proper gem dependencies
+* `npm install` - Install development package via NPM
+* `grunt dev` - Get Developing!
 
 ##References:
 Lots of help from:
