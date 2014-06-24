@@ -6,14 +6,20 @@ wp-architect is a academic theme focused on collecting best practices,
 documentation, tips and references for theme developers. This theme can 
 also be used as a boilerplate for building custom WordPress themes. 
 
-##Contains:
+##Uses:
 * Grunt.JS. Packaged with (Modernizr, ImageMin and helpful workflow enhancers)
 * Normalize.css for resetting CSS
 * Compass and SASS
 * Collected Mixins
+* [Bundler](http://bundler.io/) 
 * [Susy Grid Framework](http://susy.oddbird.net/) Mobile-First Develpoment
 * Functions.php filled with comments, helpful tools and best practices
 * Font Awesome, the iconic font designed for Bootstrap - loaded via CDN for fast load time.
+ 
+##Install:
+* 'bundle install' - Use proper gem dependencies
+* 'npm install' - Install development package via NPM
+* 'grunt dev' - Get Developing!
 
 ##References:
 Lots of help from:
