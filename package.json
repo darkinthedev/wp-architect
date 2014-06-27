@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "author": "Matthew Ell <me@matthewell.com>",
   "description": "Grunt Package for WP Architect WordPress Theme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ellm/wp-architect.git"
+  }
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-sass": "~0.7.2",
