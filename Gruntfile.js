@@ -152,7 +152,7 @@ module.exports = function(grunt) {
             },
 
             html: {
-                files: ['*.html', '*.php']
+                files: ['*.html', '*.php', 'library/**/*.php']
             },
 
             img: {
@@ -161,7 +161,7 @@ module.exports = function(grunt) {
             },
 
             compass: {
-                files: ['library/scss/*.scss', 'library/scss/**/*.scss'],
+                files: ['library/scss/*.scss', 'library/scss/**/*.scss', 'library/scss/**/**/*.scss'],
                 tasks: ['compass:dev', 'newer:cssmin'],
             },
 
