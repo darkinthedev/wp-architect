@@ -1,0 +1,50 @@
+/* ////////////////////////////////////////////////////////////// */
+/*
+/* Typography
+/* All base-line typographic elements go here
+/* • Avoid the descendent selector (i.e. don’t use .sidebar h3)
+/* • Avoid IDs as styling hooks
+/* • Avoid attaching classes to elements in your stylesheet (i.e. don’t do div.header or h1.title)
+/* • Except in some rare cases, avoid using !important
+/*
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+
+/* Headings
+-------------------------------------------------------------- */
+#{headings()} {
+    // Reset all headings to normal font weight.
+    font-weight: normal;
+}
+
+/* Article
+-------------------------------------------------------------- */
+
+    /* Entry Meta - found in header and footer of article.
+    -------------------------------------------------------------- */
+    .entry-meta { clear:both; }
+    header.entry-meta {}
+    footer.entry-meta {}
+
+    /* Article Header
+    -------------------------------------------------------------- */
+    .entry-title {
+        // Decrease space between title and entry-meta.
+        margin-bottom: $gutter-width/5;
+        a {
+            &:hover {
+                // Underline looks bad on title text.
+                text-decoration: none;
+            }
+        }
+    }
+
+    /* Article Content
+    -------------------------------------------------------------- */
+    .entry-content {
+        @extend %cf;
+    }
+
+/* Widgets
+-------------------------------------------------------------- */
+.widget-title {}
+

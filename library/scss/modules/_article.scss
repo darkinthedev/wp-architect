@@ -10,10 +10,13 @@ article {
     -------------------------------------------------------------- */
     .archive &, .blog &, .search & {
         & {
+            // Add border to separate post list
             border-bottom: 1px solid $base-border-color;
+            // Add padding to separate post list
             padding: $gutter-width 0;
 
             &.last-child {
+                // Last post does not get a border
                 border-bottom: 0;
             }
         }
@@ -22,43 +25,6 @@ article {
             background-color:$base-sticky-color;
             padding: $gutter-width;
         }
-    }
-
-    /* Entry Meta - found in header and footer of article.
-    -------------------------------------------------------------- */
-    .entry-meta {
-        clear:both;
-    }
-
-    /* Article Header
-    -------------------------------------------------------------- */
-    header.entry-header {
-        .entry-title {
-            // Decrease space between title and entry-meta.
-            margin-bottom: $gutter-width/5;
-            a {
-                &:hover {
-                    // Underline looks bad on title text.
-                    text-decoration: none;
-                }
-            }
-        }
-
-        .entry-meta {
-
-        }
-    }
-
-    /* Article Content
-    -------------------------------------------------------------- */
-    .entry-content {
-        @extend %cf;
-    }
-
-    /* Article Footer
-    -------------------------------------------------------------- */
-    footer.entry-meta {
-
     }
 
 }//article

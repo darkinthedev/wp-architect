@@ -2,9 +2,9 @@
 require 'susy'
 
 # Basic Configurations
-css_dir = 'library/build/css/src'
+css_dir = 'library/css/src'
 sass_dir = 'library/scss'
-javascripts_dir = 'library/js'
+javascripts_dir = 'library/js/src'
 output_style = :compressed
 
 ## Image Handeling

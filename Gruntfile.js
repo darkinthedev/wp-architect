@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         // Clean Up
         clean: {
             build: {
-                src: ["library/build"]
+                src: ["library/css/dist","library/js/dist"]
             }
         },
 
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
             normalize: {
                 cwd: 'bower_components/normalize-css/',
                 src: 'normalize.css',
-                dest: 'library/build/css/src/',
+                dest: 'library/css/src/',
                 filter: 'isFile',
                 expand: true
             }
@@ -55,12 +55,12 @@ module.exports = function(grunt) {
                 banner: '/*! Processed <%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %> */\n'
             },
             build: {
-                src: ['library/js/script.js', 'library/js/plugins/*.js'],
-                dest: 'library/build/js/site.min.js'
+                src: ['library/js/src/common/*.js'],
+                dest: 'library/js/dist/common.min.js'
             }
         },
 
-        // Compass grunt – see config.rb
+        // Compass grunt see config.rb
         compass: {
             dev: {
                 options: {
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
                 "devFile" : "bower_components/modernizr/modernizr.js",
 
                 // [REQUIRED] Path to save out the built file.
-                "outputFile" : "library/build/js/modernizr-custom.min.js",
+                "outputFile" : "library/js/dist/modernizr-custom.min.js",
 
                 // Based on default settings on http://modernizr.com/download/
                 "extra" : {
@@ -123,7 +123,7 @@ module.exports = function(grunt) {
                 // When parseFiles = true, this task will crawl all *.js, *.css, *.scss files, except files that are in node_modules/.
                 // You can override this by defining a "files" array below.
                 "files" : {
-                    "src" : ['library/scss/*.scss', 'library/scss/**/*.scss', 'library/js/*.js' ]
+                    "src" : ['library/scss/*.scss', 'library/scss/**/*.scss', 'library/js/src/*.js' ,'library/js/src/**/*.js' ]
                 },
 
                 // When parseFiles = true, matchCommunityTests = true will attempt to
@@ -139,7 +139,7 @@ module.exports = function(grunt) {
             },
             combine: {
                 files: {
-                  'library/build/css/dist/dist.min.css': ['library/build/css/src/normalize.css','library/build/css/src/site.css'],
+                  'library/css/dist/dist.min.css': ['library/css/src/*.css'],
                 },
             },
         },
@@ -161,12 +161,12 @@ module.exports = function(grunt) {
             },
 
             compass: {
-                files: ['library/scss/*.scss', 'library/scss/**/*.scss', 'library/scss/**/**/*.scss'],
+                files: ['library/scss/*.scss', 'library/scss/**/*.scss'],
                 tasks: ['compass:dev', 'newer:cssmin'],
             },
 
             js: {
-                files: ['library/js/**/*.js'],
+                files: ['library/js/src/*.js', 'library/js/src/**/*.js'],
                 tasks: ['newer:uglify']
             },
         }

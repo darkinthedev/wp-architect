@@ -4,20 +4,20 @@
 /*
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-div.dropdown-menu {
+.dropdown-menu {
     max-height: 40px;
 
     @include at-breakpoint($bp_480) {
         max-height: none;
     }
 
-    div.skip-link {
+    .skip-link {
         @extend %screen-reader-text;
     }
 
     /* Reveal Navigation - For Touch
     -------------------------------------------------------------- */
-    a.menu-link {
+    .menu-link {
         @include font-size(16);
         display: block;
         color: $ddmenu-link-color;
@@ -33,7 +33,7 @@ div.dropdown-menu {
 
     /* Reveal Child Links - For Touch
     -------------------------------------------------------------- */
-    span.touch-button {
+    .touch-button {
         position: absolute;
         @include font-size(16);
         top: 0;

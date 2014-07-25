@@ -3,4 +3,5 @@
 .sass-cache
 node_modules
 bower_components
-/library/build/*
+/library/css/dist/*
+/library/js/dist/*

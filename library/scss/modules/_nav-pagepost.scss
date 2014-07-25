@@ -4,22 +4,23 @@
 /*
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-nav.site-navigation {
+.site-navigation {
     margin: $gutter-width 0;
     a {
         text-decoration: none;
     }
 }
-nav.paging-navigation,
-nav.post-navigation {
+
+.paging-navigation,
+.post-navigation {
     @extend %cf;
     margin: $gutter-width 0;
 
-    div.nav-previous {
+    .nav-previous {
         @extend .button;
         float: left;
     }
-    div.nav-next {
+    .nav-next {
         @extend .button;
         float: right;
     }
