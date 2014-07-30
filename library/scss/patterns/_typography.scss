@@ -9,6 +9,14 @@
 /*
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
+/* Helpers
+-------------------------------------------------------------- */
+// Assistive text is hidden on screen and used for screen readers
+.assistive-text {
+    // Don't disply assistive text.
+    @extend %screen-reader-text;
+}
+
 /* Headings
 -------------------------------------------------------------- */
 #{headings()} {
