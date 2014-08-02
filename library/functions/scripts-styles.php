@@ -122,7 +122,7 @@ function wp_arch_scripts_and_styles() {
          * @param string          [$ver]        String specifying the script version number
          * @param string|boolean  [$media]      String specifying the media for which this stylesheet has been defined.
          */
-        wp_enqueue_style('styles', get_stylesheet_directory_uri() . '/assets/css/dist/dist.min.css', array(), 'all');
+        wp_enqueue_style('styles', get_stylesheet_directory_uri() . '/assets/css/dist/global.min.css', array(), 'all');
 
         // If viewing local/development
         if ( $_SERVER["SERVER_ADDR"] == '192.168.50.4' ) {

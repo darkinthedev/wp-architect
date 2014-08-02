@@ -7,9 +7,10 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
 
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks("grunt-modernizr");
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-newer');
@@ -17,6 +18,21 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-svg2png');
 
     grunt.initConfig({
+        //autoprefixer
+        autoprefixer: {
+          options: {
+            browsers: ['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12']
+          },
+          dev: {
+            options: {
+              map: {
+                prev: 'assets/css/src/'
+              }
+            },
+            src: 'assets/css/src/global.css'
+          }
+        },
+
         // Clean Up
         clean: {
             build: {
@@ -36,6 +52,18 @@ module.exports = function(grunt) {
             }
         },
 
+        sass: {
+            dist: {
+                options: {
+                    style: 'expanded',
+                    require: 'susy'
+                },
+                files: {
+                    'assets/css/src/global.css': 'assets/scss/global.scss'
+                }
+            }
+        },
+
         // Uglify/Minification for JS files
         uglify: {
             options: {
@@ -44,15 +72,6 @@ module.exports = function(grunt) {
             build: {
                 src: ['assets/js/src/common/*.js'],
                 dest: 'assets/js/dist/common.min.js'
-            }
-        },
-
-        // Compass grunt see config.rb
-        compass: {
-            dev: {
-                options: {
-                config: 'config.rb'
-                }
             }
         },
 
@@ -93,7 +112,7 @@ module.exports = function(grunt) {
             },
             combine: {
                 files: {
-                  'assets/css/dist/dist.min.css': ['assets/css/src/*.css'],
+                  'assets/css/dist/global.min.css': ['assets/css/src/global.css'],
                 },
             },
         },
@@ -116,7 +135,7 @@ module.exports = function(grunt) {
 
             compass: {
                 files: ['assets/scss/*.scss', 'assets/scss/**/*.scss'],
-                tasks: ['compass:dev', 'newer:cssmin'],
+                tasks: ['sass', 'newer:autoprefixer:dev','newer:cssmin'],
             },
 
             js: {
@@ -129,11 +148,12 @@ module.exports = function(grunt) {
     // Register Tasks
     grunt.registerTask('default', [
         'clean:build',
+        'sass',
+        'newer:autoprefixer:dev',
+        'newer:cssmin',
         'uglify',
         'modernizr',
-        'compass',
         'newer:imagemin',
-        'newer:cssmin',
         'newer:svg2png'
     ]);
 

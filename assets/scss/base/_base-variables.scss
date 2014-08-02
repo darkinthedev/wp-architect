@@ -4,21 +4,48 @@
 /*
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 
-/* Susy Grid
+/* Susy
 -------------------------------------------------------------- */
 $total-columns:                         16;
-$column-width:                          3.75em; //60px
 $gutter-width:                          1.25em; //20px
-$grid-padding:                          $gutter-width;
+
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 4,
+  gutters: .25,
+  column-width: false,
+  global-box-sizing: border-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
 
 /* Use Border Box Boxsizing
 /* @ref: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
 -------------------------------------------------------------- */
 @include border-box-sizing;
 
-/* Brakepoints
+/* Brakepoint
 -------------------------------------------------------------- */
-$bp_480:                              30em oldie; //Default Mobile 480/16
+$breakpoint-no-queries:               false;
+$breakpoint-no-query-fallbacks:       true;
+$bp_480:                              30em,  'no-query' '.oldie'; //Default Mobile 480/16
 
 /* Brand Colors
 -------------------------------------------------------------- */

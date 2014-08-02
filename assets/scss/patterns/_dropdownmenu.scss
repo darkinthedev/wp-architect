@@ -7,7 +7,7 @@
 .dropdown-menu {
     max-height: 40px;
 
-    @include at-breakpoint($bp_480) {
+    @include breakpoint($bp_480) {
         max-height: none;
     }
 
@@ -26,7 +26,7 @@
         padding: $gutter-width/2;
         text-transform: uppercase;
         font-weight: bold;
-        @include at-breakpoint($bp_480) {
+        @include breakpoint($bp_480) {
            display: none;
         }
     }//.menu-link
@@ -46,7 +46,7 @@
         &:hover {
             cursor: pointer;
         }
-        @include at-breakpoint($bp_480) {
+        @include breakpoint($bp_480) {
             display: none;
         }
     }//.touch-button
@@ -57,7 +57,7 @@
         background-color: $ddmenu-bg-color;
         overflow: hidden;
         max-height: 0;
-        @include at-breakpoint($bp_480) {
+        @include breakpoint($bp_480) {
             background-color: transparent;
             overflow: visible;
             max-height: none;
@@ -68,7 +68,7 @@
             position: relative;
             max-height: 55em;
             z-index: 99999;
-            @include at-breakpoint($bp_480) {
+            @include breakpoint($bp_480) {
                 max-height: none;
                 z-index: auto;
             }
@@ -80,14 +80,14 @@
             text-align: left;
             padding-left: 0;
             margin: 0;
-            @include at-breakpoint($bp_480) {
+            @include breakpoint($bp_480) {
                 text-align: justify;
             }
 
             /* Second Tier Navigation (dropdown)
             -------------------------------------------------------------- */
             ul {
-                @include box-shadow(none);
+                box-shadow: none;
                 display: none;
                 visibility: visible;
                 position: relative;
@@ -97,9 +97,9 @@
 
                 .cssanimations & {
                     margin: 0;
-                    @include transition-property(none);
-                    @include transition-duration(none);
-                    @include transition-timing-function(none);
+                    transition-property:none;
+                    transition-duration:none;
+                    transition-timing-function:none;
                     opacity: 1;
                 }//.cssanimations
 
@@ -107,8 +107,8 @@
                     display: block;
                 }
 
-                @include at-breakpoint($bp_480) {
-                    @include box-shadow(rgba(0,0,0,0.2) 0 3px 3px);
+                @include breakpoint($bp_480) {
+                    box-shadow:rgba(0,0,0,0.2) 0 3px 3px;
                     display: block;
                     visibility: hidden;
                     background-color: $ddmenu-bg-color;
@@ -122,16 +122,16 @@
                     .cssanimations & {
                         margin: -20px 0 0 0;
                         _margin: 0; /*IE6 only*/
-                        @include transition-property(all);
-                        @include transition-duration(.2s);
-                        @include transition-timing-function(ease-in-out);
+                        transition-property:all;
+                        transition-duration:.2s;
+                        transition-timing-function:ease-in-out;
                         opacity: 0;
                     }//.cssanimations
                 }//breakpoint 480
 
                 li {
                     padding-left: 0;
-                    @include at-breakpoint($bp_480) {
+                    @include breakpoint($bp_480) {
                         position: relative;
                         display: block;
                         margin: 0;
@@ -175,7 +175,7 @@
                 display: block;
                 *display: block;
 
-                 @include at-breakpoint($bp_480) {
+                 @include breakpoint($bp_480) {
                     display:inline-block;
                     *display: inline;
                     *zoom: 1;
@@ -198,7 +198,7 @@
                 a {
                     display: block;
                     padding: .5em;
-                    @include at-breakpoint($bp_480) {
+                    @include breakpoint($bp_480) {
                         @include font-size(14);
                         padding: 0;
                         display: inline;
@@ -211,7 +211,7 @@
         -------------------------------------------------------------- */
         li.menuParent:after {
             display: none;
-            @include at-breakpoint($bp_480) {
+            @include breakpoint($bp_480) {
                 display: inline-block;
                 content: " ▼";
                 font-size: .75em;
@@ -224,7 +224,7 @@
         -------------------------------------------------------------- */
         ul:after {
           display: none;
-          @include at-breakpoint($bp_480) {
+          @include breakpoint($bp_480) {
               display: inline-block;
               content: '';
               width: 100%;

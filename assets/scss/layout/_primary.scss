@@ -11,6 +11,6 @@ section.primary {
 
     // Full Width template get full-width layout.
     .page-template-page-full-width-php & {
-        @include span-columns($total-columns, $total-columns);
+        @include span($total-columns of $total-columns);
     }
 }
