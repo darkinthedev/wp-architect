@@ -3,5 +3,5 @@
 .sass-cache
 node_modules
 assets/vendor
-/assets/css/dist/*
+/assets/css/*
 /assets/js/dist/*
