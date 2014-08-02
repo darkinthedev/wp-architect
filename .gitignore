@@ -2,6 +2,6 @@
 *.log
 .sass-cache
 node_modules
-bower_components
-/library/css/dist/*
-/library/js/dist/*
+assets/vendor
+/assets/css/dist/*
+/assets/js/dist/*

@@ -70,7 +70,7 @@ function wp_arch_scripts_and_styles() {
          * @param string   [$ver]        String specifying the script version number
          * @param boolean  [$in_footer]  Normally scripts are placed in the <head> section
          */
-        wp_enqueue_script('wp_arch_modernizr', get_stylesheet_directory_uri() . '/library/js/dist/modernizr-custom.min.js', array('jquery'), NULL, false);
+        wp_enqueue_script('modernizr', get_stylesheet_directory_uri() . '/assets/js/dist/vendor/modernizr.min.js', array(), null, false);
 
         /**
          * Enqueue Site Scripts
@@ -83,10 +83,10 @@ function wp_arch_scripts_and_styles() {
          * @param string   [$ver]        String specifying the script version number
          * @param boolean  [$in_footer]  Normally scripts are placed in the <head> section
          */
-        wp_enqueue_script('wp_arch_scripts', get_stylesheet_directory_uri() . '/library/js/dist/common.min.js', array('jquery'), NULL, true);
+        wp_enqueue_script('common_scripts', get_stylesheet_directory_uri() . '/assets/js/dist/common.min.js', array('jquery'), null, true);
 
         /**
-         * Enqueue Font Awesome Styles from CDN
+         * Enqueue Normalize.css
          *
          * @return  VOID
          *
@@ -96,7 +96,7 @@ function wp_arch_scripts_and_styles() {
          * @param string          [$ver]        String specifying the script version number
          * @param string|boolean  [$media]      String specifying the media for which this stylesheet has been defined.
          */
-        wp_enqueue_style('wp_arch_fontAwe', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array(), 'all' );
+        wp_enqueue_style('normalize', get_stylesheet_directory_uri()  . '/assets/vendor/normalize-css/normalize.css', array(), 'all');
 
         /**
          * Enqueue Style
@@ -109,7 +109,7 @@ function wp_arch_scripts_and_styles() {
          * @param string          [$ver]        String specifying the script version number
          * @param string|boolean  [$media]      String specifying the media for which this stylesheet has been defined.
          */
-        wp_enqueue_style('wp_arch_wpstyles', get_stylesheet_uri(), array(), 'all');
+        wp_enqueue_style('wpstyles', get_stylesheet_uri(), array(), 'all');
 
          /**
          * Enqueue Site Styles
@@ -122,7 +122,7 @@ function wp_arch_scripts_and_styles() {
          * @param string          [$ver]        String specifying the script version number
          * @param string|boolean  [$media]      String specifying the media for which this stylesheet has been defined.
          */
-        wp_enqueue_style('wp_arch_styles', get_stylesheet_directory_uri() . '/library/css/dist/dist.min.css', array(), 'all');
+        wp_enqueue_style('styles', get_stylesheet_directory_uri() . '/assets/css/dist/dist.min.css', array(), 'all');
 
         // If viewing local/development
         if ( $_SERVER["SERVER_ADDR"] == '192.168.50.4' ) {

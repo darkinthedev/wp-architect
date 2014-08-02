@@ -1,6 +1,17 @@
 {
     "name":  "wpArchitect",
-    "version": "0.0.1",
+    "version": "1.0.0",
+    "homepage": "http://matthewell.com",
+    "authors": [
+      "Matthew Ell <me@matthewell.com>"
+    ],
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+      "**/.*",
+      "node_modules",
+      "assets/vendor"
+    ],
     "dependencies": {
         "normalize-css": "latest",
         "modernizr": "latest"
