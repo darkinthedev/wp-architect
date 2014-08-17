@@ -14,21 +14,21 @@
 /**
  * Initial Functions and Resets
  */
-include_once TEMPLATEPATH . '/library/functions/start.php';
+include_once TEMPLATEPATH . '/functions/start.php';
 /**
  * Enqueue Scripts and Styles
  */
-include_once TEMPLATEPATH . '/library/functions/scripts-styles.php';
+include_once TEMPLATEPATH . '/functions/scripts-styles.php';
 /**
  * Theme settings and support
  */
-include_once TEMPLATEPATH . '/library/functions/theme-support.php';
+include_once TEMPLATEPATH . '/functions/theme-support.php';
 /**
  * Various function snippets
  */
-include_once TEMPLATEPATH . '/library/functions/snippets.php';
+include_once TEMPLATEPATH . '/functions/snippets.php';
 
 /* Optional Includes */
-//include_once TEMPLATEPATH . '/library/functions/custom-post-types.php';
+//include_once TEMPLATEPATH . '/functions/custom-post-types.php';
 
  ?>

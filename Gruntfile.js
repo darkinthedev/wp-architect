@@ -11,13 +11,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks("grunt-modernizr");
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-newer');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-svg2png');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.initConfig({
+
         //autoprefixer
         autoprefixer: {
           options: {
@@ -26,18 +26,11 @@ module.exports = function(grunt) {
           dev: {
             options: {
               map: {
-                prev: 'assets/css/src/'
+                prev: 'assets/css/'
               }
             },
-            src: 'assets/css/src/global.css'
+            src: 'assets/css/global.css'
           }
-        },
-
-        // Clean Up
-        clean: {
-            build: {
-                src: ["assets/css/dist","assets/js/dist"]
-            }
         },
 
         svg2png: {
@@ -59,9 +52,21 @@ module.exports = function(grunt) {
                     require: 'susy'
                 },
                 files: {
-                    'assets/css/src/global.css': 'assets/scss/global.scss'
+                    'assets/css/global.css': 'assets/scss/global.scss'
                 }
             }
+        },
+
+        // Minify CSS
+        cssmin: {
+            options: {
+                banner: '/*! Processed <%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %> */\n'
+            },
+            combine: {
+                files: {
+                  'assets/css/global.min.css': ['assets/vendor/normalize-css/normalize.css','assets/css/global.css'],
+                },
+            },
         },
 
         // Uglify/Minification for JS files
@@ -70,8 +75,8 @@ module.exports = function(grunt) {
                 banner: '/*! Processed <%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %> */\n'
             },
             build: {
-                src: ['assets/js/src/common/*.js'],
-                dest: 'assets/js/dist/common.min.js'
+                src: ['assets/js/common.js'],
+                dest: 'assets/js/common.min.js'
             }
         },
 
@@ -91,7 +96,7 @@ module.exports = function(grunt) {
         modernizr: {
             build: {
                 devFile: 'assets/vendor/modernizr/modernizr.js',
-                outputFile: 'assets/js/dist/vendor/modernizr.min.js',
+                outputFile: 'assets/js/vendor/modernizr.min.js',
                 files : {
                     'src' : [
                         ['assets/scss/*.scss'],
@@ -105,18 +110,6 @@ module.exports = function(grunt) {
             }
         },
 
-        // Minify CSS
-        cssmin: {
-            options: {
-                banner: '/*! Processed <%= grunt.template.today("dddd, mmmm dS, yyyy, h:MM:ss TT") %> */\n'
-            },
-            combine: {
-                files: {
-                  'assets/css/dist/global.min.css': ['assets/css/src/global.css'],
-                },
-            },
-        },
-
         // Watch Task
         watch: {
 
@@ -125,7 +118,7 @@ module.exports = function(grunt) {
             },
 
             html: {
-                files: ['*.html', '*.php', 'library/**/*.php']
+                files: ['*.html', '*.php']
             },
 
             img: {
@@ -135,11 +128,11 @@ module.exports = function(grunt) {
 
             compass: {
                 files: ['assets/scss/*.scss', 'assets/scss/**/*.scss'],
-                tasks: ['sass', 'newer:autoprefixer:dev','newer:cssmin'],
+                tasks: ['sass', 'newer:autoprefixer:dev', 'newer:cssmin'],
             },
 
             js: {
-                files: ['assets/js/src/*.js', 'assets/js/src/**/*.js'],
+                files: ['assets/js/*.js', 'assets/js/**/*.js'],
                 tasks: ['newer:uglify']
             },
         }
@@ -147,7 +140,6 @@ module.exports = function(grunt) {
 
     // Register Tasks
     grunt.registerTask('default', [
-        'clean:build',
         'sass',
         'newer:autoprefixer:dev',
         'newer:cssmin',

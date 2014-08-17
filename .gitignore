@@ -1,7 +1,9 @@
 .DS_Store
 *.log
+*.min.js
+*.min.css
 .sass-cache
 node_modules
-assets/vendor
 /assets/css/*
-/assets/js/dist/*
+/assets/vendor/*
+

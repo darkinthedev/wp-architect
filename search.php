@@ -25,7 +25,7 @@ get_header(); ?>
 				<?php wp_arch_content_nav( 'nav-below' ); ?>
 
 			<?php else : ?>
-                <?php get_template_part( 'library/partials/not-found'); ?>
+                <?php get_template_part( 'partials/not-found'); ?>
 			<?php endif; ?>
 
 		</section><!-- .primary -->

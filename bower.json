@@ -9,12 +9,11 @@
     "private": true,
     "ignore": [
       "**/.*",
-      "node_modules",
-      "assets/vendor"
+      "node_modules"
     ],
     "dependencies": {
-        "normalize-css": "latest",
         "modernizr": "latest",
-        "breakpoint-sass": "latest"
+        "breakpoint-sass": "latest",
+        "normalize-css": "latest"
     }
 }
