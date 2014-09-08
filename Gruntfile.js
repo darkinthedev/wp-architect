@@ -101,6 +101,7 @@ module.exports = function(grunt) {
                     'src' : [
                         ['assets/scss/*.scss'],
                         ['assets/scss/**/*.scss'],
+                        ['assets/js/common.js'],
                         ['assets/js/src/*.js'],
                         ['assets/js/src/**/*.js']
                     ]
